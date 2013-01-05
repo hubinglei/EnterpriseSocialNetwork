@@ -11,4 +11,4 @@ Project Structure Introduce
 Design			the directory to store the psd of photoshop of the system
 Prototype		the directory to store the html/js based online demo system
 Doc				the directory to store the document of the system
-
+OpenSource		the directory to store the opensource lib with source code and document which are used in the project

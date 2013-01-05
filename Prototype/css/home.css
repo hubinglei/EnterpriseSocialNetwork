@@ -1,0 +1,261 @@
+#homecontent {
+	display: none;
+	margin-left: -120px;
+}
+
+.startDetail {
+	cursor: pointer;
+	color: rgb(32, 150, 207);
+	font-size: 30px;
+	width: 90px;
+}
+
+.dropdown-menu {
+	display: none;
+	padding: 5px 5px 5px 5px;
+	width: 140px;
+	position: absolute;
+	z-index: 1000;
+	background-color: white;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	font-size: 18px;
+	margin-top: 0px;
+}
+
+ul li {
+	display: inline-block;
+}
+
+ul.dropdown-menu li>a:hover,ul.dropdown-menu li>a:focus {
+	color: white;
+	background-color: #0081C2;
+}
+
+ul.dropdown-menu li a {
+	color: #969595;
+	cursor: pointer;
+	display: block;
+	width: 135px;
+	margin-left: -5px;
+	padding-left: 15px;
+	padding-top: 10px;
+}
+
+#homePage {
+	font-size: 26px;
+	color: rgb(102, 102, 102);
+}
+
+.tile:hover {
+	padding: 0;
+	text-decoration: none;
+	cursor: pointer;
+	outline: 1px white solid;
+	-moz-box-shadow: 0 0 10px #333;
+	-webkit-box-shadow: 0 0 10px #333;
+	box-shadow: 0 0 10px #333;
+	z-index: 100;
+}
+
+#socialDash {
+	background: url(../image/bg1.png);
+	width: 354px;
+	height: 150px;
+	margin-top: 10px;
+	float: left;
+}
+
+#dash1,#network1,#plan1,#channel1 {
+	margin: 20px 0 10px 10px;
+}
+
+.group {
+	font-size: 18px;
+	color: rgb(246, 252, 253);
+	margin: 20px 0 5px 10px;
+}
+
+#socialNetwork {
+	background: url(../image/bg2.png);
+	height: 150px;
+	width: 382px;
+	float: left;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+ul li {
+	padding: 10px 0 0 10px;
+	color: rgb(249, 250, 251);
+	font-size: 16px;
+}
+
+.dropdown-menu li {
+	padding: 10px 0 0 0;
+	color: rgb(249, 250, 251);
+	font-size: 16px;
+}
+
+#dashList {
+	margin: -160px 0 0 100px;
+}
+
+#dashList ul,#networkList ul {
+	height: 5px;
+}
+
+#campaignList ul,#activityList ul,#mediaList ul {
+	height: 8px;
+}
+
+.listTitle {
+	width: 65px;
+}
+
+.tips {
+	font-size: 10px;
+	color: #A33606;
+	background: url(../image/tip.png);
+	width: 80px;
+	height: 25px;
+	position: absolute;
+	line-height: 20px;
+	text-align: center;
+	display: none;
+}
+
+#networkList {
+	margin: -160px 0 0 180px;
+}
+
+.arrow {
+	opacity: 0.36;
+	margin: 20px 0 0 10px;
+}
+
+.arrow:hover {
+	opacity: 0.76;
+}
+
+#socialCampaign {
+	background: url(../image/bg_gray.png);
+	width: 354px;
+	height: 150px;
+	margin-top: 115px;
+}
+
+#planBg {
+	background: url(../image/bg3.png);
+	width: 354px;
+	height: 53px;
+	font-size: 18px;
+	color: rgb(246, 252, 253);
+	margin-top: 13px;
+	line-height: 53px;
+}
+
+#campaignList {
+	float: right;
+	margin: -150px 40px 0 0;
+}
+
+#activityAutomation {
+	background: url(../image/bg4.png);
+	width: 191px;
+	height: 150px;
+	margin: -150px 0 0 365px;
+}
+
+#mediaMediation {
+	background: url(../image/bg5.png);
+	width: 180px;
+	height: 150px;
+	margin: -150px 0 0 565px;
+}
+
+#channelMaintenace {
+	background: url(../image/bg6.png);
+	width: 354px;
+	height: 150px;
+	margin-top: 10px;
+	color: #F6FCFD;
+}
+
+.title {
+	color: #F6FCFD;
+	font-size: 18px;
+	line-height: 40px;
+	margin-left: 10px;
+}
+
+#activityList,#mediaList {
+	margin: -20px 0 0 -30px;
+}
+
+#activityList img,#mediaList img {
+	float: right;
+	margin: -55px 20px 0 0;
+}
+
+#channelList ul {
+	height: 1px;
+}
+
+#channelList {
+	margin: -150px 0 0 160px;
+}
+
+#rightNav {
+	float: right;
+	margin-top: -500px;
+	text-align: center;
+	margin-right: -120px;
+}
+
+#rightNav img {
+	margin: 30px 0 0 50px;
+}
+
+#authotzation {
+	font-size: 26px;
+	color: rgb(102, 102, 102);
+}
+
+#authorizationBg {
+	background: url(../image/bg7.png);
+	width: 222px;
+	height: 150px;
+}
+
+#integrationBg {
+	background: url(../image/bg8.png);
+	width: 222px;
+	height: 150px;
+	margin-top: 10px;
+}
+
+#masteBg {
+	background: url(../image/bg9.png);
+	width: 222px;
+	height: 150px;
+	margin-top: 10px;
+}
+
+#authorizationBg,#integrationBg,#masteBg {
+	font-size: 17.45px;
+	color: rgb(255, 255, 255)
+}
+
+#dashcontent {
+	display: none
+}
+
+#socialTitle {
+	color: rgb(35, 160, 216);
+	font-size: 18px;
+}

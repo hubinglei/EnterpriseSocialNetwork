@@ -1,0 +1,129 @@
+#dashcontent {
+	margin: 0 -120px 0 -120px;
+}
+
+.cycleNav {
+	float: right;
+	font-size: 10px;
+	color: rgb(253, 253, 254);
+	font-family: Microsoft YaHei;
+	background-image: url(../image/cycleBg.png);
+	width: 116px;
+	height: 25px;
+	line-height: 25px;
+	margin-top: -25px;
+}
+
+.cycleNav span {
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+#socialTable {
+	font-size: 12px;
+	color: rgb(83, 83, 85);
+	text-align: center;
+	width: 100%;
+	font-family: Microsoft YaHei;
+	margin-top: 5px;
+}
+
+#socialTable tr {
+	background-color: #E6ECFF;
+	height: 35px;
+}
+
+.tableTitle {
+	background: url(../image/chart_title_bg.png);
+	width: 576px;
+	height: 35px;
+}
+
+.eyeBg {
+	background: url(../image/eye_bg.png);
+	width: 39px;
+	height: 26px;
+	float: right;
+	line-height: 25px;
+}
+
+.browserBg {
+	background: url(../image/browser_bg.png);
+	width: 39px;
+	height: 26px;
+	float: left;
+	line-height: 32px;
+}
+
+.attention {
+	color: #23A0D8;
+}
+
+.socialTitle {
+	color: #23A0D8;
+	font-size: 16px;
+	margin-top: 30px;
+}
+
+#overview {
+	height: 44px;
+	line-height: 44px;
+}
+
+.overview {
+	background-image: url(../image/overview_bg1.png);
+}
+
+.overview1 {
+	background-image: url(../image/overview2.png);
+}
+
+#date {
+	margin-left: 90px;
+	color: black;
+}
+
+#area {
+	margin-left: 20px;
+}
+
+#socialTitle span,#date,#area,.eyeBg,.browserBg {
+	cursor: pointer;
+}
+
+#chatNav {
+	margin-top: 13px;
+}
+
+.chartTitle {
+	background-image: url(../image/chart_title_bg.png);
+	width: 613px;
+	height: 36px;
+	line-height: 36px;
+	font-size: 16px;
+	font-family: Microsoft YaHei;
+	color: rgb(25, 24, 24);
+}
+
+.chartContent {
+	background-color: rgb(255, 255, 255);
+	width: 613px;
+	height: 260px;
+}
+
+#socialChart ul {
+	margin-left: -50px;
+}
+
+#socialChart {
+	margin-top: -20px;
+}
+
+.chartSetting {
+	margin: -25px 10px 0 0;
+	float: right;
+}
+
+.chartSetting span,.chartTitle span {
+	margin-left: 10px;
+}
