@@ -70,7 +70,7 @@ ul.dropdown-menu li a {
 	float: left;
 }
 
-#dash1,#network1,#plan1,#channel1 {
+#dash1,#network1,#plan1,#activity1,#media1,#channel1 {
 	margin: 20px 0 10px 10px;
 }
 
@@ -79,7 +79,9 @@ ul.dropdown-menu li a {
 	color: rgb(246, 252, 253);
 	margin: 20px 0 5px 10px;
 }
-
+.earlierdata{
+	width:18px;
+}
 #socialNetwork {
 	background: url(../image/bg2.png);
 	height: 150px;
@@ -88,13 +90,12 @@ ul.dropdown-menu li a {
 	margin-top: 10px;
 	margin-left: 10px;
 }
-
-ul li {
+#dashList ul li,#networkList ul li,#campaignList ul li,#activityList ul li,#mediaList ul li,#channelList ul li {
 	padding: 10px 0 0 10px;
 	color: rgb(249, 250, 251);
 	font-size: 16px;
+	width:10px;
 }
-
 .dropdown-menu li {
 	padding: 10px 0 0 0;
 	color: rgb(249, 250, 251);
@@ -102,15 +103,11 @@ ul li {
 }
 
 #dashList {
-	margin: -160px 0 0 100px;
+	margin: -160px 0 0 150px;
 }
 
-#dashList ul,#networkList ul {
+#networkList ul,#campaignList ul,#activityList ul,#mediaList ul{
 	height: 5px;
-}
-
-#campaignList ul,#activityList ul,#mediaList ul {
-	height: 8px;
 }
 
 .listTitle {
@@ -150,39 +147,39 @@ ul li {
 }
 
 #planBg {
-	background: url(../image/bg3.png);
+	/*background: url(../image/bg3.png);*/
 	width: 354px;
-	height: 53px;
+	height: 40px;
 	font-size: 18px;
 	color: rgb(246, 252, 253);
-	margin-top: 13px;
-	line-height: 53px;
+	margin-top: 26px;
+	line-height: 40px;
 }
 
 #campaignList {
 	float: right;
-	margin: -150px 40px 0 0;
+	margin: -165px 20px 0 0;
 }
 
 #activityAutomation {
 	background: url(../image/bg4.png);
-	width: 191px;
+	width: 382px;
 	height: 150px;
 	margin: -150px 0 0 365px;
 }
 
 #mediaMediation {
 	background: url(../image/bg5.png);
-	width: 180px;
+	width: 382px;
 	height: 150px;
-	margin: -150px 0 0 565px;
+	margin: 10px 0 0 365px;
 }
 
 #channelMaintenace {
 	background: url(../image/bg6.png);
 	width: 354px;
 	height: 150px;
-	margin-top: 10px;
+	margin-top: -150px;
 	color: #F6FCFD;
 }
 
@@ -194,20 +191,15 @@ ul li {
 }
 
 #activityList,#mediaList {
-	margin: -20px 0 0 -30px;
+	margin: -155px 0 0 180px;
 }
 
-#activityList img,#mediaList img {
-	float: right;
-	margin: -55px 20px 0 0;
-}
-
-#channelList ul {
+#dashList ul,#channelList ul {
 	height: 1px;
 }
 
 #channelList {
-	margin: -150px 0 0 160px;
+	margin: -150px 0 0 150px;
 }
 
 #rightNav {
@@ -221,7 +213,7 @@ ul li {
 	margin: 30px 0 0 50px;
 }
 
-#authotzation {
+#miscellaneous {
 	font-size: 26px;
 	color: rgb(102, 102, 102);
 }

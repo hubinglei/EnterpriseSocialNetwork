@@ -4,9 +4,8 @@
 
 .cycleNav {
 	float: right;
-	font-size: 10px;
+	font-size: 12px;
 	color: rgb(253, 253, 254);
-	font-family: Microsoft YaHei;
 	background-image: url(../image/cycleBg.png);
 	width: 116px;
 	height: 25px;
@@ -19,16 +18,15 @@
 	cursor: pointer;
 }
 
-#socialTable {
-	font-size: 12px;
+.socialTable,.sentimentTable {
+	font-size: 13px;
 	color: rgb(83, 83, 85);
 	text-align: center;
 	width: 100%;
-	font-family: Microsoft YaHei;
 	margin-top: 5px;
 }
 
-#socialTable tr {
+.socialTable tr ,.sentimentTable tr{
 	background-color: #E6ECFF;
 	height: 35px;
 }
@@ -100,8 +98,7 @@
 	width: 613px;
 	height: 36px;
 	line-height: 36px;
-	font-size: 16px;
-	font-family: Microsoft YaHei;
+	font-size: 17px;
 	color: rgb(25, 24, 24);
 }
 
@@ -111,14 +108,17 @@
 	height: 260px;
 }
 
-#socialChart ul {
+.socialChart ul {
 	margin-left: -50px;
 }
 
-#socialChart {
-	margin-top: -20px;
+.socialChart {
+	margin-top: -10px;
 }
 
+.socialChart ul li{
+	padding: 0 0 0 10px;
+}
 .chartSetting {
 	margin: -25px 10px 0 0;
 	float: right;
@@ -126,4 +126,12 @@
 
 .chartSetting span,.chartTitle span {
 	margin-left: 10px;
+}
+.chartbg{
+	background-image:url(../image/chartbg.png);
+	width:1240px;
+	height:44px;
+	font-size:18px;
+	color:rgb(35,160,216);
+	line-height:44px;
 }

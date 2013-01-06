@@ -90,22 +90,38 @@ h1 {
 #userInfor {
 	color: rgb(120, 163, 198);
 	float: right;
-	margin-right: 135px;
-	margin-top: 10px;
+	margin-right: 145px;
 }
-
-#userImg {
+#userName{
 	float: right;
-	margin-top: -35px;
-	margin-right: -90px;
+	margin: -70px -70px 0 0;
+	}
+/*#userImg {
+	float: right;
+	margin-right: -120px;
 }
-
+*/
 #userImg img {
 	padding-left: 10px;
 }
-
+#setting{
+	margin: -20px -70px 0 0;
+}
+#setting,#logoff{
+	cursor:pointer;
+	float:right;
+	}
+#logoff{
+	margin: -20px -130px 0 0;
+}
 #wrapper {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 1000px;
+}
+#fristName{
+	font-size:18px;
+}
+#lastName{
+	margin-top: -20px;
 }

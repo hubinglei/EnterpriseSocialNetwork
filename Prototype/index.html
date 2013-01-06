@@ -11,7 +11,7 @@
 
                 </style>
      <![endif]-->
-<script type="text/javascript" src="js/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/all.js"></script>
 </head>
 <div id="headerBg">
@@ -39,13 +39,18 @@
 				src="image/Chanel_small.png"><br> Channel </a>
 		</div>
 		<div id="userInfor">
-			<div id="userName">
-				<strong>FrisrtName</strong><br>lastName
-			</div>
+			
 			<div id="userImg">
-				<img src="image/profile.png"><img src="image/Separator.png"><img
-					src="image/set.png">
+				<img src="image/photo.png" >
+                <!--<img src="image/Separator.png">
+                <img src="image/set.png">-->
 			</div>
+            <div id="userName">
+				<strong><div id="fristName">Admin</div>
+				</strong> <!--<br>
+				<div id="lastName">LastName</div>-->
+			</div>
+             <div id="setting">Setting</div><div id="logoff">log off</div>
 		</div>
 	</div>
 </div>
@@ -58,8 +63,10 @@
 			<img src="image/people.png">
 		</div>
 		<div id="userLogin">
-			Login<br> User Account<br> <input type="text" required /><br>
-			Password<br> <input type="password" required /><br>
+			Login<br> User Account<br> <input type="text"
+				name="userAccout" required /> <span>Enter your User Account.</span><br>
+			Password<br> <input type="password" name="password" required />
+			<span>Enter your password.</span>
 			<div id="loginButton">
 				<img src="image/login_button1.png">
 			</div>
@@ -80,53 +87,56 @@
 			<div class="group">Social Dash Doard</div>
 			<div id="dashList">
 				<ul>
-					<li><img src="image/update.png" width="15">
+					<li><img src="image/company.png">
 					</li>
-					<li class="listTitle">Updated</li>
-					<li><img src="image/up.png">
-					</li>
+					<li>Company</li>
 				</ul>
 				<ul>
-					<li><img src="image/company.png" width="15">
-					</li>
-					<li class="listTitle">Company</li>
-					<li><img src="image/up.png">
-					</li>
-					<li><span class="earlierdata">23</span>
-						<div class="tips">
-							<span class="value"></span> updated items
-						</div>
-					</li>
-					<li><img src="image/right.png">
-					</li>
-					<li><div class="tips">
-							<span class="value"></span> updated items
-						</div> <span class="earlierdata">3</span>
-					</li>
+					<li><img src="image/add.png"></li>
+					<li><span class="earlierdata">3</span><div class="tips"></div></li>
+					<li><img src="image/plus.png"></li>
+					<li><span class="earlierdata">12</span><div class="tips"></div></li>
+					<li><img src="image/refrese.png"></li>
+					<li><span class="earlierdata">4</span><div class="tips"></div></li>
 				</ul>
 				<ul>
-					<li><img src="image/brand.png" width="15">
+					<li><img src="image/brand.png">
 					</li>
-					<li class="listTitle">Brand</li>
-					<li><img src="image/up.png">
-					</li>
-					<li>6</li>
+					<li>Brand</li>
 				</ul>
 				<ul>
-					<li><img src="image/product.png" width="15">
-					</li>
-					<li class="listTitle">Product</li>
-					<li><img src="image/up.png">
-					</li>
-					<li>4</li>
+					<li><img src="image/add.png"></li>
+					<li><span class="earlierdata">3</span><div class="tips"></div></li>
+					<li><img src="image/plus.png"></li>
+					<li><span class="earlierdata">12</span><div class="tips"></div></li>
+					<li><img src="image/refrese.png"></li>
+					<li><span class="earlierdata">4</span><div class="tips"></div></li>
 				</ul>
 				<ul>
-					<li><img src="image/campaign.png" width="15">
+					<li><img src="image/product.png">
 					</li>
-					<li class="listTitle">Campaign</li>
-					<li><img src="image/up.png">
+					<li>Product</li>
+				</ul>
+				<ul>
+					<li><img src="image/add.png"></li>
+					<li><span class="earlierdata">3</span><div class="tips"></div></li>
+					<li><img src="image/plus.png"></li>
+					<li><span class="earlierdata">12</span><div class="tips"></div></li>
+					<li><img src="image/refrese.png"></li>
+					<li><span class="earlierdata">4</span><div class="tips"></div></li>
+				</ul>
+				<ul>
+					<li><img src="image/campaign.png">
 					</li>
-					<li>4</li>
+					<li>Campaign</li>
+				</ul>
+				<ul>
+					<li><img src="image/add.png"></li>
+					<li><span class="earlierdata">3</span><div class="tips"></div></li>
+					<li><img src="image/plus.png"></li>
+					<li><span class="earlierdata">12</span><div class="tips"></div></li>
+					<li><img src="image/refrese.png"></li>
+					<li><span class="earlierdata">4</span><div class="tips"></div></li>
 				</ul>
 			</div>
 		</div>
@@ -137,41 +147,41 @@
 				<ul>
 					<li><img src="image/impact.png">
 					</li>
-					<li>Impact Analysis</li>
+					<li style="width:120px;">Impact Analysis</li>
 				</ul>
 				<ul>
 					<li><img src="image/add.png"></li>
-					<li>2</li>
+					<li><span class="earlierdata">3</span><div class="tips"></div></li>
 					<li><img src="image/plus.png"></li>
-					<li>2</li>
+					<li><span class="earlierdata">12</span><div class="tips"></div></li>
 					<li><img src="image/refrese.png"></li>
-					<li>2</li>
+					<li><span class="earlierdata">4</span><div class="tips"></div></li>
 				</ul>
 				<ul>
 					<li><img src="image/opinion.png">
 					</li>
-					<li>Opinion Analysis</li>
+					<li style="width:120px;">Opinion Analysis</li>
 				</ul>
 				<ul>
 					<li><img src="image/add.png"></li>
-					<li>2</li>
+					<li><span class="earlierdata">3</span><div class="tips"></div></li>
 					<li><img src="image/plus.png"></li>
-					<li>2</li>
+					<li><span class="earlierdata">15</span><div class="tips"></div></li>
 					<li><img src="image/refrese.png"></li>
-					<li>2</li>
+					<li><span class="earlierdata">4</span><div class="tips"></div></li>
 				</ul>
-				<ul width="15">
+				<ul>
 					<li><img src="image/cost.png">
 					</li>
-					<li>Cost Analysis</li>
-				</ul>
+					<li style="width:120px;">Cost Analysis</li>
+				</ul> 
 				<ul>
 					<li><img src="image/add.png"></li>
-					<li>2</li>
+					<li><span class="earlierdata">3</span><div class="tips"></div></li>
 					<li><img src="image/plus.png"></li>
-					<li>2</li>
+					<li><span class="earlierdata">5</span><div class="tips"></div></li>
 					<li><img src="image/refrese.png"></li>
-					<li>2</li>
+					<li><span class="earlierdata">4</span><div class="tips"></div></li>
 				</ul>
 			</div>
 		</div>
@@ -183,54 +193,135 @@
 			</div>
 			<div id="campaignList">
 				<ul>
-					<li class="listTitle">Completed</li>
-					<li>3</li>
+					<li><img src="image/impact.png">
+					</li>
+					<li>Completed</li>
 				</ul>
 				<ul>
-					<li class="listTitle">Ongoing</li>
-					<li>3</li>
+					<li><img src="image/add.png"></li>
+					<li><span class="earlierdata">3</span><div class="tips"></div></li>
+					<li><img src="image/plus.png"></li>
+					<li><span class="earlierdata">7</span><div class="tips"></div></li>
+					<li><img src="image/refrese.png"></li>
+					<li><span class="earlierdata">4</span><div class="tips"></div></li>
 				</ul>
 				<ul>
-					<li class="listTitle">Not Start</li>
-					<li>3</li>
+					<li><img src="image/opinion.png">
+					</li>
+					<li>Ongoing</li>
+				</ul>
+				<ul>
+					<li><img src="image/add.png"></li>
+					<li><span class="earlierdata">2</span><div class="tips"></div></li>
+					<li><img src="image/plus.png"></li>
+					<li><span class="earlierdata">7</span><div class="tips"></div></li>
+					<li><img src="image/refrese.png"></li>
+					<li><span class="earlierdata">4</span><div class="tips"></div></li>
+				</ul>
+				<ul>
+					<li><img src="image/cost.png">
+					</li>
+					<li style="width:120px;">Not Start</li>
+				</ul>
+				<ul>
+					<li><img src="image/add.png"></li>
+					<li><span class="earlierdata">3</span><div class="tips"></div></li>
+					<li><img src="image/plus.png"></li>
+					<li><span class="earlierdata">12</span><div class="tips"></div></li>
+					<li><img src="image/refrese.png"></li>
+					<li><span class="earlierdata">4</span><div class="tips"></div></li>
 				</ul>
 			</div>
 		</div>
 		<div id="activityAutomation" class="tile">
-
-			<div class="title">Activity Automation</div>
+			<img src="image/activity.png" id="activity1">
+			<div class="group" style="margin-top: 40px;">Activity Automation</div>
 			<div id="activityList">
-				<ul>
-					<li class="listTitle">On Going</li>
-					<li>12</li>
+			<ul>
+					<li><img src="image/impact.png">
+					</li>
+					<li>Ongoing</li>
 				</ul>
 				<ul>
-					<li class="listTitle">Completed</li>
-					<li>5</li>
+					<li><img src="image/add.png"></li>
+					<li><span class="earlierdata">3</span><div class="tips"></div></li>
+					<li><img src="image/plus.png"></li>
+					<li><span class="earlierdata">12</span><div class="tips"></div></li>
+					<li><img src="image/refrese.png"></li>
+					<li><span class="earlierdata">4</span><div class="tips"></div></li>
 				</ul>
 				<ul>
-					<li class="listTitle">Delayed</li>
-					<li>5</li>
+					<li><img src="image/opinion.png">
+					</li>
+					<li>Completed</li>
 				</ul>
-				<img src="image/activity.png">
+				<ul>
+					<li><img src="image/add.png"></li>
+					<li><span class="earlierdata">3</span><div class="tips"></div></li>
+					<li><img src="image/plus.png"></li>
+					<li><span class="earlierdata">12</span><div class="tips"></div></li>
+					<li><img src="image/refrese.png"></li>
+					<li><span class="earlierdata">4</span><div class="tips"></div></li>
+				</ul>
+				<ul>
+					<li><img src="image/cost.png">
+					</li>
+					<li>Delayed</li>
+				</ul>
+				<ul>
+					<li><img src="image/add.png"></li>
+					<li><span class="earlierdata">3</span><div class="tips"></div></li>
+					<li><img src="image/plus.png"></li>
+					<li><span class="earlierdata">12</span><div class="tips"></div></li>
+					<li><img src="image/refrese.png"></li>
+					<li><span class="earlierdata">4</span><div class="tips"></div></li>
+				</ul>
 			</div>
 		</div>
 		<div id="mediaMediation" class="tile">
-			<div class="title">Media Mediation</div>
+		<img src="image/media.png" id="media1">
+			<div class="group" style="margin-top: 40px;">Media Mediation</div>
 			<div id="mediaList">
 				<ul>
-					<li class="listTitle">On Going</li>
-					<li>12</li>
+					<li><img src="image/impact.png">
+					</li>
+					<li>Ongoing</li>
 				</ul>
 				<ul>
-					<li class="listTitle">Completed</li>
-					<li>5</li>
+					<li><img src="image/add.png"></li>
+					<li><span class="earlierdata">3</span><div class="tips"></div></li>
+					<li><img src="image/plus.png"></li>
+					<li><span class="earlierdata">12</span><div class="tips"></div></li>
+					<li><img src="image/refrese.png"></li>
+					<li><span class="earlierdata">4</span><div class="tips"></div></li>
 				</ul>
 				<ul>
-					<li class="listTitle">Used</li>
-					<li>5</li>
+					<li><img src="image/opinion.png">
+					</li>
+					<li>Completed</li>
 				</ul>
-				<img src="image/media.png">
+				<ul>
+					<li><img src="image/add.png"></li>
+					<li><span class="earlierdata">3</span><div class="tips"></div></li>
+					<li><img src="image/plus.png"></li>
+					<li><span class="earlierdata">12</span><div class="tips"></div></li>
+					<li><img src="image/refrese.png"></li>
+					<li><span class="earlierdata">4</span><div class="tips"></div></li>
+				</ul>
+				<ul>
+					<li><img src="image/cost.png">
+					</li>
+					<li>Used</li>
+				</ul>
+				<ul>
+					<li><img src="image/add.png"></li>
+					<li><span class="earlierdata">3</span><div class="tips"></div></li>
+					<li><img src="image/plus.png"></li>
+					<li><span class="earlierdata">12</span><div class="tips"></div></li>
+					<li><img src="image/refrese.png"></li>
+					<li><span class="earlierdata">4</span><div class="tips"></div></li>
+				</ul>
+				
 			</div>
 		</div>
 		<div id="channelMaintenace" class="tile">
@@ -244,11 +335,11 @@
 				</ul>
 				<ul>
 					<li><img src="image/add.png"></li>
-					<li>2</li>
+					<li><span class="earlierdata">3</span><div class="tips"></div></li>
 					<li><img src="image/plus.png"></li>
-					<li>2</li>
+					<li><span class="earlierdata">12</span><div class="tips"></div></li>
 					<li><img src="image/refrese.png"></li>
-					<li>2</li>
+					<li><span class="earlierdata">4</span><div class="tips"></div></li>
 				</ul>
 				<ul>
 					<li><img src="image/brand.png">
@@ -257,42 +348,42 @@
 				</ul>
 				<ul>
 					<li><img src="image/add.png"></li>
-					<li>2</li>
+					<li><span class="earlierdata">3</span><div class="tips"></div></li>
 					<li><img src="image/plus.png"></li>
-					<li>2</li>
+					<li><span class="earlierdata">12</span><div class="tips"></div></li>
 					<li><img src="image/refrese.png"></li>
-					<li>2</li>
+					<li><span class="earlierdata">4</span><div class="tips"></div></li>
 				</ul>
-				<ul width="15">
+				<ul>
 					<li><img src="image/product.png">
 					</li>
 					<li>Product</li>
 				</ul>
 				<ul>
 					<li><img src="image/add.png"></li>
-					<li>2</li>
+					<li><span class="earlierdata">3</span><div class="tips"></div></li>
 					<li><img src="image/plus.png"></li>
-					<li>2</li>
+					<li><span class="earlierdata">12</span><div class="tips"></div></li>
 					<li><img src="image/refrese.png"></li>
-					<li>2</li>
+					<li><span class="earlierdata">4</span><div class="tips"></div></li>
 				</ul>
-				<ul width="15">
+				<ul>
 					<li><img src="image/unofficial.png">
 					</li>
 					<li>Unofficial</li>
 				</ul>
 				<ul>
 					<li><img src="image/add.png"></li>
-					<li>2</li>
+					<li><span class="earlierdata">3</span><div class="tips"></div></li>
 					<li><img src="image/plus.png"></li>
-					<li>2</li>
+					<li><span class="earlierdata">12</span><div class="tips"></div></li>
 					<li><img src="image/refrese.png"></li>
-					<li>2</li>
+					<li><span class="earlierdata">4</span><div class="tips"></div></li>
 				</ul>
 			</div>
 		</div>
 		<div id="rightNav">
-			<div id="authotzation">Authorization</div>
+			<div id="miscellaneous">Miscellaneous</div>
 			<div id="authorizationBg" class="tile">
 				<img src="image/authorization.png">Authorization
 			</div>
@@ -306,60 +397,64 @@
 		</div>
 	</div>
 	<div id="dashcontent">
-    <div>
-			<div class="startDetail">Start ></div>
-			<ul class="dropdown-menu">
-				<li><a>Start 1</a></li>
-				<li><a>Start 2</a></li>
-			</ul>
+		<div id="socialTitle">Social Dash Doard-Analysis</div>
+		<table border="0" class="socialTable" Cellspacing="0">
+			<tr class="tableTitle">
+				<td>Insrance Name</td>
+				<td>Explain</td>
+				<td>Address</td>
+				<td>Influence</td>
+				<td>Plan Num</td>
+				<td>Plan Schedule</td>
+				<td>Cost Curve</td>
+				<td><div class="eyeBg">
+						<img src="image/eye.png">
+					</div></td>
+				<td><div class="browserBg">
+						<img src="image/browser.png">
+					</div></td>
+			</tr>
+			<tr>
+				<td>LG Mobile</td>
+				<td>LG Business Unit</td>
+				<td>http://www.twitter.com/lgmobile</td>
+				<td>129384</td>
+				<td>4</td>
+				<td><progress value="75" max="100">3/4 complete</progress></td>
+				<td>$2888899</td>
+				<td colspan="2" class="attention"><img
+					src="image/plus-transparent.png"> Pay Attention</td>
+			</tr>
+			<tr>
+				<td>Samsung</td>
+				<td>Samsung Mobile</td>
+				<td>http://www.twitter.com/sumsung</td>
+				<td>129384</td>
+				<td>4</td>
+				<td><progress value="75" max="100">3/4 complete</progress></td>
+				<td>$2888899</td>
+				<td colspan="2" class="attention">Delete Attention</td>
+			</tr>
+		</table>
+		<div class="socialTitle">
+			&nbsp;LG Mobile <span id="date">Date</span><span id="area">
+				Area</span>
 		</div>
-        <div id="socialTitle">Social Dash Doard-Analysis</div>
-        <div class="cycleNav"> <span> Day </span><span>Week </span><span> Month </span></div>
-        <table  border="0" id="socialTable" Cellspacing="0">
-  <tr class="tableTitle">
-    <td>Insrance Name</td>
-    <td>Explain</td>
-    <td>Address</td>
-    <td>Influence</td>
-    <td>Plan Num</td>
-    <td>Plan Schedule</td>
-    <td>Cost Curve</td>
-    <td><div class="eyeBg"><img src="image/eye.png"></div></td>
-    <td><div class="browserBg"><img src="image/browser.png"></div></td>
-  </tr>
-  <tr>
-    <td>LG Mobile</td>
-    <td>LG Business Unit</td>
-    <td>http://www.twitter.com/lgmobile</td>
-    <td>129384</td>
-    <td>4</td>
-    <td><progress value="75" max="100">3/4 complete</progress></td>
-    <td>$2888899</td>
-    <td colspan="2" class="attention"><img src="image/plus-transparent.png"> Pay Attention</td>
-  </tr>
-  <tr>
-    <td>Samsung</td>
-    <td>Samsung Mobile</td>
-    <td>http://www.twitter.com/sumsung</td>
-    <td>129384</td>
-    <td>4</td>
-    <td><progress value="75" max="100">3/4 complete</progress></td>
-    <td>$2888899</td>
-    <td colspan="2" class="attention">Delete Attention</td>
-  </tr>
-</table>
-<div class="socialTitle">&nbsp;LG Mobile  <span id="date">Date</span><span id="area"> Area</span></div>
-<div id="overview" class="overview">&nbsp;Overview  <div class="cycleNav" id="chatNav"> <span> Day </span><span>Week </span><span> Month </span></div></div>
-		<div id="socialChart">
+		<div id="overview" class="overview">
+			&nbsp;Overview
+			<div class="cycleNav" id="chatNav">
+				<span> Day </span><span>Week </span><span> Month </span>
+			</div>
+		</div>
+		<div class="socialChart">
 			<ul>
 				<li><div class="chartTitle">
 						<span>Activity Force</span>
 					</div>
 					<div class="chartSetting">
-						<span><img src="image/list1.png">
-						</span><span><img src="image/list.png">
-						</span><span><img src="image/list_setting.png">
-						</span>
+						<span><img src="image/list1.png"> </span><span><img
+							src="image/list.png"> </span><span><img
+							src="image/list_setting.png"> </span>
 					</div>
 					<div class="chartContent"></div>
 				</li>
@@ -367,57 +462,60 @@
 						<span>Attractive Force</span>
 					</div>
 					<div class="chartSetting">
-						<span><img src="image/list1.png">
-						</span><span><img src="image/list.png">
-						</span><span><img src="image/list_setting.png">
-						</span>
-					</div>
-					<div class="chartContent"></div>
-				</li>
-				<li><div class="chartTitle">
-						<span>Coverage Rate</span>
-					</div>
-					<div class="chartSetting">
-						<span><img src="image/list1.png">
-						</span><span><img src="image/list.png">
-						</span><span><img src="image/list_setting.png">
-						</span>
-					</div>
-					<div class="chartContent"></div>
-				</li>
-				<li><div class="chartTitle">
-						<span>Communication Force</span>
-					</div>
-					<div class="chartSetting">
-						<span><img src="image/list1.png">
-						</span><span><img src="image/list.png">
-						</span><span><img src="image/list_setting.png">
-						</span>
-					</div>
-					<div class="chartContent"></div>
-				</li>
-				<li><div class="chartTitle">
-						<span>Lead Trunover Rate</span>
-					</div>
-					<div class="chartSetting">
-						<span><img src="image/list1.png">
-						</span><span><img src="image/list.png">
-						</span><span><img src="image/list_setting.png">
-						</span>
-					</div>
-					<div class="chartContent"></div>
-				</li>
-				<li><div class="chartTitle">
-						<span>Colse Rate</span>
-					</div>
-					<div class="chartSetting">
-						<span><img src="image/list1.png">
-						</span><span><img src="image/list.png">
-						</span><span><img src="image/list_setting.png">
-						</span>
+						<span><img src="image/list1.png"> </span><span><img
+							src="image/list.png"> </span><span><img
+							src="image/list_setting.png"> </span>
 					</div>
 					<div class="chartContent"></div>
 				</li>
 			</ul>
 		</div>
+        <div id="sentimentcontent">
+        <div id="socialTitle">Social Dash Doard-Public Sentiment</div>
+		<table border="0" class="sentimentTable" Cellspacing="0">
+			<tr class="tableTitle">
+				<td>Channel Name</td>
+				<td>Option Experts</td>
+				<td>Hot Topic</td>
+				<td>Company</td>
+				<td>Product</td>
+				<td>Brand</td>
+				<td><div class="eyeBg">
+						<img src="image/eye.png">
+					</div></td>
+				<td><div class="browserBg">
+						<img src="image/browser.png">
+					</div></td>
+			</tr>
+			<tr>
+				<td>ESN</td>
+				<td>5</td>
+				<td>23</td>
+				<td>129384</td>
+				<td>4</td>
+				<td><progress value="75" max="100">3/4 complete</progress></td>
+				<td colspan="2" class="attention"><img
+					src="image/plus-transparent.png"> Delete Attention</td>
+			</tr>
+			<tr>
+				<td>HP Connect</td>
+				<td>6</td>
+				<td>24</td>
+				<td>129384</td>
+				<td>4</td>
+				<td><progress value="75" max="100">3/4 complete</progress></td>
+				<td colspan="2" class="attention">Delete Attention</td>
+			</tr>
+            <tr>
+				<td>Community</td>
+				<td>6</td>
+				<td>24</td>
+				<td>129384</td>
+				<td>4</td>
+				<td><progress value="75" max="100">3/4 complete</progress></td>
+				<td colspan="2" class="attention">Delete Attention</td>
+			</tr>
+		</table>
+		<div class="chartbg">&nbsp;Chart</div>
+        </div>
 	</div>
