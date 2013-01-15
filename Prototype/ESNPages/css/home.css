@@ -1,0 +1,305 @@
+#homecontent {
+	margin-left: -120px;
+}
+
+.startDetail {
+	cursor: pointer;
+	color: rgb(32, 150, 207);
+	font-size: 30px;
+	width: 90px;
+}
+
+.dropdown-menu {
+	display: none;
+	padding: 5px 5px 5px 5px;
+	width: 140px;
+	position: absolute;
+	z-index: 1000;
+	background-color: white;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	font-size: 18px;
+	margin-top: 0px;
+}
+
+ul li {
+	display: inline-block;
+}
+
+ul.dropdown-menu li>a:hover,ul.dropdown-menu li>a:focus {
+	color: white;
+	background-color: #0081C2;
+}
+
+ul.dropdown-menu li a {
+	color: #969595;
+	cursor: pointer;
+	display: block;
+	width: 135px;
+	margin-left: -5px;
+	padding-left: 15px;
+	padding-top: 10px;
+}
+
+#homePage {
+	font-size: 26px;
+	color: rgb(102, 102, 102);
+}
+
+.tile:hover {
+	padding: 0;
+	text-decoration: none;
+	cursor: pointer;
+	outline: 1px white solid;
+	-moz-box-shadow: 0 0 10px #333;
+	-webkit-box-shadow: 0 0 10px #333;
+	box-shadow: 0 0 10px #333;
+	z-index: 100;
+}
+
+#socialDash {
+	background: url(../image/bg1.png);
+	width: 354px;
+	height: 150px;
+	margin-top: 10px;
+	float: left;
+}
+
+#dash1,#network1,#plan1,#activity1,#media1,#channel1 {
+	margin: 20px 0 10px 10px;
+}
+
+.group {
+	font-size: 18px;
+	color: rgb(246, 252, 253);
+	margin: 20px 0 5px 10px;
+}
+
+.earlierdata {
+	width: 18px;
+}
+
+#socialNetwork {
+	background: url(../image/bg2.png);
+	height: 150px;
+	width: 382px;
+	float: left;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+#dashList ul li,#networkList ul li,#campaignList ul li,#activityList ul li,#mediaList ul li,#channelList ul li
+	{
+	padding: 10px 0 0 10px;
+	color: rgb(249, 250, 251);
+	font-size: 16px;
+	width: 10px;
+}
+
+.dropdown-menu li {
+	padding: 10px 0 0 0;
+	color: rgb(249, 250, 251);
+	font-size: 16px;
+}
+
+#dashList {
+	margin: -160px 0 0 150px;
+}
+
+#networkList ul,#campaignList ul,#activityList ul,#mediaList ul {
+	height: 5px;
+}
+
+.listTitle {
+	width: 65px;
+}
+
+.tips {
+	font-size: 10px;
+	color: #A33606;
+	background: url(../image/tip.png);
+	width: 80px;
+	height: 25px;
+	position: absolute;
+	line-height: 20px;
+	text-align: center;
+	display: none;
+}
+
+#networkList {
+	margin: -160px 0 0 180px;
+}
+
+.arrow {
+	opacity: 0.56;
+	margin: 20px 0 0 10px;
+}
+
+.arrow:hover {
+	opacity: 0.96;
+}
+
+#socialCampaign {
+	background: url(../image/bg_gray.png);
+	width: 354px;
+	height: 150px;
+	margin-top: 115px;
+}
+
+#planBg { /*background: url(../image/bg3.png);*/
+	width: 354px;
+	height: 40px;
+	font-size: 18px;
+	color: rgb(246, 252, 253);
+	margin-top: 26px;
+	line-height: 40px;
+}
+
+#campaignList {
+	float: right;
+	margin: -165px 10px 0 0;
+}
+
+#activityAutomation {
+	background: url(../image/bg4.png);
+	width: 382px;
+	height: 150px;
+	margin: -150px 0 0 365px;
+}
+
+#mediaMediation {
+	background: url(../image/bg5.png);
+	width: 382px;
+	height: 150px;
+	margin: 10px 0 0 365px;
+}
+
+#channelMaintenace {
+	background: url(../image/bg6.png);
+	width: 354px;
+	height: 150px;
+	margin-top: -150px;
+	color: #F6FCFD;
+}
+
+.title {
+	color: #F6FCFD;
+	font-size: 18px;
+	line-height: 40px;
+	margin-left: 10px;
+}
+
+#activityList,#mediaList {
+	margin: -155px 0 0 180px;
+}
+
+#dashList ul,#channelList ul {
+	height: 1px;
+}
+
+#channelList {
+	margin: -160px 0 0 150px;
+}
+
+.rightNav {
+	float: right;
+	margin-top: -510px;
+	text-align: center;
+	margin-right: -120px;
+	opacity: 0.5;
+}
+
+.rightNav img {
+	margin: 30px 0 0;
+}
+
+.homeNavTitle {
+	font-size: 26px;
+	color: rgb(102, 102, 102);
+}
+
+.homeNav1,.homeNav2,.homeNav3 {
+	width: 222px;
+	height: 150px;
+}
+
+.homeNav1 {
+	background: url(../image/bg7.png);
+}
+
+.homeNav2 {
+	background: url(../image/bg8.png);
+	margin-top: 10px;
+}
+
+.homeNav3 {
+	background: url(../image/bg9.png);
+	margin-top: 10px;
+}
+
+.homeNav4,.homeNav5,.homeNav6,.homeNav7,.homeNav8,.homeNav9 {
+	width: 221px;
+	height: 70px;
+	line-htight:70px;
+}
+
+.homeNav5,.homeNav6,.homeNav7,.homeNav8,.homeNav9 {
+	margin-top: 10px;
+}
+.networkRightNav img{
+	float:left;
+}
+
+.homeNav4 {
+	background: url(../image/homepage2_right1.png);
+}
+
+.homeNav5 {
+	background: url(../image/homepage2_right2.png);
+}
+
+.homeNav6 {
+	background: url(../image/homepage2_right3.png);
+}
+
+.homeNav7 {
+	background: url(../image/homepage2_right4.png);
+}
+
+.homeNav8 {
+	background: url(../image/homepage2_right5.png);
+}
+
+.homeNav9 {
+	background: url(../image/homepage2_righ6.png);
+}
+
+.homeNav1,.homeNav2,.homeNav3,.homeNav4,.homeNav5,.homeNav6,.homeNav7,.homeNav8,.homeNav9
+	{
+	font-size: 17.45px;
+	color: rgb(255, 255, 255)
+}
+
+.arrowLeft {
+	float: left;
+	display: none;
+	margin-left: -60px;
+	margin-top: -2px;
+}
+
+#networkNav,#mediaNav,#configNav,.networkRightNav,#networkSentiment,#networkCost {
+	display: none;
+}
+.networkRightNav{
+	margin-left:1800px;
+	margin-top: -510px;
+	float: left;
+	opacity: 0.5;
+}
+#networkArrowLeft{
+margin: 30px 0 0 -300px;
+}
