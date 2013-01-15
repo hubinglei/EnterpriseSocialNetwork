@@ -81,7 +81,7 @@ $(function() {
 		$(".rightNav").each(function(){
 			if($(this).css("display")=="block"){
 				showRightNav($(this).attr("id"));
-				$("#networkInluence").hide();
+				$(".networkRightNav").hide();
 				if($(this).attr("id").indexOf("dash")>-1){
 					navActive("#dash")
 				}else if($(this).attr("id").indexOf("network")>-1){
@@ -109,6 +109,26 @@ $(function() {
 		moveLeft();
 	})
 	
+	//the second level
+	function moveRight1(){
+		$(".networkRightNav").css("margin-left", "870px");
+		$(".rightNav").css("margin-right", "1290px");
+		$(".networkRightNav").css("opacity", "1");
+		$(".arrowLeft1").show();
+		
+	}
+	function moveLeft1(){
+		$(".arrowLeft1").hide();
+		$(".networkRightNav").css("margin-left", "1800px");
+		$(".rightNav").css("margin-right", "890px");
+		$(".networkRightNav").css("opacity", "0.5");
+	}
+	$(".arrowRight1").click(function(){
+		moveRight1();
+	})
+	$(".arrowLeft1").click(function(){
+		moveLeft1();
+	})
 	function networkNav2(id){
 		$(".networkRightNav").each(function(){
 			$(this).hide();
