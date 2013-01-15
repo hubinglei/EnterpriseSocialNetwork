@@ -1,6 +1,6 @@
 $(function() {
-	
-  // header page selected home 
+
+	// header page selected home
 	navActive("#home")
 
 	// start click
@@ -18,143 +18,108 @@ $(function() {
 	})
 
 	// show tips
-	$("ul li").mouseenter(
-			function() {
-			var div=$(".tips")
-			var self = $(this); 
-				$(this).find(".tips").html(
-						$(this).find(".earlierdata").text()+" updated items");
-				var p = self.position()  
-        var x = p.left + self.width()/2; 
-        var docWidth = $(document).width();
-		var y=p.top-self.height();
-        div.css("left", x);  
-        div.css("top", y);  
-				$(this).find(".tips").show();
-			}).mouseleave(function() {
-		$(this).find(".tips").hide();
-	});
-	
-	function showRightNav(id){
-		$(".rightNav").each(function(){
-			$(this).hide();
-		})
-		$("#"+id).show();
+	$("ul li")
+			.mouseenter(
+					function() {
+						var div = $(".tips")
+						var self = $(this);
+						$(this).find(".tips").html(
+								$(this).find(".earlierdata").text()
+										+ " updated items");
+						var p = self.position()
+						var x = p.left + self.width() / 2;
+						var docWidth = $(document).width();
+						var y = p.top - self.height();
+						div.css("left", x);
+						div.css("top", y);
+						$(this).find(".tips").show();
+					}).mouseleave(function() {
+				$(this).find(".tips").hide();
+			});
 
-	}
-	function hideRightNav(){
-		$(".rightNav").css("opacity", "0.5");
-	}
 	// home page nav
 	// social dash board
 	$("#socialDash").click(function() {
-		showRightNav("dashNav");		
+		showRightNav("dashNav");
 	})
+
 	// social network insight
 	$("#socialNetwork").click(function() {
-		showRightNav("networkNav");		
+		showRightNav("networkNav");
 	})
 	// media mediation
 	$("#mediaMediation").click(function() {
-		showRightNav("mediaNav");		
+		showRightNav("mediaNav");
 	})
-	
-		// social campaingn plan
+
+	// social campaingn plan
 	$("#socialCampaign").click(function() {
-		
+
 	})
 
 	// activity automation
 	$("#activityAutomation").click(function() {
-		
-	})
 
+	})
 
 	// channel maintenace
 	$("#channelMaintenace").click(function() {
-		
+
 	})
-	function moveRight(){
-		$("#homecontent").css("margin-left", "-985px");
-		$(".rightNav").css("margin-right", "890px");
-		$(".arrowLeft").show();
-		$(".rightNav").each(function(){
-			if($(this).css("display")=="block"){
-				showRightNav($(this).attr("id"));
-				$(".networkRightNav").hide();
-				if($(this).attr("id").indexOf("dash")>-1){
-					navActive("#dash")
-				}else if($(this).attr("id").indexOf("network")>-1){
-					$("#networkInluence").show();
-					navActive("#network")
-				}else if($(this).attr("id").indexOf("media")>-1){
-					navActive("#media")
-				}
-			}
-		});
-		$(".rightNav").css("opacity", "1");
-		
-	}
-	function moveLeft(){
-		$(".arrowLeft").hide();
-		$("#homecontent").css("margin-left", "-120px");
-		$(".rightNav").css("margin-right", "-120px");
-		hideRightNav();	
-		navActive("#home")
-	}
-	$("#arrowRight").click(function(){
+
+	$("#arrowRight").click(function() {
 		moveRight();
 	})
-	$(".arrowLeft").click(function(){
+	$(".arrowLeft").click(function() {
 		moveLeft();
 	})
-	
-	//the second level
-	function moveRight1(){
+
+	// the second level
+	function moveRight1() {
 		$(".networkRightNav").css("margin-left", "870px");
 		$(".rightNav").css("margin-right", "1290px");
 		$(".networkRightNav").css("opacity", "1");
 		$(".arrowLeft1").show();
-		
+
 	}
-	function moveLeft1(){
+	function moveLeft1() {
 		$(".arrowLeft1").hide();
 		$(".networkRightNav").css("margin-left", "1800px");
 		$(".rightNav").css("margin-right", "890px");
 		$(".networkRightNav").css("opacity", "0.5");
 	}
-	$(".arrowRight1").click(function(){
+	$(".arrowRight1").click(function() {
 		moveRight1();
 	})
-	$(".arrowLeft1").click(function(){
+	$(".arrowLeft1").click(function() {
 		moveLeft1();
 	})
-	function networkNav2(id){
-		$(".networkRightNav").each(function(){
+	function networkNav2(id) {
+		$(".networkRightNav").each(function() {
 			$(this).hide();
 		})
-		$("#"+id).show();
+		$("#" + id).show();
 	}
-	$("#influenceAnalysis").click(function(){
+	$("#influenceAnalysis").click(function() {
 		networkNav2("networkInluence");
 	});
-	$("#sentimentAnalysis").click(function(){
+	$("#sentimentAnalysis").click(function() {
 		networkNav2("networkSentiment");
 	});
-	$("#costAnalysis").click(function(){
+	$("#costAnalysis").click(function() {
 		networkNav2("networkCost");
 	});
- // back home 
-$("#homeNav").click(function(){
-	moveLeft();
+	// back home
+	$("#homeNav").click(function() {
+		moveLeft();
 	})
-//Influence Insight
-$("#influenceDash").click(function(){
-	window.open("influenceDash.html","_self")
+	// Influence Insight
+	$("#influenceDash").click(function() {
+		window.open("influenceDash.html", "_self")
 	})
 
-	//Influence Insight
-$("#sentimentDash").click(function(){
-	window.open("sentimentDash.html","_self")
+	// Influence Insight
+	$("#sentimentDash").click(function() {
+		window.open("sentimentDash.html", "_self")
 	})
 });

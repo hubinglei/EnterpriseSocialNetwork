@@ -4,11 +4,27 @@ $(function() {
 	$(".socialTable tr:odd").css("background-color", "#FFFFFF");
 	$(".sentimentTable tr:odd").css("background-color", "#FFFFFF");
 
-	$('.esn-chart', $("#" + $(this).attr("id") + ("content"))).each(function(i) {
-		$.data(this, 'chart').jqplot.replot();
-	});
-	
-// socail dash board -anlaysis
+	function replotChart() {
+		$('.esn-chart').each(function(i) {
+			$.data(this, 'chart').jqplot.replot();
+		});
+	}
+	// bind table tr event
+	$("table tr:not(:first)").click(function() {
+		var instanceName = $(this).find("td").html();
+		$("#instanceName").html("&nbsp;" + instanceName);
+		if (instanceName.indexOf("Samsung") > -1) {
+			$("#lgData").hide();
+			$("#samsungData").show();
+			replotChart();
+		} else {
+			$("#lgData").show();
+			replotChart();
+			$("#samsungData").hide();
+		}
+	})
+
+	// socail dash board -anlaysis
 	// area click
 	$("#area").click(function() {
 		$("#overview").addClass("overview1");
@@ -21,5 +37,16 @@ $(function() {
 		$("#overview").addClass("overview")
 		$("#dateView").show();
 		$("#areaView").hide();
+	})
+
+	// top button
+	$(".topButton").click(function() {
+		$('body,html').animate({
+			scrollTop : 0
+		}, 0);
+		return false;
+	});
+	$("#config").click(function() {
+		navActive("#config")
 	})
 })
