@@ -1,0 +1,389 @@
+.esn-chart {
+	width: 99%;
+	background-color: white;
+}
+
+.chart {
+	overflow: hidden;
+	font-size: 12px;
+}
+
+.chart-header {
+	background: url(../image/chart_title_bg.png);
+	padding: 5px;
+	line-height: 25px;
+	position: relative;
+	border: 1px solid #ddd;
+}
+
+.chart-title {
+	font-size: 17px;
+	margin-left: 10px;
+}
+
+.chart-header-noborder {
+	border-width: 0px;
+	border-bottom: 1px solid #ddd;
+}
+
+.chart-body {
+	overflow: auto;
+	border: 1px solid #ddd;
+	border-top-width: 0px;
+}
+
+.chart-body-noheader {
+	border-top-width: 1px;
+}
+
+.chart-body-noborder {
+	border-width: 0px;
+}
+
+.chart-with-icon {
+	padding-left: 18px;
+}
+
+.chart-icon {
+	position: absolute;
+	left: 5px;
+	top: 4px;
+	width: 16px;
+	height: 16px;
+}
+
+.chart-tool {
+	position: absolute;
+	right: 5px;
+	top: 4px;
+	margin-right: 5px;
+}
+
+.chart-tool a {
+	display: inline-block;
+	opacity: 0.6;
+	filter: alpha(opacity =   60);
+	margin-left: 2px;
+}
+
+.chart-tool a:hover {
+	opacity: 1;
+	filter: alpha(opacity =   100);
+	background-color: #ddd;
+}
+
+.chart-tool-time {
+	background-image: url(../image/time_bg.png);
+	width: 39px;
+	height: 25px;
+	vertical-align: text-bottom;
+	text-align: center;
+	font-size: 12px;
+	color: #FDFDFE;
+	line-height: 25px;
+	text-decoration: none;
+}
+
+.chart-tool-table {
+	background: url('../image/list.png') no-repeat;
+	width: 16px;
+	height: 16px;
+}
+
+.chart-tool-chart {
+	background: url('../image/list1.png') no-repeat;
+	width: 16px;
+	height: 16px;
+}
+
+.chart-tool-setting {
+	background: url('../image/list_setting.png') no-repeat;
+	width: 16px;
+	height: 16px;
+}
+
+.chart-loading {
+	padding: 11px 0px 10px 30px;
+	background: url('../image/chart_loading.gif') no-repeat 10px 10px;
+}
+
+.chart-noscroll {
+	overflow: hidden;
+}
+
+.chart-fit,.chart-fit body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	overflow: hidden;
+}
+
+.datagrid .panel-body {
+	//overflow: hidden;
+	position: relative;
+}
+
+.datagrid-view {
+	position: relative;
+	//overflow: hidden;
+}
+
+.datagrid-view1,.datagrid-view2 {
+	position: absolute;
+	//overflow: hidden;
+	top: 0;
+}
+
+.datagrid-view1 {
+	left: 0;
+}
+
+.datagrid-view2 {
+	right: 0;
+}
+
+.datagrid-mask {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.3;
+	filter: alpha(opacity = 30);
+	display: none;
+}
+
+.datagrid-mask-msg {
+	position: absolute;
+	top: 50%;
+	margin-top: -20px;
+	padding: 12px 5px 10px 30px;
+	width: auto;
+	height: 16px;
+	border-width: 2px;
+	border-style: solid;
+	display: none;
+}
+
+.datagrid-sort-icon {
+	padding: 0;
+}
+
+.datagrid-toolbar {
+	height: auto;
+	padding: 1px 2px;
+	border-width: 0 0 1px 0;
+	border-style: solid;
+}
+
+.datagrid-btn-separator {
+	float: left;
+	height: 24px;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #fff;
+	margin: 2px 1px;
+}
+
+.datagrid .datagrid-pager {
+	margin: 0;
+	border-width: 1px 0 0 0;
+	border-style: solid;
+}
+
+.datagrid .datagrid-pager-top {
+	border-width: 0 0 1px 0;
+}
+
+.datagrid-header {
+	overflow: hidden;
+	cursor: default;
+	border-width: 0 0 1px 0;
+	border-style: solid;
+}
+
+.datagrid-header-inner {
+	float: left;
+	width: 100%;
+}
+
+.datagrid-header-row,.datagrid-row {
+	height: 25px;
+}
+
+.datagrid-header td,.datagrid-body td,.datagrid-footer td {
+	border-width: 0 1px 1px 0;
+	border-style: dotted;
+	margin: 0;
+	padding: 0;
+}
+
+.datagrid-cell,.datagrid-cell-group,.datagrid-header-rownumber,.datagrid-cell-rownumber
+	{
+	margin: 0;
+	padding: 0 4px;
+	white-space: nowrap;
+	word-wrap: normal;
+	overflow: hidden;
+	height: 18px;
+	line-height: 18px;
+	font-weight: normal;
+	font-size: 12px;
+}
+
+.datagrid-cell-group {
+	text-align: center;
+}
+
+.datagrid-header-rownumber,.datagrid-cell-rownumber {
+	width: 25px;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+.datagrid-body {
+	margin: 0;
+	padding: 0;
+	overflow: auto;
+	zoom: 1;
+}
+
+.datagrid-view1 .datagrid-body-inner {
+	padding-bottom: 20px;
+}
+
+.datagrid-view1 .datagrid-body {
+	overflow: hidden;
+}
+
+.datagrid-footer {
+	overflow: hidden;
+}
+
+.datagrid-footer-inner {
+	border-width: 1px 0 0 0;
+	border-style: solid;
+	width: 10000px;
+	float: left;
+}
+
+.datagrid-row-editing .datagrid-cell {
+	height: auto;
+}
+
+.datagrid-header-check,.datagrid-cell-check {
+	padding: 0;
+	width: 27px;
+	height: 18px;
+	font-size: 1px;
+	text-align: center;
+	overflow: hidden;
+}
+
+.datagrid-header-check input,.datagrid-cell-check input {
+	margin: 0;
+	padding: 0;
+	width: 15px;
+	height: 18px;
+}
+
+.datagrid-resize-proxy {
+	position: absolute;
+	width: 1px;
+	height: 10000px;
+	top: 0;
+	cursor: e-resize;
+	display: none;
+}
+
+.datagrid-body .datagrid-editable {
+	margin: 0;
+	padding: 0;
+}
+
+.datagrid-body .datagrid-editable table {
+	width: 100%;
+	height: 100%;
+}
+
+.datagrid-body .datagrid-editable td {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.datagrid-body .datagrid-editable .datagrid-editable-input {
+	margin: 0;
+	padding: 2px;
+	border-width: 1px;
+	border-style: solid;
+}
+
+.datagrid-mask-msg {
+	background: #ffffff url('images/loading.gif') no-repeat scroll 5px
+		center;
+}
+
+.datagrid-header,.datagrid-td-rownumber {
+	background-color: #efefef;
+	background: -webkit-linear-gradient(top, #F9F9F9 0, #efefef 100%);
+	background: -moz-linear-gradient(top, #F9F9F9 0, #efefef 100%);
+	background: -o-linear-gradient(top, #F9F9F9 0, #efefef 100%);
+	background: linear-gradient(to bottom, #F9F9F9 0, #efefef 100%);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#F9F9F9,
+		endColorstr=#efefef, GradientType=0 );
+}
+
+.datagrid-cell-rownumber {
+	color: #000000;
+}
+
+.datagrid-resize-proxy {
+	background: #aac5e7;
+}
+
+.datagrid-mask {
+	background: #ccc;
+}
+
+.datagrid-mask-msg {
+	border-color: #95B8E7;
+}
+
+.datagrid-toolbar,.datagrid-pager {
+	background: #F4F4F4;
+}
+
+.datagrid-header,.datagrid-toolbar,.datagrid-pager,.datagrid-footer-inner
+	{
+	border-color: #dddddd;
+}
+
+.datagrid-header td,.datagrid-body td,.datagrid-footer td {
+	border-color: #ccc;
+}
+
+.datagrid-htable,.datagrid-btable,.datagrid-ftable {
+	color: #000000;
+}
+
+.datagrid-row-alt {
+	background: #fafafa;
+}
+
+.datagrid-row-over,.datagrid-header td.datagrid-header-over {
+	background: #eaf2ff;
+	color: #000000;
+	cursor: default;
+}
+
+.datagrid-row-selected {
+	background: #FBEC88;
+	color: #000000;
+}
+
+.datagrid-body .datagrid-editable .datagrid-editable-input {
+	border-color: #95B8E7;
+}

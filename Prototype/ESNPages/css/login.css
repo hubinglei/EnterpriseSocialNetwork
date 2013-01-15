@@ -1,0 +1,59 @@
+#sharepointInfor {
+	color: rgb(134, 130, 126);
+	float: left
+}
+
+#sharepointInfor img {
+	margin-left: -160px;
+	margin-top: -20px;
+}
+
+#sharepointInfor p {
+	font-size: 24px;
+}
+
+#userLogin {
+	font-weight: 300;
+	font-size: 20px;
+	color: rgb(0, 0, 0);
+}
+
+#userLogin {
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.75), 0 0 1px rgba(164, 164, 164, 1)
+		inset;
+	width: 380px;
+	height: 400px;
+	float: right;
+	margin: 30px 30px 0 20px;
+	line-height: 45px;
+	padding-left: 25px;
+}
+
+input {
+	-webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.4), 0 0 0
+		rgba(77, 47, 47, 1);
+	border-radius: 1px;
+	-moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.4), 0 0 0 rgba(77, 47, 47, 1);
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.4), 0 0 0 rgba(77, 47, 47, 1);
+	width: 358px;
+	height: 37px;
+}
+
+#userLogin a {
+	color: rgb(78, 117, 243);
+}
+
+#loginButton {
+	color: rgb(255, 255, 255);
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+#userImg img,a {
+	cursor: pointer;
+}
+#userLogin span{
+	font-size:14px;
+	color:#DD4B39;
+	display:none;
+}

@@ -1,0 +1,13 @@
+html,body {
+	background: url(../image/body_bg.png);
+	width: 100%;
+	margin: 0 auto;
+	min-width: 1295px;
+	font-family: HP Simplified;
+	overflow-x: hidden;
+}
+#wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1000px;
+}

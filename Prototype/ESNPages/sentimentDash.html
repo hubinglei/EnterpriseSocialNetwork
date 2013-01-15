@@ -1,0 +1,227 @@
+<link href="css/global.css" rel="stylesheet" type="text/css" />
+<link href="css/header.css" rel="stylesheet" type="text/css" />
+<link href="css/dash.css" rel="stylesheet" type="text/css" />
+<link href="css/chart.css" rel="stylesheet" type="text/css" />
+<link href="css/jquery.jqplot.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/data.js"></script>
+<script type="text/javascript" src="js/header.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/dash.js"></script>
+<script type="text/javascript" src="js/tagcloud.js"></script>
+<script type="text/javascript" src="js/plugins/jquery.jqplot.js"></script>
+<script type="text/javascript" src="js/plugins/jquery.chart.js"></script>
+<script type="text/javascript" src="js/plugins/jqplot.barRenderer.js"></script>
+<script type="text/javascript" src="js/plugins/jqplot.categoryAxisRenderer.js"></script>
+<script>
+$(function() {
+$("#tag").windstag();
+});
+</script>
+<div id="headerBg">
+	<div id="header">
+		<div id="headerTitles">
+			<h1>
+				<img src="image/logo.png"> Enterprise Social Network
+				Governance
+			</h1>
+		</div>
+		<div id="nav">
+			<a id="home" class="navItem" href="home.html" target="content"> <img
+				src="image/home_small.png"><br> Home </a> <a id="author"
+				class="navItem " href="login.html" target="content"> <img
+				src="image/config.png"><br>  Config </a> <a id="dash"
+				class="navItem navActive" href="" target="content"> <img src="image/Dash_small.png"><br>
+				Dash </a> <a id="network" class="navItem " href="" target="_self" > <img
+				src="image/Network_small.png"><br> Network </a> <a id="plan"
+				class="navItem " href="#plan" > <img src="image/Plan_small.png"><br>
+				Plan </a> <a id="activity" class="navItem " href="#activity"> <img
+				src="image/Activity_small.png"><br> Activity </a> <a
+				id="media" class="navItem " href="#media"> <img
+				src="image/Media_small.png"><br> Media </a> <a id="channel"
+				class="navItem " href="#channel"> <img
+				src="image/Chanel_small.png"><br> Channel </a>
+		</div>
+		<div id="userInfor">
+
+			<div id="userImg">
+				<img src="image/photo.png">
+				<!--<img src="image/Separator.png">
+                <img src="image/set.png">-->
+			</div>
+			<div id="userName">
+				<strong><div id="fristName">Admin</div> </strong>
+				<!--<br>
+				<div id="lastName">LastName</div>-->
+			</div>
+			<div id="setting">Setting</div>
+			<div id="logoff">log off</div>
+		</div>
+	</div>
+</div>
+<div id="wrapper">
+
+		<div id="sentimentcontent">
+			<div id="socialTitle">Social Dash Doard-Public Sentiment</div>
+			<table border="0" class="sentimentTable" Cellspacing="0">
+				<tr class="tableTitle">
+					<td>Channel Name</td>
+					<td>Option Experts</td>
+					<td>Hot Topic</td>
+					<td>Company</td>
+					<td>Product</td>
+					<td>Brand</td>
+					<td><div class="eyeBg">
+						<img src="image/eye.png" class="eyePic">
+					</div></td>
+				<td><div class="browserBg">
+						<img src="image/browser.png" class="browserPic">
+					</div></td>
+				</tr>
+				<tr>
+					<td>ESN</td>
+					<td>5</td>
+					<td>23</td>
+					<td>129384</td>
+					<td>4</td>
+					<td><progress value="75" max="100">3/4 complete</progress></td>
+					<td colspan="2" class="attention"><img
+						src="image/plus-transparent.png"> Delete Attention</td>
+				</tr>
+				<tr>
+					<td>HP Connect</td>
+					<td>6</td>
+					<td>24</td>
+					<td>129384</td>
+					<td>4</td>
+					<td><progress value="75" max="100">3/4 complete</progress></td>
+					<td colspan="2" class="attention">Delete Attention</td>
+				</tr>
+				<tr>
+					<td>Community</td>
+					<td>6</td>
+					<td>24</td>
+					<td>129384</td>
+					<td>4</td>
+					<td><progress value="75" max="100">3/4 complete</progress></td>
+					<td colspan="2" class="attention">Delete Attention</td>
+				</tr>
+			</table>
+			<div class="chartbg">&nbsp;Chart</div>
+			<div id="chart" class="esn-chart" 
+									data-options="formatable:true,setting:false,timeable:true,
+									legend:true,
+									loadDayResource:loadDay,
+									loadWeekResource:loadWeek,
+									loadMonthResource:loadMonth,
+									series:[{label:'Positive Value',color:'green'},{label:'Negative Value',color:'red'},{label:'Neutral Value',color:'yellow'}],
+									datasource:{data:[[50, 90, 42, 89, 45, 87, 50],
+													  [49, 82, 38, 83, 40, 80, 42],
+													  [37, 76, 28, 77, 30, 74, 32]
+													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov']},head:'Company'">
+
+								</div>
+			<div id="chart7" class="esn-chart" 
+									data-options="formatable:true,setting:false,timeable:true,
+									legend:true,
+									loadDayResource:loadDay,
+									loadWeekResource:loadWeek,
+									loadMonthResource:loadMonth,
+									series:[{label:'Positive Value',color:'green'},{label:'Negative Value',color:'orange'},{label:'Neutral Value',color:'yellow'}],
+									datasource:{data:[[50, 90, 42, 89, 45, 87, 50],
+													  [49, 82, 38, 83, 40, 80, 42],
+													  [37, 76, 28, 77, 30, 74, 32]
+													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov']},head:'Product'">
+
+								</div>
+			<div id="chart8" class="esn-chart" 
+									data-options="formatable:true,setting:false,timeable:true,
+									legend:true,
+									loadDayResource:loadDay,
+									loadWeekResource:loadWeek,
+									loadMonthResource:loadMonth,
+									series:[{label:'Positive Value',color:'green'},{label:'Negative Value',color:'green'},{label:'Neutral Value',color:'yellow'}],
+									datasource:{data:[[50, 90, 42, 89, 45, 87, 50],
+													  [49, 82, 38, 83, 40, 80, 42],
+													  [37, 76, 28, 77, 30, 74, 32]
+													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov']},head:'Brand'">
+
+								</div>
+			<div class="socialChart">
+				<ul>
+					<li style="float: left"><div class="chartTitle">
+							<span>Option Experts</span>
+						</div>
+						<div class="chartSetting">
+							<div class="cycleNav">
+								<span> Day </span><span>Week </span><span> Month </span>
+							</div>
+							<span><img src="image/list1.png"> </span><span><img
+								src="image/list.png"> </span>
+						</div>
+						<div class="chartContent">
+							<table width="613" border="0">
+								<tr>
+									<td><img src="image/expert1.png"><img
+										src="image/influence1.png">
+									</td>
+									<td><img src="image/expert2.png"><img
+										src="image/influence2.png">
+									</td>
+									<td><img src="image/expert3.png"><img
+										src="image/influence3.png">
+									</td>
+									<td><img src="image/expert4.png"><img
+										src="image/influence4.png">
+									</td>
+								</tr>
+								<tr>
+									<td><img src="image/expert5.png"><img
+										src="image/influence5.png">
+									</td>
+									<td><img src="image/expert6.png"><img
+										src="image/influence6.png">
+									</td>
+									<td><img src="image/expert7.png"><img
+										src="image/influence7.png">
+									</td>
+									<td><img src="image/expert8.png"><img
+										src="image/influence8.png">
+									</td>
+								</tr>
+							</table>
+						</div>
+					</li>
+					<li><div class="chartTitle">
+							<span>Hot Topic</span>
+						</div>
+						<div class="chartSetting">
+							<div class="cycleNav">
+								<span> Day </span><span>Week </span><span> Month </span>
+							</div>
+							<span><img src="image/list1.png"> </span><span><img
+								src="image/list.png"> </span>
+						</div>
+						<div class="chartContent">
+							<div id="tag">
+								<a href="" class="red">Migration toolset</a> <a href=""
+									class="blue1">TomCate</a> <a href="" class="orange">Sharepoint
+									2007</a> <a href="" class="blue1">Visual Studio</a> <a href=""
+									class="blue">JavaScript</a> <a href="" class="yellow">Sharepoint
+									2010</a> <a href="" class="green">SQL Server 2005</a> <a href=""
+									class="black">.NET</a> <a href="">Ajax</a> <a href=""
+									class="red">CSS</a> <a href="">Sharepoint 2007</a> <a href=""
+									class="blue">SQL Server 20010</a> <a href="">Silverlight</a> <a
+									href=" class="red">Sharepoint 2013</a> <a href="" class="blue">SQL
+									Server 2008</a> <a href="">XHTML</a> <a href="" class="blue">Html5</a>
+								<a href="">Exchange 2007</a> <a href="">Exhcnage 2010</a> <a
+									href="" class="yellow">Java</a> <a href="">C++</a> <a href=""
+									class="red">HTML</a> <a href="">CSS</a> <a href=""
+										class="red">PowerShell</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		</div>
