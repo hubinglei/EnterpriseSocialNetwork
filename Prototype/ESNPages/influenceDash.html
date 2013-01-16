@@ -7,11 +7,12 @@
 <script type="text/javascript" src="js/data.js"></script>
 <script type="text/javascript" src="js/header.js"></script>
 <script type="text/javascript" src="js/global.js"></script>
-<script type="text/javascript" src="js/dash.js"></script>
 <script type="text/javascript" src="js/plugins/jquery.jqplot.js"></script>
 <script type="text/javascript" src="js/plugins/jquery.chart.js"></script>
 <script type="text/javascript" src="js/plugins/jqplot.barRenderer.js"></script>
-<script type="text/javascript" src="js/plugins/jqplot.categoryAxisRenderer.js"></script>
+<script type="text/javascript"
+	src="js/plugins/jqplot.categoryAxisRenderer.js"></script>
+<script type="text/javascript" src="js/dash.js"></script>
 <div id="headerBg">
 	<div id="header">
 		<div id="headerTitles">
@@ -22,13 +23,13 @@
 		</div>
 		<div id="nav">
 			<a id="home" class="navItem" href="home.html" target="content"> <img
-				src="image/home_small.png"><br> Home </a> <a id="author"
-				class="navItem " href="login.html" target="content"> <img
-				src="image/config.png"><br>  Config </a> <a id="dash"
-				class="navItem navActive" href="" target="content"> <img src="image/Dash_small.png"><br>
-				Dash </a> <a id="network" class="navItem " href="" target="_self" > <img
+				src="image/home_small.png"><br> Home </a> <a id="config"
+				class="navItem " target="content"> <img src="image/config.png"><br>
+				Config </a> <a id="dash" class="navItem navActive" target="content">
+				<img src="image/Dash_small.png"><br> Dash </a> <a
+				id="network" class="navItem " href="" target="_self"> <img
 				src="image/Network_small.png"><br> Network </a> <a id="plan"
-				class="navItem " href="#plan" > <img src="image/Plan_small.png"><br>
+				class="navItem " href="#plan"> <img src="image/Plan_small.png"><br>
 				Plan </a> <a id="activity" class="navItem " href="#activity"> <img
 				src="image/Activity_small.png"><br> Activity </a> <a
 				id="media" class="navItem " href="#media"> <img
@@ -54,11 +55,11 @@
 	</div>
 </div>
 <div id="wrapper">
-<div id="dashcontent">
+	<div id="dashcontent">
 		<div id="socialTitle">Social Dash Doard-Analysis</div>
 		<table border="0" class="socialTable" Cellspacing="0">
 			<tr class="tableTitle">
-				<td>Insrance Name</td>
+				<td>Instance Name</td>
 				<td>Explain</td>
 				<td>Address</td>
 				<td>Influence</td>
@@ -67,10 +68,12 @@
 				<td>Cost Curve</td>
 				<td><div class="eyeBg">
 						<img src="image/eye.png" class="eyePic">
-					</div></td>
+					</div>
+				</td>
 				<td><div class="browserBg">
 						<img src="image/browser.png" class="browserPic">
-					</div></td>
+					</div>
+				</td>
 			</tr>
 			<tr>
 				<td>LG Mobile</td>
@@ -78,7 +81,8 @@
 				<td>http://www.twitter.com/lgmobile</td>
 				<td>129384</td>
 				<td>4</td>
-				<td><progress value="75" max="100">3/4 complete</progress></td>
+				<td><progress value="75" max="100">3/4 complete</progress>
+				</td>
 				<td>$2888899</td>
 				<td colspan="2" class="attention"><img
 					src="image/plus-transparent.png"> Pay Attention</td>
@@ -89,108 +93,172 @@
 				<td>http://www.twitter.com/sumsung</td>
 				<td>129384</td>
 				<td>4</td>
-				<td><progress value="75" max="100">3/4 complete</progress></td>
+				<td><progress value="75" max="100">3/4 complete</progress>
+				</td>
 				<td>$2888899</td>
 				<td colspan="2" class="attention">Delete Attention</td>
 			</tr>
 		</table>
 		<div class="socialTitle">
-			&nbsp;LG Mobile <span id="date">Date</span><span id="area">
-				Area</span>
+			<span id="instanceName">&nbsp;LG Mobile</span> <span id="date">Date</span><span
+				id="area"> Area</span>
 		</div>
 		<div id="overview" class="overview">&nbsp;Overview</div>
 		<div class="socialChart" id="dateView">
-			<ul>
-				<li>	<div id="chart1" class="esn-chart" 
-									data-options="formatable:true,setting:false,timeable:true,
-									legend:true,
-									loadDayResource:loadDay,
-									loadWeekResource:loadWeek,
-									loadMonthResource:loadMonth,
-									series:[{label:'Positive Value',color:'green'},{label:'Negative Value',color:'red'},{label:'Neutral Value',color:'yellow'}],
-									datasource:{data:[[50, 90, 42, 89, 45, 87, 50],
-													  [49, 82, 38, 83, 40, 80, 42],
-													  [37, 76, 28, 77, 30, 74, 32]
-													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov']},head:'Activity Force'">
-
-								</div>
-				</li>
-				<li>	<div id="chart2" class="esn-chart" 
-									data-options="formatable:true,setting:true,timeable:true,
+			<ul id="lgData">
+				<li>
+					<div id="chart1" class="esn-chart"
+						data-options="formatable:true,setting:true,timeable:true,
 									legend:false,
 									loadDayResource:loadDay,
 									loadWeekResource:loadWeek,
 									loadMonthResource:loadMonth,
-									series:[{label:'Positive Value',color:'green'},{label:' Value1',color:'black'},{label:' Value 2',color:'yellow'}],
-									datasource:{data:[[50, 90, 42, 89, 45, 87, 50],
-													  [49, 82, 38, 83, 40, 80, 42],
-													  [37, 76, 28, 77, 30, 74, 32]
-													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov']},head:'Attactive Force'">
+									series:[{label:'Positive Value',color:'17b8f1'}],
+									datasource:{data:[[50, 20, 42, 89, 45, 87, 50, 38, 83, 40]
+													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov','5-Nov','6-Nov','7-Nov']},head:'Activity Force'">
 
-								</div>
-				</li>
-				<li>	<div id="chart3" class="esn-chart" 
-									data-options="formatable:true,setting:true,timeable:true,
+					</div></li>
+				<li>
+					<div id="chart2" class="esn-chart"
+						data-options="formatable:true,setting:true,timeable:true,
 									legend:false,
 									loadDayResource:loadDay,
 									loadWeekResource:loadWeek,
 									loadMonthResource:loadMonth,
-									series:[{label:'Positive Value',color:'green'},{label:' Value1',color:'black'},{label:' Value 2',color:'yellow'}],
-									datasource:{data:[[50, 90, 42, 89, 45, 87, 50],
-													  [49, 82, 38, 83, 40, 80, 42],
-													  [37, 76, 28, 77, 30, 74, 32]
-													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov']},head:'Attactive Force'">
+									series:[{label:'Positive Value',color:'7a9741'}],
+									datasource:{data:[[50, 90, 12, 89, 45, 87, 50, 38, 83, 40]
+													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov','5-Nov','6-Nov','7-Nov']},head:'Attractive Force'">
 
-								</div>
-				</li>
-					<li>	<div id="chart4" class="esn-chart" 
-									data-options="formatable:true,setting:true,timeable:true,
+					</div></li>
+				<li>
+					<div id="chart3" class="esn-chart"
+						data-options="formatable:true,setting:true,timeable:true,
 									legend:false,
 									loadDayResource:loadDay,
 									loadWeekResource:loadWeek,
 									loadMonthResource:loadMonth,
-									series:[{label:'Positive Value',color:'green'},{label:' Value1',color:'black'},{label:' Value 2',color:'yellow'}],
-									datasource:{data:[[50, 90, 42, 89, 45, 87, 50],
-													  [49, 82, 38, 83, 40, 80, 42],
-													  [37, 76, 28, 77, 30, 74, 32]
-													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov']},head:'Attactive Force'">
+									series:[{label:'Positive Value',color:'e98433'}],
+									datasource:{data:[[50, 90, 42, 89, 45, 17, 80, 38, 83, 40]
+													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov','5-Nov','6-Nov','7-Nov']},head:'Coverage Rate'">
 
-								</div>
-				</li>
-					<li>	<div id="chart5" class="esn-chart" 
-									data-options="formatable:true,setting:true,timeable:true,
+					</div></li>
+				<li>
+					<div id="chart4" class="esn-chart"
+						data-options="formatable:true,setting:true,timeable:true,
 									legend:false,
 									loadDayResource:loadDay,
 									loadWeekResource:loadWeek,
 									loadMonthResource:loadMonth,
-									series:[{label:'Positive Value',color:'green'},{label:' Value1',color:'black'},{label:' Value 2',color:'yellow'}],
-									datasource:{data:[[50, 90, 42, 89, 45, 87, 50],
-													  [49, 82, 38, 83, 40, 80, 42],
-													  [37, 76, 28, 77, 30, 74, 32]
-													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov']},head:'Attactive Force'">
+									series:[{label:'Positive Value',color:'black'}],
+									datasource:{data:[[50, 90, 42, 49, 45, 87, 50, 38, 83, 40]
+													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov','5-Nov','6-Nov','7-Nov']},head:'Communication Force'">
 
-								</div>
-				</li>
-					<li>	<div id="chart6" class="esn-chart" 
-									data-options="formatable:true,setting:true,timeable:true,
+					</div></li>
+				<li>
+					<div id="chart5" class="esn-chart"
+						data-options="formatable:true,setting:true,timeable:true,
 									legend:false,
 									loadDayResource:loadDay,
 									loadWeekResource:loadWeek,
 									loadMonthResource:loadMonth,
-									series:[{label:'Positive Value',color:'green'},{label:' Value1',color:'black'},{label:' Value 2',color:'yellow'}],
-									datasource:{data:[[50, 90, 42, 89, 45, 87, 50],
-													  [49, 82, 38, 83, 40, 80, 42],
-													  [37, 76, 28, 77, 30, 74, 32]
-													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov']},head:'Attactive Force'">
+									series:[{label:'Positive Value',color:'red'}],
+									datasource:{data:[[10, 90, 42, 89, 45, 17, 50, 38, 83, 40]
+													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov','5-Nov','6-Nov','7-Nov']},head:'Lead Turnover Rate'">
 
-								</div>
-				</li>
+					</div></li>
+				<li>
+					<div id="chart6" class="esn-chart"
+						data-options="formatable:true,setting:true,timeable:true,
+									legend:false,
+									loadDayResource:loadDay,
+									loadWeekResource:loadWeek,
+									loadMonthResource:loadMonth,
+									series:[{label:'Positive Value',color:'green'}],
+									datasource:{data:[[50, 90, 32, 89, 45, 87, 50, 38, 83, 40]
+													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov','5-Nov','6-Nov','7-Nov']},head:'Close Rate'">
+
+					</div></li>
+			</ul>
+			<ul id="samsungData">
+				<li>
+					<div id="chart9" class="esn-chart"
+						data-options="formatable:true,setting:true,timeable:true,
+									legend:false,
+									loadDayResource:loadDay,
+									loadWeekResource:loadWeek,
+									loadMonthResource:loadMonth,
+									series:[{label:'Positive Value',color:'orange'}],
+									datasource:{data:[[50, 20, 12, 89, 45, 87, 50, 38, 83, 40]
+													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov','5-Nov','6-Nov','7-Nov']},head:'Activity Force'">
+
+					</div></li>
+				<li>
+					<div id="chart10" class="esn-chart"
+						data-options="formatable:true,setting:true,timeable:true,
+									legend:false,
+									loadDayResource:loadDay,
+									loadWeekResource:loadWeek,
+									loadMonthResource:loadMonth,
+									series:[{label:'Positive Value',color:'blue'}],
+									datasource:{data:[[10, 40, 12, 49, 35, 87, 50, 38, 83, 40]
+													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov','5-Nov','6-Nov','7-Nov']},head:'Attractive Force'">
+
+					</div></li>
+				<li>
+					<div id="chart11" class="esn-chart"
+						data-options="formatable:true,setting:true,timeable:true,
+									legend:false,
+									loadDayResource:loadDay,
+									loadWeekResource:loadWeek,
+									loadMonthResource:loadMonth,
+									series:[{label:'Positive Value',color:'red'}],
+									datasource:{data:[[30, 20, 42, 89, 15, 17, 80, 38, 83, 40]
+													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov','5-Nov','6-Nov','7-Nov']},head:'Coverage Rate'">
+
+					</div></li>
+				<li>
+					<div id="chart12" class="esn-chart"
+						data-options="formatable:true,setting:true,timeable:true,
+									legend:false,
+									loadDayResource:loadDay,
+									loadWeekResource:loadWeek,
+									loadMonthResource:loadMonth,
+									series:[{label:'Positive Value',color:'black'}],
+									datasource:{data:[[50, 10, 42, 39, 45, 87, 50, 38, 83, 40]
+													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov','5-Nov','6-Nov','7-Nov']},head:'Communication Force'">
+
+					</div></li>
+				<li>
+					<div id="chart13" class="esn-chart"
+						data-options="formatable:true,setting:true,timeable:true,
+									legend:false,
+									loadDayResource:loadDay,
+									loadWeekResource:loadWeek,
+									loadMonthResource:loadMonth,
+									series:[{label:'Positive Value',color:'red'}],
+									datasource:{data:[[10, 90, 42, 89, 45, 17, 50, 38, 83, 40]
+													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov','5-Nov','6-Nov','7-Nov']},head:'Lead Turnover Rate'">
+
+					</div></li>
+				<li>
+					<div id="chart14" class="esn-chart"
+						data-options="formatable:true,setting:true,timeable:true,
+									legend:false,
+									loadDayResource:loadDay,
+									loadWeekResource:loadWeek,
+									loadMonthResource:loadMonth,
+									series:[{label:'Positive Value',color:'green'}],
+									datasource:{data:[[50, 90, 32, 89, 45, 87, 50, 38, 83, 40]
+													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov','5-Nov','6-Nov','7-Nov']},head:'Close Rate'">
+
+					</div></li>
 			</ul>
 		</div>
 		<div class="socialChart" id="areaView">
 			<ul>
-				<li>	<div id="chart1" class="esn-chart" 
-									data-options="formatable:true,setting:false,timeable:true,
+				<li>
+					<div id="chart7" class="esn-chart"
+						data-options="formatable:true,setting:false,timeable:true,
 									legend:true,
 									loadDayResource:loadDay,
 									loadWeekResource:loadWeek,
@@ -201,10 +269,10 @@
 													  [37, 76, 28, 77, 30, 74, 32]
 													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov']},head:'Activity Force'">
 
-								</div>
-				</li>
-				<li>	<div id="chart2" class="esn-chart" 
-									data-options="formatable:true,setting:true,timeable:true,
+					</div></li>
+				<li>
+					<div id="chart8" class="esn-chart"
+						data-options="formatable:true,setting:true,timeable:true,
 									legend:false,
 									loadDayResource:loadDay,
 									loadWeekResource:loadWeek,
@@ -215,11 +283,11 @@
 													  [37, 76, 28, 77, 30, 74, 32]
 													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov']},head:'Attactive Force'">
 
-								</div>
-				</li>
-				
-				
+					</div></li>
+
+
 			</ul>
 		</div>
-		</div>
-		</div>
+	</div>
+	<div class="topButton">Top</div>
+</div>

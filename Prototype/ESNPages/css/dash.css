@@ -1,15 +1,18 @@
 #dashcontent,#sentimentcontent {
 	margin: 0 -120px 0 -120px;
-	overflow-y:auto!important;
-	*overflow-y:scroll;
+	overflow-y: auto !important;
+	*overflow-y: scroll;
 }
+
 #socialTitle {
 	color: rgb(35, 160, 216);
 	font-size: 18px;
 }
+
 ul li {
 	display: inline-block;
 }
+
 .cycleNav {
 	float: left;
 	font-size: 12px;
@@ -20,6 +23,45 @@ ul li {
 	line-height: 25px;
 	margin-top: -4px;
 	margin-left: -120px;
+}
+/* progress style */
+progress,progress[role] /* polyfill */ {
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	border: none;
+	background-size: auto;
+	width: 200px;
+	height: 20px;
+}
+
+progress[role]:after {
+	background-image: none; /* removesdefault background from polyfill */
+}
+
+progress[role] strong {
+	display: none;
+}
+
+/* change the progress backgroud */
+progress, /* Firefox */ progress[role][aria-valuenow] { /* Polyfill */
+	background: #e1e9eb;
+}
+
+progress::-webkit-progress-bar {
+	background: #e1e9eb;
+}
+
+progress::-moz-progress-bar {
+	background-image: -webkit-linear-gradient(left, #bcda58, #fb9008);
+}
+
+progress::-webkit-progress-value {
+	background-image: -webkit-linear-gradient(left, #bcda58, #fb9008)
+}
+
+progress[aria-valuenow]:before {
+	background-image: -webkit-linear-gradient(left, #bcda58, #fb9008);
 }
 
 .cycleNav span {
@@ -35,11 +77,13 @@ ul li {
 	margin-top: 5px;
 }
 
-.socialTable tr ,.sentimentTable tr{
+.socialTable tr,.sentimentTable tr {
 	background-color: #E6ECFF;
 	height: 35px;
 }
-.socialChart ul li,#chart1,#chart2,#chart3,#chart4,#chart5,#chart6{
+
+.socialChart ul li,#chart1,#chart2,#chart3,#chart4,#chart5,#chart6,#chart7,#chart8,#chart9,#chart10,#chart11,#chart12,#chart13,#chart14
+	{
 	width: 613px;
 }
 
@@ -47,6 +91,10 @@ ul li {
 	background: url(../image/chart_title_bg.png);
 	width: 576px;
 	height: 35px;
+}
+
+table tr:not (:first-child ) {
+	cursor: pointer;
 }
 
 .eyeBg {
@@ -64,12 +112,15 @@ ul li {
 	float: left;
 	line-height: 32px;
 }
-.eyePic{
-	margin-top:8px;
-	}
-.browserPic{
-	margin-top:5px;
-	}
+
+.eyePic {
+	margin-top: 8px;
+}
+
+.browserPic {
+	margin-top: 5px;
+}
+
 .attention {
 	color: #23A0D8;
 }
@@ -133,9 +184,10 @@ ul li {
 	margin-top: -20px;
 }
 
-.socialChart ul li{
+.socialChart ul li {
 	padding: 10px 0 0 10px;
 }
+
 .chartSetting {
 	margin: -25px 10px 0 0;
 	float: right;
@@ -144,25 +196,79 @@ ul li {
 .chartSetting span,.chartTitle span {
 	margin-left: 10px;
 }
-.chartbg{
-	background-image:url(../image/chartbg.png);
-	width:1240px;
-	height:44px;
-	font-size:18px;
-	color:rgb(35,160,216);
-	line-height:44px;
-}
-#tag {position:absolute; width:500px; height:250px;  }
-#tag a {position:absolute; top:0px; left:0px;  color:#fff; font-weight:bold; text-decoration:none; padding: 3px 6px; }
-#tag a:hover {border: 1px solid #eee; background: #000; }
-#tag .blue {color:blue;}
-#tag .red {color:red;}
-#tag .yellow {color:yellow;}
-#tag .green {color:green;}
-#tag .black {color:black;}
-#tag .blue1{color:#07b2bd;}
-#tag .orange{color:orange;}
 
-#areaView{
- display:none;
- }
+.chartbg {
+	background-image: url(../image/chartbg.png);
+	width: 1240px;
+	height: 44px;
+	font-size: 18px;
+	color: rgb(35, 160, 216);
+	line-height: 44px;
+}
+
+#tag {
+	position: absolute;
+	width: 500px;
+	height: 250px;
+}
+
+#tag a {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 3px 6px;
+}
+
+#tag a:hover {
+	border: 1px solid #eee;
+	background: #000;
+}
+
+#tag .blue {
+	color: blue;
+}
+
+#tag .red {
+	color: red;
+}
+
+#tag .yellow {
+	color: yellow;
+}
+
+#tag .green {
+	color: green;
+}
+
+#tag .black {
+	color: black;
+}
+
+#tag .blue1 {
+	color: #07b2bd;
+}
+
+#tag .orange {
+	color: orange;
+}
+
+#areaView,#samsungData {
+	display: none;
+}
+
+.topButton {
+	background-image: url(../image/top.png);
+	width: 53px;
+	height: 27px;
+	float: right;
+	color: #FDFDFE;
+	line-height: 27px;
+	text-align: center;
+	font-size: 14px;
+	margin-right: -170px;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
