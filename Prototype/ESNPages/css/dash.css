@@ -53,7 +53,7 @@ progress::-webkit-progress-bar {
 }
 
 progress::-moz-progress-bar {
-	background-image: -webkit-linear-gradient(left, #bcda58, #fb9008);
+	background-image: -moz-linear-gradient(left, #bcda58, #fb9008);
 }
 
 progress::-webkit-progress-value {

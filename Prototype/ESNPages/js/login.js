@@ -1,5 +1,6 @@
 $(function() {		   
-	//click "enter" key		   
+	//click "enter" key		
+	$("#userInfor").hide();
 	$("input[name='password']").keydown(function(e) {
 		if (e.keyCode == 13) {
 			$("#loginButton").click();
@@ -28,10 +29,9 @@ $(function() {
 							}
 
 							if (userAccout == "admin" && password == "admin") {
-								window.open("home.html","_self")
+								$("#wrapper").load("homeNav.html");
 								
 							}
 						}
 					})
-
 })
