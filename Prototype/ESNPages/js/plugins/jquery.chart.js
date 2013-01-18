@@ -291,12 +291,8 @@
 	}
 	
 	function wrapChart(target){
-		if($(target).hasClass('chart-body')){
-			return $(target).parent();
-		}else{
-			var chart = $(target).addClass('chart-body').wrap('<div class="chart"></div>').parent();
-			return chart;
-		}
+		var chart = $(target).addClass('chart-body').wrap('<div class="chart"></div>').parent();
+		return chart;
 	}
 	
 	function addHeader(target){
@@ -314,53 +310,77 @@
 			if(opts.timeable){
 				var menu = '<div class="menu">' + 
 					'<ul>' + 
-					'<li><a class="hide" href="javascript:void(0)">Day</a> ' + 
+					'<li><a class="hide" href="javascript:void(0)"><img class="chart_tool_menu" src="image/timeType.png" width="20" height="20"/></a> ' + 
 					'<ul>' + 
 						'<li><a href="javascript:void(0)">Day</a></li>' + 
 						'<li><a href="javascript:void(0)">Week</a></li>' + 
 						'<li><a href="javascript:void(0)">Month</a></li>' + 
 					'</ul></li>' + 
 				'</div>';
-				
 				var menuOB =  $(menu).appendTo(tool);
-				
 				menuOB.find("a[class!='hide']").each(function(i){
 					$(this).bind("click", function() {
 						drawCycle(target,opts['load' + $(this).html() + 'Resource']);
-						menuOB.find("a[class='hide']").html($(this).html());
 						return false;
 					});
 				});
 			}
 			//need to show format button?
 			if(opts.formatable){
-				$("<a class=\"chart-tool-chart\" href=\"javascript:void(0)\"></a>").appendTo(tool).bind("click", function(){
-					if ($(target).hasClass('chart-bar')){
-						$(target).drawLine();
-					} else {
-						$(target).drawBar();
-					}
-					return false;
-				});
-				$("<a class=\"chart-tool-table\" href=\"javascript:void(0)\"></a>").appendTo(tool).bind("click", function() {
-					$(target).drawTable();
-					return false;
-				});
 				
+				var menu = '<div class="menu">' + 
+					'<ul>' + 
+					'<li><a class="hide" href="javascript:void(0)"><img class="chart_tool_menu" src="image/action_icon.png" width="20" height="20"/></a> ' + 
+					'<ul>' + 
+						'<li><a href="javascript:void(0)">Line</a></li>' + 
+						'<li><a href="javascript:void(0)">Bar</a></li>' + 
+						'<li><a href="javascript:void(0)">Table</a></li>' + 
+					'</ul></li>' + 
+				'</div>';
+				var menuOB =  $(menu).appendTo(tool);
+				
+				menuOB.find("a[class!='hide']").each(function(i){
+					$(this).bind("click", function() {
+						if(i == 0){
+							$(target).drawLine();
+						}else if(i == 1){
+							$(target).drawBar();
+						}else{
+							$(target).drawTable();
+						}
+						return false;
+					});
+				});
 			}
 			if(opts.setting){
-				$("<a class=\"chart-tool-setting\" href=\"javascript:void(0)\"></a>").appendTo(tool).bind("click", function() {
-					return false;
+				
+				var menu = '<div class="menu">' + 
+					'<ul>' + 
+					'<li><a class="hide" href="javascript:void(0)"><img class="chart_tool_menu" src="image/setting_icon.png" width="20" height="20"/></a> ' + 
+					'<ul>' + 
+					'</ul></li>' + 
+				'</div>';
+				var menuOB =  $(menu).appendTo(tool);
+				
+				menuOB.find("a[class!='hide']").each(function(i){
+					$(this).bind("click", function() {
+						return false;
+					});
 				});
 			}
-			if (opts.tools){
+			
+			
+			
+			
+			
+			/*if (opts.tools){
 				for(var i=opts.tools.length-1; i>=0; i--){
 					var t = $('<div></div>').addClass(opts.tools[i].iconCls).appendTo(tool);
 					if (opts.tools[i].handler){
 						t.bind('click', eval(opts.tools[i].handler));
 					}
 				}
-			}
+			}*/
 			chart.find('>div.chart-body').removeClass('chart-body-noheader');
 		} else {
 			chart.find('>div.chart-body').addClass('chart-body-noheader');

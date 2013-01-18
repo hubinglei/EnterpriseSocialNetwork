@@ -1,15 +1,18 @@
 .title {
 	font-size: 18px;
-	margin-left:-120px;
+	margin-left: -120px;
 	color: rgb(35, 160, 216);
 }
-.title1{
+
+.title1 {
 	font-size: 16px;
 }
-.title3{
-	font-size:18px;
-	text-align:center;
+
+.title3 {
+	font-size: 18px;
+	text-align: center;
 }
+
 .navLeft {
 	box-shadow: 0 0 6px rgba(0, 0, 0, 0.75), 0 0 1px rgba(164, 164, 164, 1)
 		inset;
@@ -21,62 +24,88 @@
 	float: left;
 	color: rgb(35, 160, 216);
 }
-.tableSummary{
-	height:125px;
-	border:0;
+
+.tableSummary {
+	height: 125px;
+	border: 0;
+	width: 850px;
 }
-.tableSummary tr td{
+
+.tableSummary tr td {
 	border-bottom: 1px solid #b5b5b5;
 	border-right: 1px solid #b5b5b5;
-	width:234px;
+	width: 234px;
 }
-.tableSummary1 tr td{
-	height:35px;
-	color:#535355;
+
+.tableSummary1 tr td {
+	height: 35px;
+	color: #535355;
+	line-height: 35px;
 }
+
+.tableSummary,.tableSummary1,.chart {
+	margin-left: 150px;
+}
+
+.chart {
+	width: 850px;
+}
+
 .tableTitle1 {
-	background: url("../image/chart_title_bg.png") repeat scroll 0 0 transparent;
+	background: url("../image/chart_title_bg.png") repeat scroll 0 0
+		transparent;
 	width: 576px;
 	height: 35px;
 }
-.tableTitle{
-	background:url(../image/Chart_bg2.png);
+
+.tableTitle {
+	background: url(../image/Chart_bg2.png);
 	width: 576px;
 	height: 35px;;
-	}
-.tableButton{
-	float:right;
 }
-.blank{
-	margin-top:10px;
+
+.tableButton {
+	float: right;
 }
-.tableButton ul li{
-	background-image:url(../image/setting_bg.png);
-	width:32px;
-	height:30px;
-	margin-left:2px;
-	}
-.tableButton ul li img{
-	margin:5px 0 0 5px;
+
+.blank {
+	margin-top: 10px;
 }
-.tableButton ul{
-	margin:2px 30px 0 0;
+
+.tableButton ul li {
+	background-image: url(../image/setting_bg.png);
+	width: 32px;
+	height: 30px;
+	margin-left: 2px;
 }
-ul li{
-	display:inline-block;
+
+.tableButton ul li img {
+	margin: 5px 0 0 5px;
 }
-.level1,.level2,.level3{
+
+.tableButton ul {
+	margin: 2px 30px 0 0;
+}
+
+ul li {
+	display: inline-block;
+}
+
+.level1,.level2,.level3 {
 	text-align: center;
-	line-height:25px;
+	line-height: 25px;
 }
-.level1{
-	color:#2d2d2d;
+
+.level1 {
+	color: #2d2d2d;
 }
-.level2{
-	color:rgb(35, 160, 216);
+
+.level2 {
+	color: rgb(35, 160, 216);
 }
-.level3{
-	color:#9c9c9c;
+
+.level3 {
+	color: #9c9c9c;
 }
 
 #navigate {
@@ -84,8 +113,8 @@ ul li{
 	height: 100px;
 	width: 310px;
 	float: right;
-	 margin-top: -400px;
-	  margin-right: -140px;
+	margin-top: -1450px;
+	margin-right: -140px;
 }
 
 #navigate ul li {

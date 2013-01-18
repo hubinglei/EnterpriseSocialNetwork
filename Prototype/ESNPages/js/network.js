@@ -32,6 +32,25 @@ $("#influenceAnalysis").click(function() {
 		$(".networkRightNav").css("margin-left", "-10px");
 		$(".networkRightNav").css("opacity", "1");
 		$(".rightNav").css("margin-right", "1290px");
+		$("#inluenceCompanyGroup").click(function() {
+								 $("#wrapper").load("companyGroup.html");	
+											  });
+	$("#inluenceCompany").click(function() {
+								 $("#wrapper").load("company.html");	
+											  });
+	
+	$("#inluenceBrandGroup").click(function() {
+								 $("#wrapper").load("brandGroup.html");	
+											  });
+	$("#inluenceBrand").click(function() {
+								 $("#wrapper").load("brand.html");	
+											  });
+	$("#inluenceProductGroup").click(function() {
+								 $("#wrapper").load("productGroup.html");	
+											  });
+	$("#inluenceProduct").click(function() {
+								 $("#wrapper").load("product.html");	
+											  });
 		}
 	function moveLeft(){
 		$(".networkRightNav").css("margin-left", "850px");

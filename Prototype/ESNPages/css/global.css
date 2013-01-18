@@ -199,3 +199,16 @@ height: 150px;
 .networkArrowLeft {
 	margin: 30px 0 0 -60px;
 }
+.topButton {
+	background-image: url(../image/top.png);
+	width: 53px;
+	height: 27px;
+	float: right;
+	color: #FDFDFE;
+	line-height: 27px;
+	text-align: center;
+	font-size: 14px;
+	margin-right: -170px;
+	cursor: pointer;
+	margin-bottom: 20px;
+}

@@ -69,6 +69,7 @@ $(function() {
 	})
 
 	$(".arrowRight").click(function() {
+		navSelected(pos)
 		$("#wrapper").load(pos+"Nav.html");
 								});
 	// back home

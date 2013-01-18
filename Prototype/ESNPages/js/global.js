@@ -5,6 +5,10 @@ function showRightNav(id) {
 	$("#" + id).show();
 
 }
+function navSelected(id){
+	$("#nav > .navItem").removeClass("navActive");
+	$("#"+id).addClass("navActive");
+	}
 
 function networkNav2(id) {
 		$(".networkRightNav").each(function() {
@@ -17,31 +21,14 @@ function networkNav2(id) {
 								   $("#wrapper").load("homeNav.html");
 								   })
 	
-	$("#inluenceCompanyGroup").click(function() {
-								 $("#wrapper").load("companyGroup.html");	
-											  });
-	$("#inluenceCompany").click(function() {
-								 $("#wrapper").load("company.html");	
-											  });
-	
-	$("#inluenceBrandGroup").click(function() {
-								 $("#wrapper").load("brandGroup.html");	
-											  });
-	$("#inluencebrand").click(function() {
-								 $("#wrapper").load("brand.html");	
-											  });
-	$("#inluenceProductGroup").click(function() {
-								 $("#wrapper").load("productGroup.html");	
-											  });
-	$("#inluenceProduct").click(function() {
-								 $("#wrapper").load("product.html");	
-											  });
 		// top button
 	$(".topButton").click(function() {
-								   alert("ss")
-		$('body,html').animate({
-			scrollTop : 0
+		window.scrollTo(0,0);
+		/*$('body,html').animate({
+			scrollTop : 0,
+			Top:0
 		}, 0);
+		*/
 		return false;
 	});
 
