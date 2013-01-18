@@ -52,7 +52,7 @@
 				var t = $(this);
 				opts = $.extend({}, $.fn.chart.defaults,$.esnParser.parseOptions(this),{
 					width: (parseInt(t.css('width')) || undefined),
-					height: (parseInt(t.css('height')) || undefined),
+					height: (parseInt(t.css('height')) || $.fn.chart.defaults.defaultHeight),
 					left: (parseInt(t.css('left')) || undefined),
 					top: (parseInt(t.css('top')) || undefined),
 					title: t.attr('title'),
@@ -74,23 +74,12 @@
 					isLoaded: false
 				});
 			}
-			/*if (opts.content){
-				$(this).html(opts.content);
-				if ($.parser){
-					$.parser.parse(this);
-				}
-			}*/
-			
 			addHeader(this);
 			setBorder(this);
 			
-			if (opts.doSize == true){
-				state.panel.css('display','block');
-				//setSize(this);
-			}
 			
-			state.datasource = datasource || opts.datasource;;
-			drawLine(state);
+			state.datasource = datasource || opts.datasource;
+			$(this).esnDraw();
 		});
 	};
 	
@@ -124,13 +113,16 @@
 	function destroyChart(state){
 		if(state.jqplot){
 			state.jqplot.destroy();
-			//delete state.jqplot;
+		}else{
+			state.chart.find('>div.chart-body').empty();
 		}
 	}
 	
-	function drawLine(state){
+	$.fn.drawLine = function(){
+		var state = $.data(this[0], 'chart');
 		destroyChart(state);
 			if(state.datasource){
+			$(this).removeClass('chart-bar');
 			var opts = {
 					seriesDefaults: {
 						renderer: $.jqplot.LineRenderer,
@@ -150,11 +142,13 @@
 		    };
 			state.jqplot = $.jqplot(state.chart.find('>div.chart-body').attr("id"),state.datasource.data,$.extend(opts, customStyle(state)));
 		}
-	}
+	};
 	
-	function drawBar(state){
+	$.fn.drawBar =function(){
+		var state = $.data(this[0], 'chart');
 		destroyChart(state);
 		if(state.datasource){
+			$(this).addClass('chart-bar');
 			var opts = {
 					seriesDefaults: {
 						 renderer:$.jqplot.BarRenderer,
@@ -174,135 +168,24 @@
 			};
 			state.jqplot = $.jqplot(state.chart.find('>div.chart-body').attr("id"),state.datasource.data,$.extend(opts, customStyle(state)));
 		}
-	}
-	function wrapLineXLabel(datasource){
-		var i = 0;
-		var xlabel = new Array();
-		xlabel.push([i++,'']);
-		for(var j = 0;j < datasource.xlabel.length;j++){
-			xlabel.push([i++,datasource.xlabel[j]]);
-		}
-		xlabel.push([i,'']);
-		return xlabel;
-
-	}
-	function wrapBarXLabel(datasource){
-		var xlabel = new Array();
-		for(var j = 0;j < datasource.xlabel.length;j++){
-			xlabel.push(datasource.xlabel[j]);
-		}
-		xlabel.push('');
-		return xlabel;
-	}
-	function wrapYMax(datasource){
-		var max = 80;
-		for(var i=0;i < datasource.data.length;i++){
-			for(var j = 0;j < datasource.data[i].length;j++){
-				if(datasource.data[i][j] > max){
-					max = datasource.data[i][j];
-				}
-			}
-		}
-		return max + 10;
-	}
+	};
 	
-	function wrapChart(target){
-		var chart = $(target).addClass('chart-body').wrap('<div class="chart"></div>').parent();
-		return chart;
-	}
-	
-	function addHeader(target){
-		var opts = $.data(target, 'chart').options;
-		var chart = $.data(target, 'chart').chart;
-		removeNode(chart.find('>div.chart-header'));
-		if (opts.head && !opts.noheader){
-			var header = $('<div class="chart-header"><div class="chart-title">'+opts.head +'</div></div>').prependTo(chart);
-			if (opts.iconCls){
-				header.find('.chart-title').addClass('chart-with-icon');
-				$('<div class="chart-icon"></div>').addClass(opts.iconCls).appendTo(header);
-			}
-			var tool = $('<div class="chart-tool"></div>').appendTo(header);
-			
-			if(opts.timeable){
-				//var timebar = $('<div class="chart-tool-time"></div>').appendTo(tool);
-				$("<a class=\"chart-tool-time\" href=\"javascript:void(0)\">Day</a>").appendTo(tool).bind("click", function() {
-					drawCycle(target,opts.loadDayResource);
-					return false;
-				});
-				$("<a class=\"chart-tool-time\" href=\"javascript:void(0)\">Week</a>").appendTo(tool).bind("click", function() {
-					drawCycle(target,opts.loadWeekResource);
-					return false;
-				});
-				$("<a class=\"chart-tool-time\" href=\"javascript:void(0)\">Month</a>").appendTo(tool).bind("click", function() {
-					drawCycle(target,opts.loadMonthResource);
-					return false;
-				});
-			}
-			//need to show format button?
-			if(opts.formatable){
-				$("<a class=\"chart-tool-chart\" href=\"javascript:void(0)\"></a>").appendTo(tool).bind("click", function(){
-					if ($(target).hasClass('chart-bar')){
-						drawLine($.data(target, 'chart'));
-						$(target).removeClass('chart-bar');
-					} else {
-						drawBar($.data(target, 'chart'));
-						$(target).addClass('chart-bar');
-					}
-					return false;
-				});
-				$("<a class=\"chart-tool-table\" href=\"javascript:void(0)\"></a>").appendTo(tool).bind("click", function() {
-					$(target).addClass('chart-bar');
-					drawTable(target);
-					return false;
-				});
-				
-			}
-			if(opts.setting){
-				$("<a class=\"chart-tool-setting\" href=\"javascript:void(0)\"></a>").appendTo(tool).bind("click", function() {
-					return false;
-				});
-			}
-			if (opts.tools){
-				for(var i=opts.tools.length-1; i>=0; i--){
-					var t = $('<div></div>').addClass(opts.tools[i].iconCls).appendTo(tool);
-					if (opts.tools[i].handler){
-						t.bind('click', eval(opts.tools[i].handler));
-					}
-				}
-			}
-			chart.find('>div.chart-body').removeClass('chart-body-noheader');
-		} else {
-			chart.find('>div.chart-body').addClass('chart-body-noheader');
-		}
-	}
-	
-	function setBorder(target){
-		var opts = $.data(target, 'chart').options;
-		var chart = $.data(target, 'chart').chart;
-		if (opts.border == true){
-			chart.find('>div.chart-header').removeClass('chart-header-noborder');
-			chart.find('>div.chart-body').removeClass('chart-body-noborder');
-		} else {
-			chart.find('>div.chart-header').addClass('chart-header-noborder');
-			chart.find('>div.chart-body').addClass('chart-body-noborder');
-		}
-	}
-	
-	function drawCycle(target,cycle){
-		var state = $.data(target, 'chart');
-		destroyChart(state);
-		state.datasource = cycle(target,state.options);
-		drawLine(state);
-	}
-	
-	function drawTable(target){
-		var state = $.data(target, 'chart');
-		destroyChart(state);
+	$.fn.drawTable  = function(){
+		//alert($.data(this, 'chart'));
+		//var state = $.data($(this), 'chart');
+		//alert( $.data($(this), 'chart'));
+		var state = $.data(this[0], 'chart');
 		
+		
+		
+		destroyChart(state);
 		if(!state.datasource){
 			return;
 		}
-		var innerWidth = $(target).width();
+		$(this).addClass('chart-bar');
+		//if($(this).options)
+		var innerWidth = $(this).width();
+		var innerHeigth = $(this).height() <= 0 ? state.options.height:$(this).height();
 		var columns  = new Array();
 		columns.push({label:'Date'});
 		if(state.options.series){
@@ -360,27 +243,172 @@
 						'<div class="datagrid-body"><table class="datagrid-btable"  border="0" cellspacing="0" cellpadding="0"></table></div>' +
 					'</div>' +
 			    '</div>' +
-		  '</div>').appendTo($(target));
+		  '</div>').appendTo($(this));
 		//$('<div class="chart-tool"></div>').appendTo($(target));
-		$('.datagrid-view2 .datagrid-header-inner', target).html(t);
-		$('.datagrid-wrap', target).width(innerWidth);
-		$('.datagrid-view', target).width(innerWidth);
-		$('.datagrid-view2',target).width(innerWidth - $('.datagrid-view1',target).outerWidth());
-		$('.datagrid-view2 .datagrid-header',target).width($('.datagrid-view2',target).width());
-		$('.datagrid-view2 .datagrid-body',target).width($('.datagrid-view2',target).width());
+		$('.datagrid-view2 .datagrid-header-inner', this).html(t);
+		$('.datagrid-wrap', this).width(innerWidth);
+		$('.datagrid-wrap', this).height(innerHeigth);
+		$('.datagrid-view', this).width(innerWidth);
+		$('.datagrid-view2',this).width(innerWidth - $('.datagrid-view1',this).outerWidth());
+		$('.datagrid-view2 .datagrid-header',this).width($('.datagrid-view2',this).width());
+		$('.datagrid-view2 .datagrid-body',this).width($('.datagrid-view2',this).width());
 		$(".chartTable tr:even").css("background-color", "#FFFFFF");
 		$(".chartTable tr:odd").css("background-color", "#E6ECFF");
 		$(".chartTable tr").css("height","35px");
 		//$('.datagrid-view2 .datagrid-body table', target).html(getTBody(state.datasource,innerWidth,columns));
 		//return t;
+	};
+	
+	function wrapLineXLabel(datasource){
+		var i = 0;
+		var xlabel = new Array();
+		xlabel.push([i++,'']);
+		for(var j = 0;j < datasource.xlabel.length;j++){
+			xlabel.push([i++,datasource.xlabel[j]]);
+		}
+		xlabel.push([i,'']);
+		return xlabel;
+
 	}
+	function wrapBarXLabel(datasource){
+		var xlabel = new Array();
+		for(var j = 0;j < datasource.xlabel.length;j++){
+			xlabel.push(datasource.xlabel[j]);
+		}
+		xlabel.push('');
+		return xlabel;
+	}
+	function wrapYMax(datasource){
+		var max = 80;
+		for(var i=0;i < datasource.data.length;i++){
+			for(var j = 0;j < datasource.data[i].length;j++){
+				if(datasource.data[i][j] > max){
+					max = datasource.data[i][j];
+				}
+			}
+		}
+		return max + 10;
+	}
+	
+	function wrapChart(target){
+		if($(target).hasClass('chart-body')){
+			return $(target).parent();
+		}else{
+			var chart = $(target).addClass('chart-body').wrap('<div class="chart"></div>').parent();
+			return chart;
+		}
+	}
+	
+	function addHeader(target){
+		var opts = $.data(target, 'chart').options;
+		var chart = $.data(target, 'chart').chart;
+		removeNode(chart.find('>div.chart-header'));
+		if (opts.head && !opts.noheader){
+			var header = $('<div class="chart-header"><div class="chart-title">'+opts.head +'</div></div>').prependTo(chart);
+			if (opts.iconCls){
+				header.find('.chart-title').addClass('chart-with-icon');
+				$('<div class="chart-icon"></div>').addClass(opts.iconCls).appendTo(header);
+			}
+			var tool = $('<div class="chart-tool"></div>').appendTo(header);
+			
+			if(opts.timeable){
+				var menu = '<div class="menu">' + 
+					'<ul>' + 
+					'<li><a class="hide" href="javascript:void(0)">Day</a> ' + 
+					'<ul>' + 
+						'<li><a href="javascript:void(0)">Day</a></li>' + 
+						'<li><a href="javascript:void(0)">Week</a></li>' + 
+						'<li><a href="javascript:void(0)">Month</a></li>' + 
+					'</ul></li>' + 
+				'</div>';
+				
+				var menuOB =  $(menu).appendTo(tool);
+				
+				menuOB.find("a[class!='hide']").each(function(i){
+					$(this).bind("click", function() {
+						drawCycle(target,opts['load' + $(this).html() + 'Resource']);
+						menuOB.find("a[class='hide']").html($(this).html());
+						return false;
+					});
+				});
+			}
+			//need to show format button?
+			if(opts.formatable){
+				$("<a class=\"chart-tool-chart\" href=\"javascript:void(0)\"></a>").appendTo(tool).bind("click", function(){
+					if ($(target).hasClass('chart-bar')){
+						$(target).drawLine();
+					} else {
+						$(target).drawBar();
+					}
+					return false;
+				});
+				$("<a class=\"chart-tool-table\" href=\"javascript:void(0)\"></a>").appendTo(tool).bind("click", function() {
+					$(target).drawTable();
+					return false;
+				});
+				
+			}
+			if(opts.setting){
+				$("<a class=\"chart-tool-setting\" href=\"javascript:void(0)\"></a>").appendTo(tool).bind("click", function() {
+					return false;
+				});
+			}
+			if (opts.tools){
+				for(var i=opts.tools.length-1; i>=0; i--){
+					var t = $('<div></div>').addClass(opts.tools[i].iconCls).appendTo(tool);
+					if (opts.tools[i].handler){
+						t.bind('click', eval(opts.tools[i].handler));
+					}
+				}
+			}
+			chart.find('>div.chart-body').removeClass('chart-body-noheader');
+		} else {
+			chart.find('>div.chart-body').addClass('chart-body-noheader');
+		}
+	}
+	
+	function setBorder(target){
+		var opts = $.data(target, 'chart').options;
+		var chart = $.data(target, 'chart').chart;
+		if (opts.border == true){
+			chart.find('>div.chart-header').removeClass('chart-header-noborder');
+			chart.find('>div.chart-body').removeClass('chart-body-noborder');
+		} else {
+			chart.find('>div.chart-header').addClass('chart-header-noborder');
+			chart.find('>div.chart-body').addClass('chart-body-noborder');
+		}
+	}
+	
+	function drawCycle(target,cycle){
+		var state = $.data(target, 'chart');
+		destroyChart(state);
+		state.datasource = cycle(target,state.options);
+		$(target).drawLine();
+	}
+	
+	$.fn.esnDraw = function(){
+		if(this.is(':visible')){
+			var opts = $.data(this[0], 'chart').options;
+			var view = opts.view || 'line';
+			if(view == 'line'){
+				$(this).drawLine();
+			}else if(view == 'bar'){
+				$(this).drawBar();
+				$(this).addClass('chart-bar');
+			}else{
+				$(this).addClass('chart-bar');
+				$(this).drawTable();
+			}
+		}
+	};
 	
 	$.fn.chart.defaults = {
 			formatable:true,	
 			setting:true,
 			timeable:true,
+			defaultHeight:300,
 			loadDayResource:function(target,options){return;},
 			loadWeekResource:function(target,options){return;},
 			loadMonthResource:function(target,options){return;},
-		};
+	};
 })(jQuery);
