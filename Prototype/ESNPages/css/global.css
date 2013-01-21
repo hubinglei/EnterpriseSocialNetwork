@@ -11,3 +11,204 @@ html,body {
 	margin-right: auto;
 	max-width: 1000px;
 }
+.tile:hover {
+	padding: 0;
+	text-decoration: none;
+	cursor: pointer;
+	/*outline: 1px white solid;
+	border:1px white solid;*/
+	-moz-box-shadow: 0 0 10px #333;
+	-webkit-box-shadow: 0 0 10px #333;
+	box-shadow: 0 0 10px #333;
+	z-index: 100;
+}
+
+.rightnav {
+float: right;
+text-align: center;
+margin-right: 890px;
+opacity: 1;
+}
+.homenavtitle {
+font-size: 26px;
+color: rgb(102, 102, 102);
+}
+.rightnav img {
+margin: 30px 0 0;
+}
+.homeNav1 {
+	background: url(../image/bg7.png);
+}
+
+.homeNav2 {
+	background: url(../image/bg8.png);
+	margin-top: 10px;
+}
+
+.homeNav3 {
+	background: url(../image/bg9.png);
+	margin-top: 10px;
+}
+
+.homeNav4,.homeNav5,.homeNav6,.homeNav7,.homeNav8,.homeNav9 {
+	width: 221px;
+	height: 70px;
+	line-height: 70px;
+}
+
+.homeNav4 img,.homeNav5 img,.homeNav6 img,.homeNav7 img,.homeNav8 img,.homeNav9 img
+	{
+	margin: 5px 0 0 10px;
+}
+
+.homeNav5,.homeNav6,.homeNav7,.homeNav8,.homeNav9 {
+	margin-top: 10px;
+}
+
+.networkRightNav img {
+	float: left;
+}
+
+.homeNav4 {
+	background: url(../image/homepage2_right1.png);
+}
+
+.homeNav5 {
+	background: url(../image/homepage2_right2.png);
+}
+
+.homeNav6 {
+	background: url(../image/homepage2_right3.png);
+}
+
+.homeNav7 {
+	background: url(../image/homepage2_right4.png);
+}
+
+.homeNav8 {
+	background: url(../image/homepage2_right5.png);
+}
+
+.homeNav9 {
+	background: url(../image/homepage2_righ6.png);
+}
+
+.homeNav1,.homeNav2,.homeNav3,.homeNav4,.homeNav5,.homeNav6,.homeNav7,.homeNav8,.homeNav9
+	{
+	font-size: 17.45px;
+	color: rgb(255, 255, 255)
+}
+.homenav1, .homenav2, .homenav3 {
+width: 222px;
+height: 150px;
+}
+.homeNav1,.homeNav2,.homeNav3 {
+	width: 222px;
+	height: 150px;
+}
+
+.homeNav1 {
+	background: url(../image/bg7.png);
+}
+
+.homeNav2 {
+	background: url(../image/bg8.png);
+	margin-top: 10px;
+}
+
+.homeNav3 {
+	background: url(../image/bg9.png);
+	margin-top: 10px;
+}
+
+.homeNav4,.homeNav5,.homeNav6,.homeNav7,.homeNav8,.homeNav9 {
+	width: 221px;
+	height: 70px;
+	line-height: 70px;
+}
+
+.homeNav4 img,.homeNav5 img,.homeNav6 img,.homeNav7 img,.homeNav8 img,.homeNav9 img
+	{
+	margin: 5px 0 0 10px;
+}
+
+.homeNav5,.homeNav6,.homeNav7,.homeNav8,.homeNav9 {
+	margin-top: 10px;
+}
+
+.networkRightNav img {
+	float: left;
+}
+
+.homeNav4 {
+	background: url(../image/homepage2_right1.png);
+}
+
+.homeNav5 {
+	background: url(../image/homepage2_right2.png);
+}
+
+.homeNav6 {
+	background: url(../image/homepage2_right3.png);
+}
+
+.homeNav7 {
+	background: url(../image/homepage2_right4.png);
+}
+
+.homeNav8 {
+	background: url(../image/homepage2_right5.png);
+}
+
+.homeNav9 {
+	background: url(../image/homepage2_righ6.png);
+}
+
+.homeNav1,.homeNav2,.homeNav3,.homeNav4,.homeNav5,.homeNav6,.homeNav7,.homeNav8,.homeNav9
+	{
+	font-size: 17.45px;
+	color: rgb(255, 255, 255)
+}
+
+.arrowLeft,.arrowLeft1 {
+	float: left;
+	margin-left: -60px;
+	margin-top: -2px;
+}
+.arrowLeft1 {
+	display:none;
+	}
+#networkSentiment,#networkCost
+	{
+	display: none;
+}
+
+.networkRightNav {
+	margin-left: 850px;
+	margin-top: -490px;
+	float: left;
+	opacity: 0.5;
+}
+
+.networkArrowRight {
+	margin-left: 500px;
+    margin-top: -470px;
+	float: left;
+}
+
+.networkArrowLeft {
+	margin: 30px 0 0 -60px;
+}
+.topButton {
+	background-image: url(../image/top.png);
+	width: 53px;
+	height: 27px;
+	float: right;
+	color: #FDFDFE;
+	line-height: 27px;
+	text-align: center;
+	font-size: 14px;
+	margin-right: -170px;
+	cursor: pointer;
+	margin-bottom: 20px;
+}

@@ -1,8 +1,6 @@
 $(function() {
-
+	pos="dash"
 	// header page selected home
-	navActive("#home")
-
 	// start click
 	$(".startDetail").click(function(event) {
 		event.stopPropagation();
@@ -40,16 +38,19 @@ $(function() {
 	// home page nav
 	// social dash board
 	$("#socialDash").click(function() {
+		pos="dash"
 		showRightNav("dashNav");
 	})
 
 	// social network insight
 	$("#socialNetwork").click(function() {
+		pos="network"
 		showRightNav("networkNav");
 	})
 	// media mediation
 	$("#mediaMediation").click(function() {
-		showRightNav("mediaNav");
+	 pos="media"
+	 showRightNav("mediaNav");
 	})
 
 	// social campaingn plan
@@ -67,59 +68,24 @@ $(function() {
 
 	})
 
-	$("#arrowRight").click(function() {
-		moveRight();
-	})
-	$(".arrowLeft").click(function() {
-		moveLeft();
-	})
-
-	// the second level
-	function moveRight1() {
-		$(".networkRightNav").css("margin-left", "870px");
-		$(".rightNav").css("margin-right", "1290px");
-		$(".networkRightNav").css("opacity", "1");
-		$(".arrowLeft1").show();
-
-	}
-	function moveLeft1() {
-		$(".arrowLeft1").hide();
-		$(".networkRightNav").css("margin-left", "1800px");
-		$(".rightNav").css("margin-right", "890px");
-		$(".networkRightNav").css("opacity", "0.5");
-	}
-	$(".arrowRight1").click(function() {
-		moveRight1();
-	})
-	$(".arrowLeft1").click(function() {
-		moveLeft1();
-	})
-	function networkNav2(id) {
-		$(".networkRightNav").each(function() {
-			$(this).hide();
-		})
-		$("#" + id).show();
-	}
-	$("#influenceAnalysis").click(function() {
-		networkNav2("networkInluence");
-	});
-	$("#sentimentAnalysis").click(function() {
-		networkNav2("networkSentiment");
-	});
-	$("#costAnalysis").click(function() {
-		networkNav2("networkCost");
-	});
+	$(".arrowRight").click(function() {
+		navSelected(pos)
+		$("#wrapper").load(pos+"Nav.html");
+								});
 	// back home
 	$("#homeNav").click(function() {
-		moveLeft();
+		$("#wrapper").load("homeNav.html");
 	})
 	// Influence Insight
-	$("#influenceDash").click(function() {
-		window.open("influenceDash.html", "_self")
+	$("#influenceDash").click(function(event) {
+		//window.open("influenceDash.html", "_self")
+		event.stopPropagation();
+		$("#wrapper").load("influenceDash.html");
 	})
 
 	// Influence Insight
-	$("#sentimentDash").click(function() {
-		window.open("sentimentDash.html", "_self")
+	$("#sentimentDash").click(function(event) {
+		event.stopPropagation();
+		$("#wrapper").load("sentimentDash.html");						  
 	})
 });

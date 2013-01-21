@@ -1,0 +1,325 @@
+<link href="css/group.css" rel="stylesheet" type="text/css" />
+<link href="css/chart.css" rel="stylesheet" type="text/css" />
+<link href="css/progress.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/group.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/plugins/jquery.jqplot.js"></script>
+<script type="text/javascript" src="js/plugins/jquery.chart.js"></script>
+<script type="text/javascript" src="js/plugins/jqplot.barRenderer.js"></script>
+<script type="text/javascript"
+	src="js/plugins/jqplot.categoryAxisRenderer.js"></script>
+<div class="title">Company Group</div>
+<div class="navLeft">
+	<div class="title1">Brand Information</div>
+	<img src="image/hplogo.png" width="148" height="103" />
+	<div class="title3">HP</div>
+	<div>
+		<img src="image/add1.png" width="21" height="21" />Add Attention
+	</div>
+	<div>
+		<img src="image/plan2.png" width="24" height="21" />Plan
+	</div>
+	<div>
+		<img src="image/addcategory.png" width="21" height="24" />Add
+		Categoty
+	</div>
+	<div>
+		<img src="image/marketing.png" width="24" height="25" />Marketing
+		Analysis
+	</div>
+	<div>
+		<img src="image/auth.png" width="26" height="23" />Authority
+		Distribution
+	</div>
+	<div>
+		<img src="image/channelmaintenance.png" width="23" height="23" />Channel
+		Maintenance
+	</div>
+</div>
+<div>
+	<table width="850" border="0" class="tableSummary1" cellspacing="0">
+		<tr class="tableTitle">
+			<td colspan="4">Comany Social Media Summary
+				<div class="tableButton">
+					<ul>
+						<li><img src="image/timeType.png" width="20" height="20" />
+						</li>
+						<li><img src="image/action_icon.png" width="20" height="20" />
+						</li>
+						<li><img src="image/setting_icon.png" width="20" height="20" />
+						</li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+		<tr class="tableTitle1">
+			<td>Comapny Name</td>
+			<td>Media Channel</td>
+			<td>Caption</td>
+			<td>Status</td>
+		</tr>
+		<tr>
+			<td>HP Chinae</td>
+			<td>FaceBook</td>
+			<td>SoftWARE</td>
+			<td>Active</td>
+		</tr>
+		<tr>
+			<td>HP Australis</td>
+			<td>FaceBook</td>
+			<td>&nbsp;</td>
+			<td>Generally Active</td>
+		</tr>
+		<tr>
+			<td>HP Japan</td>
+			<td>Twitter</td>
+			<td>&nbsp;</td>
+			<td>Active</td>
+		</tr>
+		<tr>
+			<td>HP Itay</td>
+			<td>Twitter</td>
+			<td>&nbsp;</td>
+			<td>Very Active</td>
+		</tr>
+	</table>
+	<div class="blank"></div>
+	<table width="850" border="0" class="tableSummary1" cellspacing="0">
+		<tr class="tableTitle">
+			<td colspan="8">Company Influence Summary
+				<div class="tableButton">
+					<ul>
+						<li><img src="image/timeType.png" width="20" height="20" />
+						</li>
+						<li><img src="image/action_icon.png" width="20" height="20" />
+						</li>
+						<li><img src="image/setting_icon.png" width="20" height="20" />
+						</li>
+					</ul>
+			</td>
+		</tr>
+	</table>
+	<div class="blank"></div>
+	<table class="tableSummary">
+		<tr>
+			<td><div class="level1">Today's Activity Force</div>
+				<div class="level2">45%</div>
+				<div class="level3">Activity Force for today</div>
+			</td>
+			<td><div class="level1">This week's Activity Force</div>
+				<div class="level2">45%</div>
+				<div class="level3">Activity Force for this week</div>
+			</td>
+			<td><div class="level1">This month's Activity Force</div>
+				<div class="level2">45%</div>
+				<div class="level3">Activity Force for this month</div>
+			</td>
+		</tr>
+	</table>
+	<div class="blank"></div>
+	<table class="tableSummary" style="margin-top: 5px;">
+		<tr>
+			<td><div class="level1">Yesterday's Activity Force</div>
+				<div class="level2">45%</div>
+				<div class="level3">Activity Force for today</div>
+			</td>
+			<td><div class="level1">Last week's Activity Force</div>
+				<div class="level2">45%</div>
+				<div class="level3">Activity Force for week</div>
+			</td>
+			<td><div class="level1">Last month's Activity Force</div>
+				<div class="level2">45%</div>
+				<div class="level3">Activity Force for month</div>
+			</td>
+		</tr>
+	</table>
+	<div class="blank"></div>
+	<div id="chart" class="esn-chart"
+		data-options="formatable:false,setting:false,timeable:false,
+									legend:true,
+									series:[{label:'This Month ',color:'red'},{label:'Last Month',color:'green'}],
+									datasource:{data:[[50, 20, 42, 89, 45, 87, 50, 38, 83, 40],[30, 40, 12, 29, 15, 57, 60, 78, 33, 10]
+													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov','5-Nov','6-Nov','7-Nov']},head:'Activity Force'">
+
+	</div>
+</div>
+<div class="blank"></div>
+<table width="850" border="0" class="tableSummary1" cellspacing="0">
+	<tr class="tableTitle">
+		<td colspan="6">Comany Marketing Plan Execution
+			<div class="tableButton">
+				<ul>
+					<li><img src="image/timeType.png" width="20" height="20" />
+					</li>
+					<li><img src="image/action_icon.png" width="20" height="20" />
+					</li>
+					<li><img src="image/setting_icon.png" width="20" height="20" />
+					</li>
+				</ul>
+		</td>
+	</tr>
+	<tr class="tableTitle1">
+		<td>Comany Name</td>
+		<td>Plan Name</td>
+		<td>Plan Schedule</td>
+		<td>Planned Cost</td>
+		<td>Plan Influnenece</td>
+	</tr>
+	<tr>
+		<td>HP Australia</td>
+		<td>Q1 Evrry X2</td>
+		<td><progress value="65" max="100"></progress>
+		</td>
+		<td>60k</td>
+		<td>12%</td>
+	</tr>
+	<tr>
+		<td>HP Italy</td>
+		<td>Q2 EliteBook</td>
+		<td><progress value="80" max="100"></progress>
+		</td>
+		<td>80k</td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td>HP Japan</td>
+		<td>Q3 GreenCloud</td>
+		<td><progress value="100" max="100"></progress>
+		</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<div class="blank"></div>
+<table width="850" border="0" class="tableSummary1" cellspacing="0">
+	<tr class="tableTitle">
+		<td colspan="6">Company Hot Topic Summary
+			<div class="tableButton">
+				<ul>
+					<li><img src="image/timeType.png" width="20" height="20" />
+					</li>
+					<li><img src="image/action_icon.png" width="20" height="20" />
+					</li>
+					<li><img src="image/setting_icon.png" width="20" height="20" />
+					</li>
+				</ul>
+		</td>
+	</tr>
+	<tr class="tableTitle1">
+		<td>Comany Name</td>
+		<td>Topic</td>
+		<td>Channel</td>
+		<td>Spread</td>
+		<td>Cover</td>
+		<td>Trend</td>
+	</tr>
+	<tr>
+		<td>HP Japan</td>
+		<td>Cloud</td>
+		<td>MySite</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td>HP Japan</td>
+		<td>It Transformation</td>
+		<td>FaceBook</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td>HP Japan</td>
+		<td>AMOD</td>
+		<td>MySite</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td>HP Japan</td>
+		<td>ECS</td>
+		<td>MySite</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td>HP Japan</td>
+		<td>Windows8</td>
+		<td>Twitter</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<div class="blank"></div>
+<table width="850" border="0" class="tableSummary1" cellspacing="0">
+	<tr class="tableTitle">
+		<td colspan="4">Company Experts Summary
+			<div class="tableButton">
+				<ul>
+					<li><img src="image/timeType.png" width="20" height="20" />
+					</li>
+					<li><img src="image/action_icon.png" width="20" height="20" />
+					</li>
+					<li><img src="image/setting_icon.png" width="20" height="20" />
+					</li>
+				</ul>
+		</td>
+	</tr>
+	<tr class="tableTitle1">
+		<td>Personnel</td>
+		<td>Channel</td>
+		<td>Influence</td>
+		<td>Major</td>
+	</tr>
+	<tr>
+		<td><img src="image/expert01.png" width="50" height="50" />
+		</td>
+		<td>MySite</td>
+		<td>12034</td>
+		<td>Cloud DataCenter</td>
+	</tr>
+	<tr>
+		<td><img src="image/expert02.png" width="50" height="50" />
+		</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td><img src="image/expert03.png" width="50" height="50" />
+		</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+	<td><img src="image/expert04.png" width="50" height="50" />
+	</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	</tr>
+	<td><img src="image/expert05.png" width="50" height="50" />
+	</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	</tr>
+</table>
+<nav id="navigate">
+<ul>
+	<li><a href="#" style="margin-right: -165px;" id="home">Influence<img
+			src="image/nav3.png"> </a></li>
+	<li><a href="#" id="aboutus" style="margin-right: -190px;">Marketing
+			Plan<img src="image/nav.png"> </a></li>
+	<li><a href="#" id="aboutproduct" style="margin-right: -190px;">Hot
+			Topic<img src="image/nav.png"> </a></li>
+	<li><a href="#" id="contactus" style="margin-right: -190px;">Experts<img
+			src="image/nav.png"> </a></li>
+</ul>
+</nav>
+<div class="topButton">Top</div>

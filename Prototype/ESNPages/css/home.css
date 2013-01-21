@@ -50,17 +50,6 @@ ul.dropdown-menu li a {
 	color: rgb(102, 102, 102);
 }
 
-.tile:hover {
-	padding: 0;
-	text-decoration: none;
-	cursor: pointer;
-	outline: 1px white solid;
-	-moz-box-shadow: 0 0 10px #333;
-	-webkit-box-shadow: 0 0 10px #333;
-	box-shadow: 0 0 10px #333;
-	z-index: 100;
-}
-
 #socialDash {
 	background: url(../image/bg1.png);
 	width: 354px;
@@ -147,7 +136,7 @@ ul.dropdown-menu li a {
 	background: url(../image/bg_gray.png);
 	width: 354px;
 	height: 150px;
-	margin-top: 115px;
+	margin-top: 105px;
 }
 
 #planBg { /*background: url(../image/bg3.png);*/

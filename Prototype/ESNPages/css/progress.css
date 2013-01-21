@@ -1,0 +1,55 @@
+/* progress style */
+progress,progress[role] /* polyfill */ {
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	border: none;
+	background-size: auto;
+	width: 150px;
+	height: 20px;
+}
+
+progress[role]:after {
+	background-image: none; /* removesdefault background from polyfill */
+}
+
+progress[role] strong {
+	display: none;
+}
+
+/* change the progress backgroud */
+progress, /* Firefox */ progress[role][aria-valuenow] { /* Polyfill */
+	background: #e1e9eb;
+}
+
+progress::-webkit-progress-bar {
+	background: #e1e9eb;
+}
+
+progress::-moz-progress-bar {
+	background-image: -moz-linear-gradient(left, #bcda58, #fb9008);
+}
+
+progress::-webkit-progress-value {
+	background-image: -webkit-linear-gradient(left, #bcda58, #fb9008)
+}
+
+progress[aria-valuenow]:before {
+	background-image: -webkit-linear-gradient(left, #bcda58, #fb9008);
+}
+
+.progressRed::-moz-progress-bar {
+	background-image: -moz-linear-gradient(left, #f08c8c, #bc0303);
+}
+
+.progressRed::-webkit-progress-value {
+	background-image: -webkit-linear-gradient(left, #f08c8c, #bc0303);
+}
+
+.progressGreen::-webkit-progress-value {
+	background-image: -webkit-linear-gradient(left, #a0ea85, #29b402);
+}
+
+.progressGreen::-moz-progress-bar {
+	background-image: -moz-linear-gradient(left, #a0ea85, #29b402);
+}

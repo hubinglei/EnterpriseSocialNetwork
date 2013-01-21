@@ -18,56 +18,14 @@ ul li {
 	font-size: 12px;
 	color: rgb(253, 253, 254);
 	background-image: url(../image/cycleBg.png);
-	width: 116px;
-	height: 25px;
-	line-height: 25px;
-	margin-top: -4px;
+	height: 30px;
+	line-height: 30px;
+	margin-top: -10px;
 	margin-left: -120px;
 }
-/* progress style */
-progress,progress[role] /* polyfill */ {
-	appearance: none;
-	-moz-appearance: none;
-	-webkit-appearance: none;
-	border: none;
-	background-size: auto;
-	width: 200px;
-	height: 20px;
-}
 
-progress[role]:after {
-	background-image: none; /* removesdefault background from polyfill */
-}
 
-progress[role] strong {
-	display: none;
-}
 
-/* change the progress backgroud */
-progress, /* Firefox */ progress[role][aria-valuenow] { /* Polyfill */
-	background: #e1e9eb;
-}
-
-progress::-webkit-progress-bar {
-	background: #e1e9eb;
-}
-
-progress::-moz-progress-bar {
-	background-image: -webkit-linear-gradient(left, #bcda58, #fb9008);
-}
-
-progress::-webkit-progress-value {
-	background-image: -webkit-linear-gradient(left, #bcda58, #fb9008)
-}
-
-progress[aria-valuenow]:before {
-	background-image: -webkit-linear-gradient(left, #bcda58, #fb9008);
-}
-
-.cycleNav span {
-	margin-left: 10px;
-	cursor: pointer;
-}
 
 .socialTable,.sentimentTable {
 	font-size: 13px;
@@ -86,7 +44,14 @@ progress[aria-valuenow]:before {
 	{
 	width: 613px;
 }
-
+.cycleNav ul li{
+	background-image: url(../image/setting_bg.png);
+	width: 32px;
+	height: 25px;
+	margin-left: 2px;
+	cursor: pointer;
+	display:inline-block;
+}
 .tableTitle {
 	background: url(../image/chart_title_bg.png);
 	width: 576px;
@@ -257,18 +222,4 @@ table tr:not (:first-child ) {
 
 #areaView,#samsungData {
 	display: none;
-}
-
-.topButton {
-	background-image: url(../image/top.png);
-	width: 53px;
-	height: 27px;
-	float: right;
-	color: #FDFDFE;
-	line-height: 27px;
-	text-align: center;
-	font-size: 14px;
-	margin-right: -170px;
-	cursor: pointer;
-	margin-bottom: 20px;
 }

@@ -1,11 +1,11 @@
 $(function() {
-	navActive("#dash")
 	// even table rows style
 	$(".socialTable tr:odd").css("background-color", "#FFFFFF");
 	$(".sentimentTable tr:odd").css("background-color", "#FFFFFF");
-
+	
 	function replotChart() {
 		$('.esn-chart').each(function(i) {
+		    $("#"+$(this).attr("id")).empty();
 			$.data(this, 'chart').jqplot.replot();
 		});
 	}
@@ -39,14 +39,5 @@ $(function() {
 		$("#areaView").hide();
 	})
 
-	// top button
-	$(".topButton").click(function() {
-		$('body,html').animate({
-			scrollTop : 0
-		}, 0);
-		return false;
-	});
-	$("#config").click(function() {
-		navActive("#config")
-	})
+
 })
