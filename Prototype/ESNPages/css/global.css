@@ -212,3 +212,4 @@ height: 150px;
 	cursor: pointer;
 	margin-bottom: 20px;
 }
+.socialTable tr:nth-child(even),.sentimentTable tr:nth-child(odd){background-color: #FFFFFF}

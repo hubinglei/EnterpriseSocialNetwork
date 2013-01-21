@@ -118,7 +118,7 @@ ul li {
 	margin-top: -1450px;
 	margin-right: -140px;
 	}
-#navigateProductGroup,#navigateBrandGroup{
+#navigateProductGroup,#navigateBrandGroup,#navigateBrand{
 margin-top: -1050px;
 }
 #navigateComapany{
@@ -144,3 +144,5 @@ margin-top: -1900px;
 	float: right;
 	margin-right: -190px;
 }
+ .tableSummary1 tr:nth-child(odd){background-color: #E6ECFF}
+ .tableSummary1 tr:nth-child(even){background-color: #FFFFFF}

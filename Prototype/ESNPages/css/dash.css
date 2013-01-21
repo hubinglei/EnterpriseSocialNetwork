@@ -23,9 +23,6 @@ ul li {
 	margin-left: -120px;
 }
 
-
-
-
 .socialTable,.sentimentTable {
 	font-size: 13px;
 	color: rgb(83, 83, 85);
@@ -57,7 +54,7 @@ ul li {
 	height: 35px;
 }
 
-table tr:not (:first-child ) {
+.socialTable tr:not(:first-child){
 	cursor: pointer;
 }
 
