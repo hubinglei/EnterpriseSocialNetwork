@@ -10,7 +10,7 @@
 
 .title3 {
 	font-size: 18px;
-	text-align: center;
+	margin-left:50px;
 }
 
 .navLeft {
@@ -108,16 +108,28 @@ ul li {
 	color: #9c9c9c;
 }
 
-#navigate {
+.navigate,#navigateProductGroup,#navigateComapany,#navigateCompanyGroup{
 	clear: both;
 	height: 100px;
 	width: 310px;
 	float: right;
+}
+.navigate{
 	margin-top: -1450px;
 	margin-right: -140px;
+	}
+#navigateProductGroup,#navigateBrandGroup{
+margin-top: -1050px;
 }
-
-#navigate ul li {
+#navigateComapany{
+margin-right: -160px;
+margin-top: -1700px;
+	}
+#navigateCompanyGroup{
+	margin-right: -160px;
+margin-top: -1900px;
+}
+.navigate ul li {
 	padding: 10px 220px 2px 1px;
 	font-size: 18px;
 	color: rgb(246, 252, 253);
@@ -125,7 +137,7 @@ ul li {
 	display: inline-block;
 }
 
-#navigate ul li a {
+.navigate ul li a {
 	font-size: 12px;
 	color: rgb(102, 102, 102);
 	text-decoration: none;
