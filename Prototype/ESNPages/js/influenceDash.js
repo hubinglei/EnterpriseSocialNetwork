@@ -1,4 +1,6 @@
 $(function() {
+	page="influenceDash"	  
+
 	function replotChart() {
 		$('.esn-chart').each(function(i) {
 			$.data(this, 'chart').jqplot.replot();

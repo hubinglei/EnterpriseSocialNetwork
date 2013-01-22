@@ -1,4 +1,5 @@
 $(function() {
+page="networkNav"	
 $("#influenceAnalysis").click(function() {
 		pos="dash"
 		networkNav2("networkInluence");

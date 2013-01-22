@@ -3,12 +3,13 @@
 <link href="css/chart.css" rel="stylesheet" type="text/css" />
 <link href="css/jquery.jqplot.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
 <script type="text/javascript" src="js/data.js"></script>
 <script type="text/javascript" src="js/plugins/jquery.jqplot.js"></script>
 <script type="text/javascript" src="js/plugins/jquery.chart.js"></script>
 <script type="text/javascript" src="js/plugins/jqplot.barRenderer.js"></script>
 <script type="text/javascript" src="js/plugins/jqplot.categoryAxisRenderer.js"></script>
-<script type="text/javascript" src="js/dash.js"></script>
+<script type="text/javascript" src="js/influenceDash.js"></script>
 <div id="wrapper">
 	<div id="dashcontent">
 		<div id="socialTitle">Social Dash Doard-Analysis</div>
@@ -104,6 +105,7 @@
 									loadDayResource:loadDay,
 									loadWeekResource:loadWeek,
 									loadMonthResource:loadMonth,
+                                     view:'table',
 									series:[{label:'Positive Value',color:'black'}],
 									datasource:{data:[[50, 90, 42, 49, 45, 87, 50, 38, 83, 40]
 													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov','5-Nov','6-Nov','7-Nov']},head:'Communication Force'">
@@ -116,6 +118,7 @@
 									loadDayResource:loadDay,
 									loadWeekResource:loadWeek,
 									loadMonthResource:loadMonth,
+                                     view:'bar',
 									series:[{label:'Positive Value',color:'red'}],
 									datasource:{data:[[10, 90, 42, 89, 45, 17, 50, 38, 83, 40]
 													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov','5-Nov','6-Nov','7-Nov']},head:'Lead Turnover Rate'">
@@ -128,6 +131,7 @@
 									loadDayResource:loadDay,
 									loadWeekResource:loadWeek,
 									loadMonthResource:loadMonth,
+                                     view:'bar',
 									series:[{label:'Positive Value',color:'green'}],
 									datasource:{data:[[50, 90, 32, 89, 45, 87, 50, 38, 83, 40]
 													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov','5-Nov','6-Nov','7-Nov']},head:'Close Rate'">
@@ -212,33 +216,24 @@
 		<div class="socialChart" id="areaView">
 			<ul>
 				<li>
-					<div id="chart7" class="esn-chart"
-						data-options="formatable:true,setting:false,timeable:true,
-									legend:true,
-									loadDayResource:loadDay,
-									loadWeekResource:loadWeek,
-									loadMonthResource:loadMonth,
-									series:[{label:'Positive Value',color:'green'},{label:'Negative Value',color:'red'},{label:'Neutral Value',color:'yellow'}],
-									datasource:{data:[[50, 90, 42, 89, 45, 87, 50],
-													  [49, 82, 38, 83, 40, 80, 42],
-													  [37, 76, 28, 77, 30, 74, 32]
-													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov']},head:'Activity Force'">
+					<div id="map1" class="esn-plat" data-options="
+									view:'plat',
+									formatable:true,setting:false,timeable:true,
+									loadDayResource:loadDayMap,
+									loadWeekResource:loadWeekMap,
+									loadMonthResource:loadMonthMap,
+									datasource:{data:[{name:'WLM',value:10},{name:'QH',value:40},{name:'SC',value:80}],updateTime:'23:02 03.12.2013'},head:'Attactive Force'">
 
-					</div></li>
+								</div></li>
 				<li>
-					<div id="chart8" class="esn-chart"
-						data-options="formatable:true,setting:true,timeable:true,
-									legend:false,
-									loadDayResource:loadDay,
-									loadWeekResource:loadWeek,
-									loadMonthResource:loadMonth,
-									series:[{label:'Positive Value',color:'green'},{label:' Value1',color:'black'},{label:' Value 2',color:'yellow'}],
-									datasource:{data:[[50, 90, 42, 89, 45, 87, 50],
-													  [49, 82, 38, 83, 40, 80, 42],
-													  [37, 76, 28, 77, 30, 74, 32]
-													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov']},head:'Attactive Force'">
-
-					</div></li>
+					<div id="map2" class="esn-plat" data-options="
+									view:'plat',
+									formatable:true,setting:false,timeable:true,
+									loadDayResource:loadDayMap,
+									loadWeekResource:loadWeekMap,
+									loadMonthResource:loadMonthMap,
+									datasource:{data:[{name:'WLM',value:10},{name:'QH',value:40},{name:'SC',value:80}],updateTime:'23:02 03.12.2013'},head:'Attactive Force'">
+                                    </div></li>
 
 
 			</ul>

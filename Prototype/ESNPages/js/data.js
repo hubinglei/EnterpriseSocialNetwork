@@ -35,3 +35,46 @@
 						  [37, 78, 28, 77, 30, 75, 35, 28, 77, 30],
 						  ],xlabel:['Month1','Month2','Month3','Month4','Month5','Month6','Month7','Month8','Month9','Month10']}
   }
+  
+  function loadDayMap(target,options){
+	  return {data:[{name:'WLM',value:10},
+	                {name:'HHH',value:20},
+	                {name:'HEB',value:30},
+	                {name:'DL',value:50},
+	                {name:'BJ',value:60},
+	                {name:'TJ',value:70},
+	                {name:'YT',value:80},
+	                {name:'LZ',value:90},
+	                {name:'QH',value:25},
+	                {name:'KM',value:35},
+	                {name:'HK',value:45},
+	                {name:'NN',value:65},
+	                {name:'CQ',value:75}],updateTime:'Day'}
+}
+function loadWeekMap(target,options){
+	  return {data:[{name:'WLM',value:10},
+	                {name:'HEB',value:30},
+	                {name:'CC',value:40},
+	                {name:'DL',value:50},
+	                {name:'BJ',value:60},
+	                {name:'YT',value:80},
+	                {name:'LZ',value:90},
+	                {name:'SC',value:15},
+	                {name:'KM',value:35},
+	                {name:'HK',value:45},
+	                {name:'NN',value:65},
+	                {name:'CQ',value:75}],updateTime:'Week'}
+}
+function loadMonthMap(target,options){
+	  return {data:[{name:'WLM',value:10},
+	                {name:'HEB',value:30},
+	                {name:'CC',value:40},
+	                {name:'DL',value:50},
+	                {name:'BJ',value:60},
+	                {name:'LZ',value:90},
+	                {name:'SC',value:15},
+	                {name:'QH',value:25},
+	                {name:'HK',value:45},
+	                {name:'GY',value:55},
+	                {name:'CQ',value:75}],updateTime:'Month'};
+}
