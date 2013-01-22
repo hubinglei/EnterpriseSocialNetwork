@@ -115,11 +115,18 @@ ul li {
 	float: right;
 }
 .navigate{
-	margin-top: -1450px;
+	margin-top: -1050px;
 	margin-right: -140px;
+	position:fixed;
+	margin-left: 850px;
+	height: 1000px;
 	}
+	/*.navList{
+		position:relative;
+		}
+		*/
 #navigateProductGroup,#navigateBrandGroup,#navigateBrand{
-margin-top: -1050px;
+margin-top: -1450px;
 }
 #navigateComapany{
 margin-right: -160px;

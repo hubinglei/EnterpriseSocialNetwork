@@ -3,9 +3,9 @@
 }
 
 #headerBg {
-	position: relative;
-	padding: 10px 0 10px 40px;
-	z-index: 2;
+	position: fixed;
+	padding: 10px 0 10px 200px;
+	z-index: 10001;
 	overflow: hidden;
 	min-width: 1200px;
 }
@@ -13,10 +13,10 @@
 #header {
 	position: relative;
 	padding-left: 15px;
-	margin: 0 auto;
+	margin-left:-100px;
 	overflow: hidden;
+	
 }
-
 #headerTitles {
 	position: relative;
 	float: left;

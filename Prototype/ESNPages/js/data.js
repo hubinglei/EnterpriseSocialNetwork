@@ -37,44 +37,21 @@
   }
   
   function loadDayMap(target,options){
-	  return {data:[{name:'WLM',value:10},
-	                {name:'HHH',value:20},
-	                {name:'HEB',value:30},
-	                {name:'DL',value:50},
-	                {name:'BJ',value:60},
-	                {name:'TJ',value:70},
-	                {name:'YT',value:80},
-	                {name:'LZ',value:90},
-	                {name:'QH',value:25},
-	                {name:'KM',value:35},
-	                {name:'HK',value:45},
-	                {name:'NN',value:65},
-	                {name:'CQ',value:75}],updateTime:'Day'}
+	  return {data:[{name:'XJ',value:10},
+	                {name:'XZ',value:20},
+	                {name:'YN',value:30},
+	                {name:'SC',value:50}
+	               ],updateTime:'Day'}
 }
 function loadWeekMap(target,options){
-	  return {data:[{name:'WLM',value:10},
-	                {name:'HEB',value:30},
-	                {name:'CC',value:40},
-	                {name:'DL',value:50},
-	                {name:'BJ',value:60},
-	                {name:'YT',value:80},
-	                {name:'LZ',value:90},
-	                {name:'SC',value:15},
-	                {name:'KM',value:35},
-	                {name:'HK',value:45},
-	                {name:'NN',value:65},
-	                {name:'CQ',value:75}],updateTime:'Week'}
+	  return {data:[ {name:'GX',value:60},
+	                {name:'GZ',value:70},
+	                {name:'NMG',value:80},
+	                {name:'HLJ',value:90}],updateTime:'Week'}
 }
 function loadMonthMap(target,options){
-	  return {data:[{name:'WLM',value:10},
-	                {name:'HEB',value:30},
-	                {name:'CC',value:40},
-	                {name:'DL',value:50},
-	                {name:'BJ',value:60},
-	                {name:'LZ',value:90},
-	                {name:'SC',value:15},
-	                {name:'QH',value:25},
-	                {name:'HK',value:45},
-	                {name:'GY',value:55},
-	                {name:'CQ',value:75}],updateTime:'Month'};
+	  return {data:[{name:'XJ',value:10},
+	                {name:'XZ',value:20},
+	                {name:'YN',value:30},
+	                {name:'NMG',value:80}],updateTime:'Month'};
 }

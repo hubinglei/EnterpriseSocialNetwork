@@ -22,8 +22,14 @@
 	
 	var mapSrc = "image/map.jpg";
 	
-	
+	maps['XJ'] = {x:265,y:102,label:'新疆'};
+	maps['XZ'] = {x:268,y:176,label:'西藏'};
+	maps['YN'] = {x:356,y:237,label:'云南'};
 	maps['WLM'] = {x:280,y:112,label:'乌鲁木齐'};
+	maps['HLJ'] = {x:507,y:43,label:'黑龙江'};
+	maps['NMG'] = {x:401,y:108,label:'内蒙古'};
+	maps['GX'] = {x:409,y:238,label:'广西'};
+	maps['GZ'] = {x:399,y:218,label:'贵州'};
 	maps['HHH'] = {x:486,y:169,label:'呼和浩特'};
 	maps['HEB'] = {x:636,y:82,label:'哈尔滨'};
 	maps['CC'] = {x:602,y:112,label:'长春'};
@@ -32,8 +38,8 @@
 	maps['TJ'] = {x:540,y:180,label:'天津'};
 	maps['YT'] = {x:574,y:198,label:'烟台'};
 	maps['LZ'] = {x:423,y:229,label:'兰州'};
-	maps['SC'] = {x:418,y:305,label:'四川'};
-	maps['QH'] = {x:390,y:220,label:'青海'};
+	maps['SC'] = {x:364,y:186,label:'四川'};
+	maps['QH'] = {x:319,y:149,label:'青海'};
 	maps['KM'] = {x:400,y:373,label:'昆明'};
 	maps['HK'] = {x:480,y:430,label:'海口'};
 	maps['GY'] = {x:446,y:346,label:'贵阳'};
@@ -286,7 +292,7 @@
 		}
 		$(this).addClass('chart-bar');
 		//if($(this).options)
-		var innerWidth = $(this).width();
+		var innerWidth = $(this).width() - 20;
 		var innerHeigth = $(this).height() <= 0 ? state.options.height:$(this).height();
 		var columns  = new Array();
 		columns.push({label:'Date'});
@@ -542,7 +548,7 @@
 		}
 		$(this).addClass('chart-map');
 		//if($(this).options)
-		var innerWidth = $(this).width();
+		var innerWidth = $(this).width() - 20;
 		var innerHeigth = $(this).height() <= 0 ? state.options.height:$(this).height();
 		var columns  = new Array();
 		columns.push({label:'City'});

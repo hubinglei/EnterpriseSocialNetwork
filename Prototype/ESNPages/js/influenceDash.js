@@ -3,12 +3,19 @@ $(function() {
 
 	function replotChart() {
 		$('.esn-chart').each(function(i) {
-			$.data(this, 'chart').jqplot.replot();
+			$(this).esnDraw(); 
 		});
 	}
+	function replotMap(){
+		$('.esn-plat').each(function(i) {						  
+		$(this).esnMapDraw();
+									  })
+		}
 	// bind table tr event
 	$("table tr:not(:first)").click(function() {
 		var instanceName = $(this).find("td").html();
+		$("table tr:not(:first)").removeClass("trActive");
+		$(this).addClass("trActive");
 		$("#instanceName").html("&nbsp;" + instanceName);
 		if (instanceName.indexOf("Samsung") > -1) {
 			$("#lgData").hide();
@@ -27,6 +34,7 @@ $(function() {
 	$("#area").click(function() {
 		$("#overview").addClass("overview1");
 		$("#areaView").show();
+		replotMap();
 		$("#dateView").hide();
 	})
 

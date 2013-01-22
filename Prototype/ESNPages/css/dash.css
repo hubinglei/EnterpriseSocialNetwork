@@ -219,3 +219,6 @@ ul li {
 #areaView,#samsungData {
 	display: none;
 }
+.trActive{
+	color:orange;
+}

@@ -54,7 +54,7 @@
 .chart-tool {
 	position: absolute;
 	right: 5px;
-	top: 4px;
+	top: 3px;
 	margin-right: 5px;
 }
 
@@ -378,6 +378,7 @@
 .chart_tool_menu{
 	vertical-align: bottom;
 	position: relative;
+	 margin-top: 5px;
 }
 
 .menu {
