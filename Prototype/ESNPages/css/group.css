@@ -119,22 +119,24 @@ ul li {
 	margin-right: -140px;
 	position:fixed;
 	margin-left: 850px;
-	height: 1000px;
 	}
 	/*.navList{
 		position:relative;
 		}
 		*/
-#navigateProductGroup,#navigateBrandGroup,#navigateBrand{
+#navigateBrand{
 margin-top: -1450px;
 }
+#navigateProductGroup,#navigateBrandGroup{
+	margin-top: -1050px;
+	}
 #navigateComapany{
 margin-right: -160px;
 margin-top: -1700px;
 	}
 #navigateCompanyGroup{
 	margin-right: -160px;
-margin-top: -1900px;
+margin-top: -2150px;
 }
 .navigate ul li {
 	padding: 10px 220px 2px 1px;
