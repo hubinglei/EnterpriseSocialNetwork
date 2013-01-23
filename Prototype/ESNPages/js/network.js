@@ -53,6 +53,28 @@ $("#influenceAnalysis").click(function() {
 								 $("#wrapper").load("product.html");	
 											  });
 		}
+		
+		
+		$("#sentimentCompany").click(function() {
+											   $("#wrapper").load("companySentiment.html");
+											  });
+			$("#sentimentBrand").click(function() {
+												$("#wrapper").load("brandSentiment.html");
+											  });
+				$("#sentimentProduct").click(function() {
+											 $("#wrapper").load("productSentiment.html");		 
+											  });
+		
+			$("#costCompany").click(function() {
+											   $("#wrapper").load("companyCost.html");
+											  });
+			$("#costBrand").click(function() {
+												$("#wrapper").load("brandCost.html");
+											  });
+				$("#costProduct").click(function() {
+											 $("#wrapper").load("productCost.html");		 
+											  });
+		
 	function moveLeft(){
 		$(".networkRightNav").css("margin-left", "850px");
 		$(".networkRightNav").css("opacity", "0.5");

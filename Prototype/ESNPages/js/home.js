@@ -1,6 +1,7 @@
 $(function() {
 	pos="dash"
 	page="homeNav"
+	navSelected("home")
 	// header page selected home
 	// start click
 	$(".startDetail").click(function(event) {
