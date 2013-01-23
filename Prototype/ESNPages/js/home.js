@@ -1,5 +1,6 @@
 $(function() {
 	pos="dash"
+	page="homeNav"
 	// header page selected home
 	// start click
 	$(".startDetail").click(function(event) {
@@ -72,20 +73,5 @@ $(function() {
 		navSelected(pos)
 		$("#wrapper").load(pos+"Nav.html");
 								});
-	// back home
-	$("#homeNav").click(function() {
-		$("#wrapper").load("homeNav.html");
-	})
-	// Influence Insight
-	$("#influenceDash").click(function(event) {
-		//window.open("influenceDash.html", "_self")
-		event.stopPropagation();
-		$("#wrapper").load("influenceDash.html");
-	})
-
-	// Influence Insight
-	$("#sentimentDash").click(function(event) {
-		event.stopPropagation();
-		$("#wrapper").load("sentimentDash.html");						  
-	})
+	
 });

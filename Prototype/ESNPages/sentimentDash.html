@@ -1,14 +1,11 @@
-<link href="css/global.css" rel="stylesheet" type="text/css" />
-<link href="css/header.css" rel="stylesheet" type="text/css" />
 <link href="css/dash.css" rel="stylesheet" type="text/css" />
 <link href="css/progress.css" rel="stylesheet" type="text/css" />
 <link href="css/chart.css" rel="stylesheet" type="text/css" />
 <link href="css/jquery.jqplot.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/data.js"></script>
-<script type="text/javascript" src="js/header.js"></script>
 <script type="text/javascript" src="js/global.js"></script>
-<script type="text/javascript" src="js/dash.js"></script>
+<script type="text/javascript" src="js/data.js"></script>
+<script type="text/javascript" src="js/sentimentDash.js"></script>
 <script type="text/javascript" src="js/tagcloud.js"></script>
 <script type="text/javascript" src="js/plugins/jquery.jqplot.js"></script>
 <script type="text/javascript" src="js/plugins/jquery.chart.js"></script>
@@ -77,9 +74,9 @@ $("#tag").windstag();
 		<div id="chart" class="esn-chart"
 			data-options="formatable:true,setting:false,timeable:true,
 									legend:true,
-									loadDayResource:loadDay,
-									loadWeekResource:loadWeek,
-									loadMonthResource:loadMonth,
+									loadDayResource:loadDay1,
+									loadWeekResource:loadWeek1,
+									loadMonthResource:loadMonth1,
 									series:[{label:'Positive Value',color:'green'},{label:'Negative Value',color:'red'},{label:'Neutral Value',color:'yellow'}],
 									datasource:{data:[[50, 90, 42, 89, 45, 87, 50],
 													  [49, 82, 38, 83, 40, 80, 42],
@@ -90,9 +87,9 @@ $("#tag").windstag();
 		<div id="chartsen1" class="esn-chart"
 			data-options="formatable:true,setting:false,timeable:true,
 									legend:true,
-									loadDayResource:loadDay,
-									loadWeekResource:loadWeek,
-									loadMonthResource:loadMonth,
+									loadDayResource:loadDay1,
+									loadWeekResource:loadWeek1,
+									loadMonthResource:loadMonth1,
 									series:[{label:'Positive Value',color:'green'},{label:'Negative Value',color:'orange'},{label:'Neutral Value',color:'yellow'}],
 									datasource:{data:[[50, 90, 42, 89, 45, 87, 50],
 													  [49, 82, 38, 83, 40, 80, 42],
@@ -103,9 +100,9 @@ $("#tag").windstag();
 		<div id="chartsen2" class="esn-chart"
 			data-options="formatable:true,setting:false,timeable:true,
 									legend:true,
-									loadDayResource:loadDay,
-									loadWeekResource:loadWeek,
-									loadMonthResource:loadMonth,
+									loadDayResource:loadDay1,
+									loadWeekResource:loadWeek1,
+									loadMonthResource:loadMonth1,
 									series:[{label:'Positive Value',color:'green'},{label:'Negative Value',color:'green'},{label:'Neutral Value',color:'yellow'}],
 									datasource:{data:[[50, 90, 42, 89, 45, 87, 50],
 													  [49, 82, 38, 83, 40, 80, 42],

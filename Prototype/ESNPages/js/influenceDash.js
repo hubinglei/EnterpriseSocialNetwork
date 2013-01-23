@@ -1,26 +1,31 @@
 $(function() {
-	// even table rows style
-	$(".socialTable tr:odd").css("background-color", "#FFFFFF");
-	$(".sentimentTable tr:odd").css("background-color", "#FFFFFF");
-	
+	page="influenceDash"	  
+
 	function replotChart() {
 		$('.esn-chart').each(function(i) {
-		    $("#"+$(this).attr("id")).empty();
-			$.data(this, 'chart').jqplot.replot();
+			$(this).esnDraw(); 
 		});
 	}
+	function replotMap(){
+		$('.esn-plat').each(function(i) {						  
+		$(this).esnMapDraw();
+									  })
+		}
 	// bind table tr event
 	$("table tr:not(:first)").click(function() {
 		var instanceName = $(this).find("td").html();
+		$("table tr:not(:first)").removeClass("trActive");
+		$(this).addClass("trActive");
 		$("#instanceName").html("&nbsp;" + instanceName);
 		if (instanceName.indexOf("Samsung") > -1) {
 			$("#lgData").hide();
 			$("#samsungData").show();
 			replotChart();
+			
 		} else {
+			$("#samsungData").hide();
 			$("#lgData").show();
 			replotChart();
-			$("#samsungData").hide();
 		}
 	})
 
@@ -29,6 +34,7 @@ $(function() {
 	$("#area").click(function() {
 		$("#overview").addClass("overview1");
 		$("#areaView").show();
+		replotMap();
 		$("#dateView").hide();
 	})
 
