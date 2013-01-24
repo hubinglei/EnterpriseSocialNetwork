@@ -124,7 +124,7 @@ ul li {
 		position:relative;
 		}
 		*/
-#navigateBrand{
+#navigateBrandv{
 margin-top: -1450px;
 }
 #navigateProductGroup,#navigateBrandGroup{
@@ -132,7 +132,10 @@ margin-top: -1450px;
 	}
 #productSentimentNav{
 	margin-top: -900px;
-	}	
+	}
+#productCostNav{
+	margin-top:-1350px;
+}
 #navigateComapany{
 margin-right: -160px;
 margin-top: -1700px;
