@@ -1,3 +1,3 @@
 $(function() {
-		   page="comapnySentiment"
+		   page="companySentiment"
 		   })

@@ -31,7 +31,7 @@ function navActive(page){
 			$("#config").addClass("navActive");
 			}else if(page.indexOf("dash")>-1||page.indexOf("Dash")>-1){
 			$("#dash").addClass("navActive");
-			}else if(page.indexOf("network")>-1||page.indexOf("group")>-1||page.indexOf("brand")>-1||page.indexOf("product")>-1||page.indexOf("company")>-1){
+			}else if(page.indexOf("network")>-1||page.indexOf("group")>-1||page.indexOf("brand")>-1||page.indexOf("product")>-1||page.indexOf("company")>-1||page.indexOf("Sentiment")>-1||page.indexOf("Cost")>-1){
 			$("#network").addClass("navActive");
 			}else if(page.indexOf("paln")>-1){
 			$("#paln").addClass("navActive");
