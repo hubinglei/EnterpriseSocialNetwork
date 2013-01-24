@@ -55,3 +55,23 @@ function loadMonthMap(target,options){
 	                {name:'YN',value:30},
 	                {name:'NMG',value:80}],updateTime:'Month'};
 }
+
+
+ function loadDayPie(target,options){
+	  return {data:[
+						  ['Heavy Industry', 12],['Retail', 9], ['Light Industry', 14], 
+    ['Out of home', 16],['Commuting', 7], ['Orientation', 9]
+						  ]}
+  }
+  function loadWeekPie(target,options){
+	  return {data:[
+	                	  ['Heavy Industry', 12],['Retail', 9], ['Light Industry', 14], 
+    ['Out of home', 16]
+						  ]}
+  }
+  function loadMonthPie(target,options){
+	  return {data:[  	  
+	                  	  ['Light Industry', 14], 
+    ['Out of home', 16],['Commuting', 7], ['Orientation', 9]
+						  ]}
+  }

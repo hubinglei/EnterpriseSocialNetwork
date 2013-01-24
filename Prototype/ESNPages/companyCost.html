@@ -3,11 +3,13 @@
 <script type="text/javascript" src="js/group.js"></script>
 <script type="text/javascript" src="js/companyCost.js"></script>
 <script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/data.js"></script>
 <script type="text/javascript" src="js/plugins/jquery.jqplot.js"></script>
 <script type="text/javascript" src="js/plugins/jquery.chart.js"></script>
 <script type="text/javascript" src="js/plugins/jqplot.barRenderer.js"></script>
-<script type="text/javascript"
-	src="js/plugins/jqplot.categoryAxisRenderer.js"></script>
+<script type="text/javascript" src="js/plugins/jqplot.categoryAxisRenderer.js"></script>
+ <script type="text/javascript" src="js/plugins/jqplot.pieRenderer.min.js"></script>
+<script type="text/javascript" src="js/plugins/jqplot.donutRenderer.min.js"></script>
 <div class="title">Company</div>
 <div class="navLeft">
   <div class="title1">Company Information</div>
@@ -36,14 +38,28 @@
 		Maintenance
 	</div>
 </div>
-<div id="chart" class="esn-chart"
+ <div id="chartcost" class="esn-chart"
 		data-options="formatable:false,setting:false,timeable:false,
 									legend:true,
-									series:[,{label:'Actual',color:'orange'},{label:'Plan',color:'green'}],
+									series:[{label:'Actual',color:'orange'},{label:'Plan',color:'green'}],
 									datasource:{data:[[0, 20, 42, 89, 45, 87, 50, 38, 83, 40],[0, 40, 12, 29, 15, 57, 60, 78, 33, 10]
 													  ],xlabel:['1','3','5','7','9','11','13','15','17','19']},head:'LED'">
 
 	</div>
+    
+
+<div id="chartcost1" class="esn-chart"
+		data-options="formatable:false,setting:true,timeable:true,
+      								view:'pie',
+									legend:true,
+									loadDayResource:loadDayPie,
+									loadWeekResource:loadWeekPie,
+									loadMonthResource:loadMonthPie,
+                                    datasource:{data:[['Heavy Industry', 12],['Retail', 9], ['Light Industry', 14], 
+    ['Out of home', 16],['Commuting', 7], ['Orientation', 9]]},head:'Cost Structure'">
+
+	</div>
+
 <nav class="navigate" id="productCostNav">
 <ul>
 	<li><a href="#" style="margin-right: -165px;" class="total">Sentiment Insight<br /> Total Table<img

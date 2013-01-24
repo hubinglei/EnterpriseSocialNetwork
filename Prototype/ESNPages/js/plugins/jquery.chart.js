@@ -266,6 +266,7 @@
 			var opts = {
 					seriesDefaults: {
 						 renderer:$.jqplot.BarRenderer,
+						 pointLabels: {show: true}
 					},
 					axes: { 
 				          xaxis: {
@@ -367,6 +368,25 @@
 		//return t;
 	};
 	
+	// draw pie
+	
+	$.fn.drawPie =function(){
+		var state = $.data(this[0], 'chart');
+		destroyChart(state);
+		if(state.datasource){
+			$(this).addClass('chart-bar');
+			var opts = {
+					 seriesDefaults: {
+        renderer: jQuery.jqplot.PieRenderer, 
+        rendererOptions: {
+          showDataLabels: true
+        }
+      },
+			};
+			state.jqplot = $.jqplot(state.chart.find('>div.chart-body').attr("id"),[state.datasource.data],$.extend(opts, customStyle(state)));
+		}
+	};
+	
 	function wrapLineXLabel(datasource){
 		var i = 0;
 		var xlabel = new Array();
@@ -428,7 +448,7 @@
 				var menuOB =  $(menu).appendTo(tool);
 				menuOB.find("a[class!='hide']").each(function(i){
 					$(this).bind("click", function() {
-						drawCycle(target,opts['load' + $(this).html() + 'Resource']);
+						drawChartCycle(target,opts['load' + $(this).html() + 'Resource']);
 						return false;
 					});
 				});
@@ -453,7 +473,7 @@
 							$(target).drawLine();
 						}else if(i == 1){
 							$(target).drawBar();
-						}else{
+						}else if(i==2){
 							$(target).drawChartTable();
 						}
 						return false;
@@ -496,9 +516,23 @@
 	
 	function drawChartCycle(target,cycle){
 		var state = $.data(target, 'chart');
-		destroyChart(state);
 		state.datasource = cycle(target,state.options);
-		$(target).drawLine();
+		var mycanvas =$("#"+target.id).find('canvas')
+		if(mycanvas.hasClass('jqplot-barRenderer-highlight-canvas')){
+			destroyChart(state);
+			$(target).drawBar();
+			}
+		else if(mycanvas.hasClass('jqplot-lineRenderer-highlight-canvas')){
+			destroyChart(state);
+			$(target).drawLine();
+			}	
+		else if(mycanvas.hasClass('jqplot-pieRenderer-highlight-canvas')){
+			destroyChart(state);
+			$(target).drawPie();
+			}else{
+				destroyChart(state);
+				$(target).drawChartTable();
+				}
 	}
 	
 	$.fn.esnChartDraw = function(){
@@ -510,10 +544,12 @@
 			}else if(view == 'bar'){
 				$(this).drawBar();
 				$(this).addClass('chart-bar');
-			}else{
+			}else if(view=='table'){
 				$(this).addClass('chart-bar');
 				$(this).drawChartTable();
-			}
+			}else if(view=='pie'){
+				$(this).drawPie();
+				}
 		}
 	};
 	
