@@ -108,7 +108,7 @@ ul li {
 	color: #9c9c9c;
 }
 
-.navigate,#navigateProductGroup,#navigateComapany,#navigateCompanyGroup{
+.navigate{
 	clear: both;
 	height: 100px;
 	width: 310px;
@@ -120,30 +120,6 @@ ul li {
 	position:fixed;
 	margin-left: 850px;
 	}
-	/*.navList{
-		position:relative;
-		}
-		*/
-#navigateBrandv{
-margin-top: -1450px;
-}
-#navigateProductGroup,#navigateBrandGroup{
-	margin-top: -1050px;
-	}
-#productSentimentNav{
-	margin-top: -900px;
-	}
-#productCostNav{
-	margin-top:-1350px;
-}
-#navigateComapany{
-margin-right: -160px;
-margin-top: -1700px;
-	}
-#navigateCompanyGroup{
-	margin-right: -160px;
-margin-top: -2150px;
-}
 .navigate ul li {
 	padding: 10px 220px 2px 1px;
 	font-size: 18px;

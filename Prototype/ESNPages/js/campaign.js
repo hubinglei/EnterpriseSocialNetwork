@@ -1,3 +1,3 @@
 $(function() {
-		   page="product"
+		   page="campaign"
 		   })

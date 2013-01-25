@@ -1,16 +1,16 @@
 $(function() {
-	page="influenceDash"	  
+	page = "influenceDash"
 
 	function replotChart() {
 		$('.esn-chart').each(function(i) {
-			$(this).esnDraw(); 
+			$(this).esnDraw();
 		});
 	}
-	function replotMap(){
-		$('.esn-plat').each(function(i) {						  
-		$(this).esnMapDraw();
-									  })
-		}
+	function replotMap() {
+		$('.esn-plat').each(function(i) {
+			$(this).esnMapDraw();
+		})
+	}
 	// bind table tr event
 	$("table tr:not(:first)").click(function() {
 		var instanceName = $(this).find("td").html();
@@ -21,7 +21,7 @@ $(function() {
 			$("#lgData").hide();
 			$("#samsungData").show();
 			replotChart();
-			
+
 		} else {
 			$("#samsungData").hide();
 			$("#lgData").show();
@@ -44,6 +44,5 @@ $(function() {
 		$("#dateView").show();
 		$("#areaView").hide();
 	})
-
 
 })

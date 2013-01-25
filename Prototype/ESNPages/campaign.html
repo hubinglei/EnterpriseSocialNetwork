@@ -2,17 +2,19 @@
 <link href="css/chart.css" rel="stylesheet" type="text/css" />
 <link href="css/progress.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/group.js"></script>
+<script type="text/javascript" src="js/data.js"></script>
+<script type="text/javascript" src="js/campaign.js"></script>
 <script type="text/javascript" src="js/global.js"></script>
 <script type="text/javascript" src="js/plugins/jquery.jqplot.js"></script>
 <script type="text/javascript" src="js/plugins/jquery.chart.js"></script>
 <script type="text/javascript" src="js/plugins/jqplot.barRenderer.js"></script>
 <script type="text/javascript"
 	src="js/plugins/jqplot.categoryAxisRenderer.js"></script>
-<div class="title">Brand Group</div>
+<script type="text/javascript" src="js/group.js"></script>
+<div class="title">Campaign</div>
 <div class="navLeft">
-	<div class="title1">Brand Information</div>
-	  <img src="image/evnyX2.png" width="113" height="128" />
+	<div class="title1">Campaign Information</div>
+	<img src="image/evnyX2.png" width="113" height="128" />
 	<div class="title3">Q1 EvnyX2</div>
 	<div>
 		<img src="image/add1.png" width="21" height="21" />Add Attention
@@ -32,43 +34,51 @@
 		<img src="image/auth.png" width="26" height="23" />Authority
 		Distribution
 	</div>
-    <div>
+	<div>
 		<img src="image/channelmaintenance.png" width="23" height="23" />Channel
 		Maintenance
 	</div>
 </div>
 <div>
-	<div>Product Influence Summary</div>
+	<table width="850" border="0" class="tableSummary1" cellspacing="0">
+		<tr class="tableTitle">
+			<td colspan="8">Product Influence Summary
+				<div class="tableButton">
+					<ul>
+						<li><img src="image/timeType.png" width="20" height="20" />
+						</li>
+						<li><img src="image/action_icon.png" width="20" height="20" />
+						</li>
+						<li><img src="image/setting_icon.png" width="20" height="20" />
+						</li>
+					</ul>
+			</td>
+		</tr>
+	</table>
 	<table class="tableSummary influenceContent">
 		<tr>
 			<td><div class="level1">Today's Activity Force</div>
 				<div class="level2">45%</div>
-				<div class="level3">Activity Force for today</div>
-			</td>
+				<div class="level3">Activity Force for today</div></td>
 			<td><div class="level1">This week's Activity Force</div>
 				<div class="level2">45%</div>
-				<div class="level3">Activity Force for this week</div>
-			</td>
+				<div class="level3">Activity Force for this week</div></td>
 			<td><div class="level1">This month's Activity Force</div>
 				<div class="level2">45%</div>
-				<div class="level3">Activity Force for this month</div>
-			</td>
+				<div class="level3">Activity Force for this month</div></td>
 		</tr>
 	</table>
 	<table class="tableSummary" style="margin-top: 5px;">
 		<tr>
 			<td><div class="level1">Yesterday's Activity Force</div>
 				<div class="level2">45%</div>
-				<div class="level3">Activity Force for today</div>
-			</td>
+				<div class="level3">Activity Force for today</div></td>
 			<td><div class="level1">Last week's Activity Force</div>
 				<div class="level2">45%</div>
-				<div class="level3">Activity Force for week</div>
-			</td>
+				<div class="level3">Activity Force for week</div></td>
 			<td><div class="level1">Last month's Activity Force</div>
 				<div class="level2">45%</div>
-				<div class="level3">Activity Force for month</div>
-			</td>
+				<div class="level3">Activity Force for month</div></td>
 		</tr>
 	</table>
 	<div class="blank"></div>
@@ -82,13 +92,13 @@
 	</div>
 </div>
 <div class="blank"></div>
-<table width="850" border="0" class="tableSummary1 marketingContent" cellspacing="0">
+<table width="850" border="0" class="tableSummary1 marketingContent"
+	cellspacing="0">
 	<tr class="tableTitle">
-		<td colspan="6"> Marketing Plan Execution
+		<td colspan="6">Marketing Plan Execution
 			<div class="tableButton">
 				<ul>
-					<li><img src="image/timeType.png" width="20" height="20" />
-					</li>
+					<li><img src="image/timeType.png" width="20" height="20" /></li>
 					<li><img src="image/action_icon.png" width="20" height="20" />
 					</li>
 					<li><img src="image/setting_icon.png" width="20" height="20" />
@@ -104,37 +114,32 @@
 	</tr>
 	<tr>
 		<td>Q1 Evrry X2</td>
-		<td><progress value="65" max="100"></progress>
-		</td>
+		<td><progress value="65" max="100"></progress></td>
 		<td>60k</td>
 		<td>12%</td>
 	</tr>
 </table>
 <div class="blank"></div>
-<table width="850" border="0" class="tableSummary1 planContent" cellspacing="0">
-	<tr class="tableTitle">
-		<td colspan="6">Maketing Plan Executin Detail
-			<div class="tableButton">
-				<ul>
-					<li><img src="image/timeType.png" width="20" height="20" />
-					</li>
-					<li><img src="image/action_icon.png" width="20" height="20" />
-					</li>
-					<li><img src="image/setting_icon.png" width="20" height="20" />
-					</li>
-				</ul>
-		</td>
-	</tr>
-	<tr class="tableTitle1">
-	</tr>
-</table>
+<div id="chart2" class="esn-chart planContent"
+	data-options="formatable:false,setting:false,timeable:false,
+									legend:true,
+									series:[{label:'This Month ',color:'red'},{label:'Last Month',color:'green'}],
+									datasource:{data:[[50, 20, 42, 89, 45, 87, 50, 38, 83, 40],[30, 40, 12, 29, 15, 57, 60, 78, 33, 10]
+													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov','5-Nov','6-Nov','7-Nov']},head:'Marketing Plan Execution Detail'">
+
+</div>
 </div>
 <nav class="navigate">
-<ul>
-	<li><a href="#" style="margin-right: -165px;" class="influence" >Influence<img
-			src="image/nav3.png"> </a></li>
-	<li><a href="#"  style="margin-right: -190px;" class="marketing">Marketing Plan<img src="image/nav.png"> </a></li>
-	<li><a href="#"  style="margin-right: -190px;" class="plan">Plan Execution Detail<img src="image/nav.png"> </a></li>
+<ul class="navList">
+	<li><a href="#" style="margin-right: -165px;" class="influence">Influence<img
+			src="image/nav3.png"> </a>
+	</li>
+	<li><a href="#" style="margin-right: -190px;" class="marketing">Marketing
+			Plan<img src="image/nav.png"> </a>
+	</li>
+	<li><a href="#" style="margin-right: -190px;" class="plan">Plan
+			Execution Detail<img src="image/nav.png"> </a>
+	</li>
 </ul>
 </nav>
 <div class="topButton">Top</div>

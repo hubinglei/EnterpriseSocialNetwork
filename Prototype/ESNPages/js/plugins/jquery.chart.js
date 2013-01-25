@@ -722,9 +722,14 @@
 	
 	function drawMapCycle(target,cycle){
 		var state = $.data(target, 'chart');
-		destroyChart(state);
 		state.datasource = cycle(target,state.options);
-		$(target).drawMap();
+		if($("#"+target.id).find('table').length>0){
+			destroyChart(state);
+		    $(target).drawMapTable();
+			}else{
+		    destroyChart(state);
+		    $(target).drawMap();
+			}
 	}
 	
 	$.fn.esnMapDraw = function(){

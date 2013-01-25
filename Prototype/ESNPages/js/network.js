@@ -74,6 +74,17 @@ $("#influenceAnalysis").click(function() {
 				$("#costProduct").click(function() {
 											 $("#wrapper").load("productCost.html");		 
 											  });
+				
+				$("#inluenceCampaign").click(function() {
+													  $("#wrapper").load("campaign.html");
+													   });
+				$("#inluenceCampaignGroup").click(function() {
+														     $("#wrapper").load("campaignGroup.html");
+													   });
+				
+				$("#costCampaign").click(function() {
+													$("#wrapper").load("campaignCost.html");
+													   });
 		
 	function moveLeft(){
 		$(".networkRightNav").css("margin-left", "850px");

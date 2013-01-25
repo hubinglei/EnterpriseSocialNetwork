@@ -1,19 +1,19 @@
 $(function() {
-	page="dashNav"
+	page = "dashNav"
 	// Influence Insight
 	$("#influenceDash").click(function(event) {
 		//window.open("influenceDash.html", "_self")
 		event.stopPropagation();
-		page="influenceDash"
+		page = "influenceDash"
 		$("#wrapper").load("influenceDash.html");
-		
+
 	})
 
 	// Influence Insight
 	$("#sentimentDash").click(function(event) {
 		event.stopPropagation();
-		$("#wrapper").load("sentimentDash.html");	
-		page="sentimentDash"
+		$("#wrapper").load("sentimentDash.html");
+		page = "sentimentDash"
 	})
-	
-		   })
+
+})
