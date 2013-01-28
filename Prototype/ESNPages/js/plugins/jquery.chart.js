@@ -1,5 +1,26 @@
 (function($) {
 	
+	function cloneObj(obj) {
+		var objClone;
+	    if (obj.constructor == Object){
+	        objClone = new obj.constructor(); 
+	    }else{
+	        objClone = new obj.constructor(obj.valueOf()); 
+	    }
+	    for(var key in obj){
+	        if ( objClone[key] != obj[key] ){ 
+	            if ( typeof(obj[key]) == 'object' ){ 
+	                objClone[key] = cloneObj(obj[key]);
+	            }else{
+	                objClone[key] = obj[key];
+	            }
+	        }
+	    }
+	    objClone.toString = obj.toString;
+	    objClone.valueOf = obj.valueOf;
+	    return objClone; 
+	}
+	
 	Date.prototype.Format = function (fmt) { //author: meizz 
 	    var o = {
 	        "M+": this.getMonth() + 1, //月份 
@@ -148,9 +169,10 @@
 			addChartHeader(this);
 			setBorder(this);
 			
-			
 			state.datasource = datasource || opts.datasource;
-			$(this).esnChartDraw();
+			state.rawdata = state.datasource;
+			state.options.rawseries = state.options.series;
+			$(this).esnDraw();
 		});
 	};
 	
@@ -193,7 +215,9 @@
 			setBorder(this);
 			
 			state.datasource = datasource || opts.datasource;
-			$(this).esnMapDraw();
+			state.rawdata = state.datasource;
+			state.options.rawseries = state.options.series;
+			$(this).esnDraw();
 		});
 	};
 	
@@ -423,9 +447,11 @@
 		return chart;
 	}
 	
-	function addChartHeader(target){
-		var opts = $.data(target, 'chart').options;
-		var chart = $.data(target, 'chart').chart;
+	
+	function addHeader(target,cycles,menus){
+		var state = $.data(target, 'chart');
+		var opts =  state.options;
+		var chart = state.chart;
 		removeNode(chart.find('>div.chart-header'));
 		if (opts.head && !opts.noheader){
 			var header = $('<div class="chart-header"><div class="chart-title">'+opts.head +'</div></div>').prependTo(chart);
@@ -440,66 +466,128 @@
 					'<ul>' + 
 					'<li><a class="hide" href="javascript:void(0)"><img class="chart_tool_menu" src="image/timeType.png" width="20" height="20"/></a> ' + 
 					'<ul>' + 
-						'<li><a href="javascript:void(0)">Day</a></li>' + 
-						'<li><a href="javascript:void(0)">Week</a></li>' + 
-						'<li><a href="javascript:void(0)">Month</a></li>' + 
-					'</ul></li>' + 
+					createLis(cycles) + 
+					'</ul></li></ul>' + 
 				'</div>';
 				var menuOB =  $(menu).appendTo(tool);
 				menuOB.find("a[class!='hide']").each(function(i){
 					$(this).bind("click", function() {
-						drawChartCycle(target,opts['load' + $(this).html() + 'Resource']);
+						drawCycle(target,opts['load' + $(this).html() + 'Resource']);
 						return false;
 					});
 				});
 			}
 			//need to show format button?
 			if(opts.formatable){
-				
 				var menu = '<div class="menu">' + 
 					'<ul>' + 
 					'<li><a class="hide" href="javascript:void(0)"><img class="chart_tool_menu" src="image/action_icon.png" width="20" height="20"/></a> ' + 
 					'<ul>' + 
-						'<li><a href="javascript:void(0)">Line</a></li>' + 
-						'<li><a href="javascript:void(0)">Bar</a></li>' + 
-						'<li><a href="javascript:void(0)">Table</a></li>' + 
-					'</ul></li>' + 
+					createLis(menus) + 
+					'</ul></li></ul>' + 
 				'</div>';
 				var menuOB =  $(menu).appendTo(tool);
-				
 				menuOB.find("a[class!='hide']").each(function(i){
 					$(this).bind("click", function() {
-						if(i == 0){
-							$(target).drawLine();
-						}else if(i == 1){
-							$(target).drawBar();
-						}else if(i==2){
-							$(target).drawChartTable();
-						}
+						$.data(target, 'chart').options.view = $(this).text().toLowerCase();
+						$(target).esnDraw();
 						return false;
 					});
 				});
 			}
+			
 			if(opts.setting){
-				
 				var menu = '<div class="menu">' + 
 					'<ul>' + 
 					'<li><a class="hide" href="javascript:void(0)"><img class="chart_tool_menu" src="image/setting_icon.png" width="20" height="20"/></a> ' + 
-					'<ul>' + 
-					'</ul></li>' + 
+					'<ul>'  + 
+					'</ul></li></ul>' + 
 				'</div>';
 				var menuOB =  $(menu).appendTo(tool);
-				
-				menuOB.find("a[class!='hide']").each(function(i){
-					$(this).bind("click", function() {
-						return false;
+				menuOB.find("input").each(function(i){
+					$(this).bind("click", function(){
+						return true;
 					});
 				});
 			}
+			
+			if(opts.chooseable){
+				var menu = '<div class="menu lineCheck">' + 
+				'<ul>' + 
+				'<li><a href="javascript:void(0)"><img class="chart_tool_menu" src="image/setting_icon.png" width="20" height="20"/></a> ' + 
+				'<ul>' + createCheckboxs(['Activity Force','Communication Force','Attractive Force','Coverage Rate','Close Rate','Lead Turnover Rate']) + 
+				'</ul></li></ul>' + 
+				'</div>';
+				var menuOB =  $(menu).appendTo(tool);
+				menuOB.find(".chooseableImg").each(function(i){
+					$(this).bind("click", function(event){
+						resetDatasource(target);
+						$(target).esnDraw();
+						return true;
+					});
+				});
+			}
+			
 			chart.find('>div.chart-body').removeClass('chart-body-noheader');
 		} else {
 			chart.find('>div.chart-body').addClass('chart-body-noheader');
 		}
+	}
+	
+	function resetDatasource(target){
+		var lineCheck = $(target).prev().find('.lineCheck');
+		if(lineCheck.size() > 0){
+			var checked = lineCheck.find("img[value]");
+			var state = $.data(target, 'chart');
+			var datasource = cloneObj(state.rawdata);
+			var series = [];
+			datasource.data = [];
+			for(var i = 0; i < checked.length; i ++){
+				if($(checked[i]).attr('src').indexOf('_selected.png') > 0){
+					var index = parseInt($(checked[i]).attr('value'));
+					datasource.data.push(state.rawdata.data[index * 2]);
+					datasource.data.push(state.rawdata.data[index * 2 + 1]);
+					series.push(state.options.rawseries[index* 2] ||  ("series" + (index* 2 + 1)));
+					series.push(state.options.rawseries[index* 2 + 1] ||  ("series" + (index* 2 + 2)));
+					//datasource.data.push(state.rawdata.data[index]);
+					//series.push(state.options.rawseries[index] ||  ("series" + (index + 1)));
+				}
+			}
+			state.datasource = datasource;
+			state.options.series = series;
+		}
+	}
+	
+	function addChartHeader(target){
+		addHeader(target,['Day','Week','Month'],['Line','Bar','Table']);
+	}
+	
+	function createLis(array){
+		var lis = "";
+		for(var i = 0; i < array.length; i++){
+			lis += '<li><a href="javascript:void(0)">' + array[i] + '</a></li>';
+		}
+		return lis;
+	}
+	
+	$.fn.changeImg = function(This){
+		var img = This.find("img");
+		var src = img.attr('src');
+		if(src.indexOf('_selected.png') > 0){
+			src = src.replace('_selected.png','.png');
+		}else{
+			src = src.replace('.png','_selected.png');
+		}
+		img.attr('src',src);
+	};
+	
+	function createCheckboxs(array){
+		var lis = "";
+		for(var i = 0; i < array.length; i++){
+			lis += '<li style="vertical-align: top;height: 26px;"><a onclick="$.fn.changeImg($(this))" class ="men_img" href="javascript:void(0)"><img title="' + array[i]  +'" src="image/' + array[i].replace(new RegExp(" ","gm"), '')  +'_selected.png" value=' + i +'/></a></li>';
+		}
+		lis += '<li style="vertical-align: top;height: 13px;margin: 1px;"><img class="chooseableImg" src="image/ok.png"/></li>';
+		return lis;
 	}
 	
 	function setBorder(target){
@@ -514,27 +602,6 @@
 		}
 	}
 	
-	function drawChartCycle(target,cycle){
-		var state = $.data(target, 'chart');
-		state.datasource = cycle(target,state.options);
-		var mycanvas =$("#"+target.id).find('canvas')
-		if(mycanvas.hasClass('jqplot-barRenderer-highlight-canvas')){
-			destroyChart(state);
-			$(target).drawBar();
-			}
-		else if(mycanvas.hasClass('jqplot-lineRenderer-highlight-canvas')){
-			destroyChart(state);
-			$(target).drawLine();
-			}	
-		else if(mycanvas.hasClass('jqplot-pieRenderer-highlight-canvas')){
-			destroyChart(state);
-			$(target).drawPie();
-			}else{
-				destroyChart(state);
-				$(target).drawChartTable();
-				}
-	}
-	
 	$.fn.esnChartDraw = function(){
 		if(this.is(':visible')){
 			var opts = $.data(this[0], 'chart').options;
@@ -543,17 +610,21 @@
 				$(this).drawLine();
 			}else if(view == 'bar'){
 				$(this).drawBar();
-				$(this).addClass('chart-bar');
 			}else if(view=='table'){
-				$(this).addClass('chart-bar');
 				$(this).drawChartTable();
 			}else if(view=='pie'){
 				$(this).drawPie();
-				}
+			}
 		}
 	};
 	
-	$.fn.esnDraw  = $.fn.esnChartDraw;
+	$.fn.esnDraw = function(){
+		if(this.hasClass('esn-chart')){
+			this.esnChartDraw();
+		}else if(this.hasClass('esn-plat')){
+			this.esnMapDraw();
+		}
+	};
 	
 	$.fn.drawMap  = function(){
 		var state = $.data(this[0], 'chart');
@@ -644,99 +715,23 @@
 	};
 	
 	function addMapHeader(target){
-		var opts = $.data(target, 'chart').options;
-		var chart = $.data(target, 'chart').chart;
-		removeNode(chart.find('>div.chart-header'));
-		if (opts.head && !opts.noheader){
-			var header = $('<div class="chart-header"><div class="chart-title">'+opts.head +'</div></div>').prependTo(chart);
-			if (opts.iconCls){
-				header.find('.chart-title').addClass('chart-with-icon');
-				$('<div class="chart-icon"></div>').addClass(opts.iconCls).appendTo(header);
-			}
-			var tool = $('<div class="chart-tool"></div>').appendTo(header);
-			
-			if(opts.timeable){
-				var menu = '<div class="menu">' + 
-					'<ul>' + 
-					'<li><a class="hide" href="javascript:void(0)"><img class="chart_tool_menu" src="image/timeType.png" width="20" height="20"/></a> ' + 
-					'<ul>' + 
-						'<li><a href="javascript:void(0)">Day</a></li>' + 
-						'<li><a href="javascript:void(0)">Week</a></li>' + 
-						'<li><a href="javascript:void(0)">Month</a></li>' + 
-					'</ul></li>' + 
-				'</div>';
-				var menuOB =  $(menu).appendTo(tool);
-				menuOB.find("a[class!='hide']").each(function(i){
-					$(this).bind("click", function() {
-						drawMapCycle(target,opts['load' + $(this).html() + 'Resource']);
-						return false;
-					});
-				});
-			}
-			//need to show format button?
-			if(opts.formatable){
-				
-				var menu = '<div class="menu">' + 
-					'<ul>' + 
-					'<li><a class="hide" href="javascript:void(0)"><img class="chart_tool_menu" src="image/action_icon.png" width="20" height="20"/></a> ' + 
-					'<ul>' + 
-						'<li><a href="javascript:void(0)">Map</a></li>' + 
-						'<li><a href="javascript:void(0)">Table</a></li>' + 
-					'</ul></li>' + 
-				'</div>';
-				var menuOB =  $(menu).appendTo(tool);
-				
-				menuOB.find("a[class!='hide']").each(function(i){
-					$(this).bind("click", function() {
-						if(i == 0){
-							$(target).drawMap();
-						}else{
-							$(target).drawMapTable();
-						}
-						return false;
-					});
-				});
-			}
-			if(opts.setting){
-				
-				var menu = '<div class="menu">' + 
-					'<ul>' + 
-					'<li><a class="hide" href="javascript:void(0)"><img class="chart_tool_menu" src="image/setting_icon.png" width="20" height="20"/></a> ' + 
-					'<ul>' + 
-					'</ul></li>' + 
-				'</div>';
-				var menuOB =  $(menu).appendTo(tool);
-				
-				menuOB.find("a[class!='hide']").each(function(i){
-					$(this).bind("click", function() {
-						return false;
-					});
-				});
-			}
-			
-			chart.find('>div.chart-body').removeClass('chart-body-noheader');
-		} else {
-			chart.find('>div.chart-body').addClass('chart-body-noheader');
-		}
+		addHeader(target,['Day','Week','Month'],['Map','Table']);
 	}
 	
-	function drawMapCycle(target,cycle){
+	function drawCycle(target,cycle){
 		var state = $.data(target, 'chart');
+		destroyChart(state);
 		state.datasource = cycle(target,state.options);
-		if($("#"+target.id).find('table').length>0){
-			destroyChart(state);
-		    $(target).drawMapTable();
-			}else{
-		    destroyChart(state);
-		    $(target).drawMap();
-			}
+		state.rawdata = state.datasource;
+		resetDatasource(target);
+		$(target).esnDraw();
 	}
 	
 	$.fn.esnMapDraw = function(){
 		if(this.is(':visible')){
 			var opts = $.data(this[0], 'chart').options;
 			var view = opts.view || 'table';
-			if(view == 'plat'){
+			if(view == 'map' || view == 'plat'){
 				$(this).drawMap();
 			}else{
 				$(this).drawMapTable();
@@ -746,7 +741,7 @@
 	
 	$.fn.map.defaults = {
 			formatable:true,	
-			setting:true,
+			setting:false,
 			timeable:true,
 			defaultHeight:300,
 			loadDayResource:function(target,options){return;},
@@ -757,8 +752,9 @@
 	
 	$.fn.chart.defaults = {
 			formatable:true,	
-			setting:true,
+			setting:false,
 			timeable:true,
+			chooseable:false,
 			defaultHeight:300,
 			loadDayResource:function(target,options){return;},
 			loadWeekResource:function(target,options){return;},
