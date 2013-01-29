@@ -87,6 +87,6 @@ $(function() {
 	function moveLeft() {
 		$(".networkRightNav").css("margin-left", "850px");
 		$(".networkRightNav").css("opacity", "0.5");
-		$(".rightNav").css("margin-right", "890px");
+		$(".rightNav").css("margin-right", "870px");
 	}
 });
