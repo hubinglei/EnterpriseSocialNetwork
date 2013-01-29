@@ -3,6 +3,7 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/brand.js"></script>
 <script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/data.js"></script>
 <script type="text/javascript" src="js/plugins/jquery.jqplot.js"></script>
 <script type="text/javascript" src="js/plugins/jquery.chart.js"></script>
 <script type="text/javascript" src="js/plugins/jqplot.barRenderer.js"></script>
@@ -78,11 +79,38 @@
 	</table>
 	<div class="blank"></div>
 	<div id="chart" class="esn-chart"
-		data-options="formatable:false,setting:false,timeable:false,
+		data-options="view:'line',
+									formatable:true,setting:false,timeable:true,
 									legend:true,
-									series:[{label:'This Month ',color:'red'},{label:'Last Month',color:'green'}],
-									datasource:{data:[[50, 20, 42, 89, 45, 87, 50, 38, 83, 40],[30, 40, 12, 29, 15, 57, 60, 78, 33, 10]
-													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov','5-Nov','6-Nov','7-Nov']},head:'Activity Force'">
+									chooseable:true,
+									loadDayResource:loadDaySetting,
+									loadWeekResource:loadWeekSetting,
+									loadMonthResource:loadMonthSetting,
+									series:[{label:'this_Activity Force'},{label:'last_Activity Force'},
+									{label:'this_Commubucation Force'},
+									{label:'last_Commubucation Force'},
+									{label:'this_Attrative Force'},
+									{label:'last_Attrative Force'},
+									{label:'this_Coverage Force'},
+									{label:'last_Coverage Force'},
+									{label:'this_Close Force'},
+									{label:'last_Close Force'},
+									{label:'this_Lead Turn Turnover Rate'},
+									{label:'last_Lead Turn Turnover Rate'},
+									],
+									datasource:{data:[[37, 76, 28, 77, 30, 74, 10],
+													  [50, 90, 42, 89, 45, 77, 15],
+													  [51, 82, 38, 83, 40, 80, 20],
+													  [52, 83, 39, 84, 41, 81, 25],
+													  [53, 84, 40, 85, 42, 82, 30],
+													  [54, 85, 41, 86, 43, 83, 35],
+													  [37, 76, 28, 77, 30, 74, 40],
+													  [50, 90, 42, 89, 45, 77, 45],
+													  [51, 82, 38, 83, 40, 80, 50],
+													  [52, 83, 39, 84, 41, 81, 55],
+													  [53, 84, 40, 85, 42, 82, 60],
+													  [54, 85, 41, 86, 43, 83, 65]
+													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov']},head:'Attactive Force'">
 
 	</div>
 </div>

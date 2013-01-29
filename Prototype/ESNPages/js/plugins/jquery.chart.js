@@ -1,5 +1,26 @@
 (function($) {
 	
+	function cloneObj(obj) {
+		var objClone;
+	    if (obj.constructor == Object){
+	        objClone = new obj.constructor(); 
+	    }else{
+	        objClone = new obj.constructor(obj.valueOf()); 
+	    }
+	    for(var key in obj){
+	        if ( objClone[key] != obj[key] ){ 
+	            if ( typeof(obj[key]) == 'object' ){ 
+	                objClone[key] = cloneObj(obj[key]);
+	            }else{
+	                objClone[key] = obj[key];
+	            }
+	        }
+	    }
+	    objClone.toString = obj.toString;
+	    objClone.valueOf = obj.valueOf;
+	    return objClone; 
+	}
+	
 	Date.prototype.Format = function (fmt) { //author: meizz 
 	    var o = {
 	        "M+": this.getMonth() + 1, //月份 
@@ -25,26 +46,27 @@
 	maps['XJ'] = {x:265,y:102,label:'新疆'};
 	maps['XZ'] = {x:268,y:176,label:'西藏'};
 	maps['YN'] = {x:356,y:237,label:'云南'};
-	maps['WLM'] = {x:280,y:112,label:'乌鲁木齐'};
 	maps['HLJ'] = {x:507,y:43,label:'黑龙江'};
-	maps['NMG'] = {x:401,y:108,label:'内蒙古'};
+	maps['NMG'] = {x:401,y:107,label:'内蒙古'};
 	maps['GX'] = {x:409,y:238,label:'广西'};
 	maps['GZ'] = {x:399,y:218,label:'贵州'};
-	maps['HHH'] = {x:486,y:169,label:'呼和浩特'};
-	maps['HEB'] = {x:636,y:82,label:'哈尔滨'};
-	maps['CC'] = {x:602,y:112,label:'长春'};
-	maps['DL'] = {x:584,y:162,label:'大连'};
-	maps['BJ'] = {x:534,y:163,label:'北京'};
-	maps['TJ'] = {x:540,y:180,label:'天津'};
-	maps['YT'] = {x:574,y:198,label:'烟台'};
-	maps['LZ'] = {x:423,y:229,label:'兰州'};
+	maps['BJ'] = {x:448,y:106,label:'北京'};
 	maps['SC'] = {x:364,y:186,label:'四川'};
-	maps['QH'] = {x:319,y:149,label:'青海'};
-	maps['KM'] = {x:400,y:373,label:'昆明'};
-	maps['HK'] = {x:480,y:430,label:'海口'};
-	maps['GY'] = {x:446,y:346,label:'贵阳'};
-	maps['NN'] = {x:450,y:382,label:'南宁'};
-	maps['CQ'] = {x:457,y:300,label:'重庆'};
+	maps['CQ'] = {x:402,y:191,label:'重庆'};
+	maps['QH'] = {x:324,y:143,label:'青海'};
+	maps['GXU'] = {x:331,y:107,label:'甘肃'};
+	maps['NX'] = {x:387,y:133,label:'宁夏'};
+	maps['HN'] = {x:418,y:275,label:'海南'};
+	maps['JL'] = {x:503,y:72,label:'吉林'};
+	maps['LN'] = {x:489,y:92,label:'辽宁'};
+	maps['HB'] = {x:429,y:127,label:'河北'};
+	maps['SD'] = {x:463,y:139,label:'山东'};
+	maps['JS'] = {x:482,y:161,label:'江苏'};
+	maps['GD'] = {x:443,y:242,label:'广东'};
+	maps['HN'] = {x:426,y:205,label:'湖南'};
+	maps['HB'] = {x:482,y:161,label:'湖北'};
+	maps['HN'] = {x:436,y:160,label:'河南'};
+	maps['AH'] = {x:462,y:172,label:'安徽'};
 	
 	var rgbs = new Array([255,252],[210,128],[176,35]);
 	
@@ -148,9 +170,10 @@
 			addChartHeader(this);
 			setBorder(this);
 			
-			
 			state.datasource = datasource || opts.datasource;
-			$(this).esnChartDraw();
+			state.rawdata = state.datasource;
+			state.options.rawseries = state.options.series;
+			$(this).esnDraw();
 		});
 	};
 	
@@ -193,7 +216,9 @@
 			setBorder(this);
 			
 			state.datasource = datasource || opts.datasource;
-			$(this).esnMapDraw();
+			state.rawdata = state.datasource;
+			state.options.rawseries = state.options.series;
+			$(this).esnDraw();
 		});
 	};
 	
@@ -423,9 +448,11 @@
 		return chart;
 	}
 	
-	function addChartHeader(target){
-		var opts = $.data(target, 'chart').options;
-		var chart = $.data(target, 'chart').chart;
+	
+	function addHeader(target,cycles,menus){
+		var state = $.data(target, 'chart');
+		var opts =  state.options;
+		var chart = state.chart;
 		removeNode(chart.find('>div.chart-header'));
 		if (opts.head && !opts.noheader){
 			var header = $('<div class="chart-header"><div class="chart-title">'+opts.head +'</div></div>').prependTo(chart);
@@ -440,66 +467,128 @@
 					'<ul>' + 
 					'<li><a class="hide" href="javascript:void(0)"><img class="chart_tool_menu" src="image/timeType.png" width="20" height="20"/></a> ' + 
 					'<ul>' + 
-						'<li><a href="javascript:void(0)">Day</a></li>' + 
-						'<li><a href="javascript:void(0)">Week</a></li>' + 
-						'<li><a href="javascript:void(0)">Month</a></li>' + 
-					'</ul></li>' + 
+					createLis(cycles) + 
+					'</ul></li></ul>' + 
 				'</div>';
 				var menuOB =  $(menu).appendTo(tool);
 				menuOB.find("a[class!='hide']").each(function(i){
 					$(this).bind("click", function() {
-						drawChartCycle(target,opts['load' + $(this).html() + 'Resource']);
+						drawCycle(target,opts['load' + $(this).html() + 'Resource']);
 						return false;
 					});
 				});
 			}
 			//need to show format button?
 			if(opts.formatable){
-				
 				var menu = '<div class="menu">' + 
 					'<ul>' + 
 					'<li><a class="hide" href="javascript:void(0)"><img class="chart_tool_menu" src="image/action_icon.png" width="20" height="20"/></a> ' + 
 					'<ul>' + 
-						'<li><a href="javascript:void(0)">Line</a></li>' + 
-						'<li><a href="javascript:void(0)">Bar</a></li>' + 
-						'<li><a href="javascript:void(0)">Table</a></li>' + 
-					'</ul></li>' + 
+					createLis(menus) + 
+					'</ul></li></ul>' + 
 				'</div>';
 				var menuOB =  $(menu).appendTo(tool);
-				
 				menuOB.find("a[class!='hide']").each(function(i){
 					$(this).bind("click", function() {
-						if(i == 0){
-							$(target).drawLine();
-						}else if(i == 1){
-							$(target).drawBar();
-						}else if(i==2){
-							$(target).drawChartTable();
-						}
+						$.data(target, 'chart').options.view = $(this).text().toLowerCase();
+						$(target).esnDraw();
 						return false;
 					});
 				});
 			}
+			
 			if(opts.setting){
-				
 				var menu = '<div class="menu">' + 
 					'<ul>' + 
 					'<li><a class="hide" href="javascript:void(0)"><img class="chart_tool_menu" src="image/setting_icon.png" width="20" height="20"/></a> ' + 
-					'<ul>' + 
-					'</ul></li>' + 
+					'<ul>'  + 
+					'</ul></li></ul>' + 
 				'</div>';
 				var menuOB =  $(menu).appendTo(tool);
-				
-				menuOB.find("a[class!='hide']").each(function(i){
-					$(this).bind("click", function() {
-						return false;
+				menuOB.find("input").each(function(i){
+					$(this).bind("click", function(){
+						return true;
 					});
 				});
 			}
+			
+			if(opts.chooseable){
+				var menu = '<div class="menu lineCheck">' + 
+				'<ul>' + 
+				'<li><a href="javascript:void(0)"><img class="chart_tool_menu" src="image/setting_icon.png" width="20" height="20"/></a> ' + 
+				'<ul>' + createCheckboxs(['Activity Force','Communication Force','Attractive Force','Coverage Rate','Close Rate','Lead Turnover Rate']) + 
+				'</ul></li></ul>' + 
+				'</div>';
+				var menuOB =  $(menu).appendTo(tool);
+				menuOB.find(".chooseableImg").each(function(i){
+					$(this).bind("click", function(event){
+						resetDatasource(target);
+						$(target).esnDraw();
+						return true;
+					});
+				});
+			}
+			
 			chart.find('>div.chart-body').removeClass('chart-body-noheader');
 		} else {
 			chart.find('>div.chart-body').addClass('chart-body-noheader');
 		}
+	}
+	
+	function resetDatasource(target){
+		var lineCheck = $(target).prev().find('.lineCheck');
+		if(lineCheck.size() > 0){
+			var checked = lineCheck.find("img[value]");
+			var state = $.data(target, 'chart');
+			var datasource = cloneObj(state.rawdata);
+			var series = [];
+			datasource.data = [];
+			for(var i = 0; i < checked.length; i ++){
+				if($(checked[i]).attr('src').indexOf('_selected.png') > 0){
+					var index = parseInt($(checked[i]).attr('value'));
+					datasource.data.push(state.rawdata.data[index * 2]);
+					datasource.data.push(state.rawdata.data[index * 2 + 1]);
+					series.push(state.options.rawseries[index* 2] ||  ("series" + (index* 2 + 1)));
+					series.push(state.options.rawseries[index* 2 + 1] ||  ("series" + (index* 2 + 2)));
+					//datasource.data.push(state.rawdata.data[index]);
+					//series.push(state.options.rawseries[index] ||  ("series" + (index + 1)));
+				}
+			}
+			state.datasource = datasource;
+			state.options.series = series;
+		}
+	}
+	
+	function addChartHeader(target){
+		addHeader(target,['Day','Week','Month'],['Line','Bar','Table']);
+	}
+	
+	function createLis(array){
+		var lis = "";
+		for(var i = 0; i < array.length; i++){
+			lis += '<li><a href="javascript:void(0)">' + array[i] + '</a></li>';
+		}
+		return lis;
+	}
+	
+	$.fn.changeImg = function(This){
+		var img = This.find("img");
+		var src = img.attr('src');
+		if(src.indexOf('_selected.png') > 0){
+			src = src.replace('_selected.png','.png');
+		}else{
+			src = src.replace('.png','_selected.png');
+		}
+		img.attr('src',src);
+	};
+	
+	function createCheckboxs(array){
+		var lis = "";
+		for(var i = 0; i < array.length; i++){
+			lis += '<li style="vertical-align: top;height: 26px;"><a onclick="$.fn.changeImg($(this))" class ="men_img" href="javascript:void(0)"><img title="' + array[i]  +'" src="image/' + array[i].replace(new RegExp(" ","gm"), '')  +'_selected.png" value=' + i +'/></a></li>';
+		}
+		lis += '<li style="vertical-align: top;height: 13px;margin: 1px;"><img class="chooseableImg" src="image/ok.png"/></li>';
+		return lis;
 	}
 	
 	function setBorder(target){
@@ -514,27 +603,6 @@
 		}
 	}
 	
-	function drawChartCycle(target,cycle){
-		var state = $.data(target, 'chart');
-		state.datasource = cycle(target,state.options);
-		var mycanvas =$("#"+target.id).find('canvas')
-		if(mycanvas.hasClass('jqplot-barRenderer-highlight-canvas')){
-			destroyChart(state);
-			$(target).drawBar();
-			}
-		else if(mycanvas.hasClass('jqplot-lineRenderer-highlight-canvas')){
-			destroyChart(state);
-			$(target).drawLine();
-			}	
-		else if(mycanvas.hasClass('jqplot-pieRenderer-highlight-canvas')){
-			destroyChart(state);
-			$(target).drawPie();
-			}else{
-				destroyChart(state);
-				$(target).drawChartTable();
-				}
-	}
-	
 	$.fn.esnChartDraw = function(){
 		if(this.is(':visible')){
 			var opts = $.data(this[0], 'chart').options;
@@ -543,17 +611,21 @@
 				$(this).drawLine();
 			}else if(view == 'bar'){
 				$(this).drawBar();
-				$(this).addClass('chart-bar');
 			}else if(view=='table'){
-				$(this).addClass('chart-bar');
 				$(this).drawChartTable();
 			}else if(view=='pie'){
 				$(this).drawPie();
-				}
+			}
 		}
 	};
 	
-	$.fn.esnDraw  = $.fn.esnChartDraw;
+	$.fn.esnDraw = function(){
+		if(this.hasClass('esn-chart')){
+			this.esnChartDraw();
+		}else if(this.hasClass('esn-plat')){
+			this.esnMapDraw();
+		}
+	};
 	
 	$.fn.drawMap  = function(){
 		var state = $.data(this[0], 'chart');
@@ -644,99 +716,23 @@
 	};
 	
 	function addMapHeader(target){
-		var opts = $.data(target, 'chart').options;
-		var chart = $.data(target, 'chart').chart;
-		removeNode(chart.find('>div.chart-header'));
-		if (opts.head && !opts.noheader){
-			var header = $('<div class="chart-header"><div class="chart-title">'+opts.head +'</div></div>').prependTo(chart);
-			if (opts.iconCls){
-				header.find('.chart-title').addClass('chart-with-icon');
-				$('<div class="chart-icon"></div>').addClass(opts.iconCls).appendTo(header);
-			}
-			var tool = $('<div class="chart-tool"></div>').appendTo(header);
-			
-			if(opts.timeable){
-				var menu = '<div class="menu">' + 
-					'<ul>' + 
-					'<li><a class="hide" href="javascript:void(0)"><img class="chart_tool_menu" src="image/timeType.png" width="20" height="20"/></a> ' + 
-					'<ul>' + 
-						'<li><a href="javascript:void(0)">Day</a></li>' + 
-						'<li><a href="javascript:void(0)">Week</a></li>' + 
-						'<li><a href="javascript:void(0)">Month</a></li>' + 
-					'</ul></li>' + 
-				'</div>';
-				var menuOB =  $(menu).appendTo(tool);
-				menuOB.find("a[class!='hide']").each(function(i){
-					$(this).bind("click", function() {
-						drawMapCycle(target,opts['load' + $(this).html() + 'Resource']);
-						return false;
-					});
-				});
-			}
-			//need to show format button?
-			if(opts.formatable){
-				
-				var menu = '<div class="menu">' + 
-					'<ul>' + 
-					'<li><a class="hide" href="javascript:void(0)"><img class="chart_tool_menu" src="image/action_icon.png" width="20" height="20"/></a> ' + 
-					'<ul>' + 
-						'<li><a href="javascript:void(0)">Map</a></li>' + 
-						'<li><a href="javascript:void(0)">Table</a></li>' + 
-					'</ul></li>' + 
-				'</div>';
-				var menuOB =  $(menu).appendTo(tool);
-				
-				menuOB.find("a[class!='hide']").each(function(i){
-					$(this).bind("click", function() {
-						if(i == 0){
-							$(target).drawMap();
-						}else{
-							$(target).drawMapTable();
-						}
-						return false;
-					});
-				});
-			}
-			if(opts.setting){
-				
-				var menu = '<div class="menu">' + 
-					'<ul>' + 
-					'<li><a class="hide" href="javascript:void(0)"><img class="chart_tool_menu" src="image/setting_icon.png" width="20" height="20"/></a> ' + 
-					'<ul>' + 
-					'</ul></li>' + 
-				'</div>';
-				var menuOB =  $(menu).appendTo(tool);
-				
-				menuOB.find("a[class!='hide']").each(function(i){
-					$(this).bind("click", function() {
-						return false;
-					});
-				});
-			}
-			
-			chart.find('>div.chart-body').removeClass('chart-body-noheader');
-		} else {
-			chart.find('>div.chart-body').addClass('chart-body-noheader');
-		}
+		addHeader(target,['Day','Week','Month'],['Map','Table']);
 	}
 	
-	function drawMapCycle(target,cycle){
+	function drawCycle(target,cycle){
 		var state = $.data(target, 'chart');
+		destroyChart(state);
 		state.datasource = cycle(target,state.options);
-		if($("#"+target.id).find('table').length>0){
-			destroyChart(state);
-		    $(target).drawMapTable();
-			}else{
-		    destroyChart(state);
-		    $(target).drawMap();
-			}
+		state.rawdata = state.datasource;
+		resetDatasource(target);
+		$(target).esnDraw();
 	}
 	
 	$.fn.esnMapDraw = function(){
 		if(this.is(':visible')){
 			var opts = $.data(this[0], 'chart').options;
 			var view = opts.view || 'table';
-			if(view == 'plat'){
+			if(view == 'map' || view == 'plat'){
 				$(this).drawMap();
 			}else{
 				$(this).drawMapTable();
@@ -746,7 +742,7 @@
 	
 	$.fn.map.defaults = {
 			formatable:true,	
-			setting:true,
+			setting:false,
 			timeable:true,
 			defaultHeight:300,
 			loadDayResource:function(target,options){return;},
@@ -757,8 +753,9 @@
 	
 	$.fn.chart.defaults = {
 			formatable:true,	
-			setting:true,
+			setting:false,
 			timeable:true,
+			chooseable:false,
 			defaultHeight:300,
 			loadDayResource:function(target,options){return;},
 			loadWeekResource:function(target,options){return;},

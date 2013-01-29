@@ -154,6 +154,12 @@ function loadDayMap(target, options) {
 		}, {
 			name : 'SC',
 			value : 50
+		}, {
+			name : 'BJ',
+			value : 50
+		}, {
+			name : 'NX',
+			value : 50
 		} ],
 		updateTime : 'Day'
 	}
@@ -172,6 +178,12 @@ function loadDayMap1(target, options) {
 		}, {
 			name : 'HLJ',
 			value : 90
+		}, {
+			name : 'JS',
+			value : 50
+		}, {
+			name : 'HN',
+			value : 50
 		} ],
 		updateTime : 'Day'
 	}
@@ -190,6 +202,12 @@ function loadWeekMap(target, options) {
 		}, {
 			name : 'HLJ',
 			value : 90
+		}, {
+			name : 'HB',
+			value : 50
+		}, {
+			name : 'HN',
+			value : 50
 		} ],
 		updateTime : 'Week'
 	}
@@ -203,8 +221,14 @@ function loadWeekMap1(target, options) {
 			name : 'HLJ',
 			value : 20
 		}, {
+			name : 'AH',
+			value : 50
+		}, {
 			name : 'YN',
 			value : 30
+		}, {
+			name : 'HB',
+			value : 50
 		}, {
 			name : 'NMG',
 			value : 80
@@ -217,6 +241,15 @@ function loadMonthMap(target, options) {
 		data : [ {
 			name : 'XJ',
 			value : 10
+		}, {
+			name : 'NMG',
+			value : 50
+		}, {
+			name : 'LN',
+			value : 50
+		}, {
+			name : 'SC',
+			value : 50
 		}, {
 			name : 'XZ',
 			value : 20
@@ -233,11 +266,17 @@ function loadMonthMap(target, options) {
 function loadMonthMap1(target, options) {
 	return {
 		data : [ {
-			name : 'GX',
+			name : 'GXU',
 			value : 60
 		}, {
 			name : 'GZ',
 			value : 70
+		}, {
+			name : 'SD',
+			value : 50
+		}, {
+			name : 'GD',
+			value : 50
 		}, {
 			name : 'NMG',
 			value : 80
@@ -266,5 +305,45 @@ function loadMonthPie(target, options) {
 	return {
 		data : [ [ 'Light Industry', 14 ], [ 'Out of home', 16 ],
 				[ 'Commuting', 7 ], [ 'Orientation', 9 ] ]
+	}
+}
+
+function loadDaySetting(target, cycle) {
+	return {
+		data : [ [ 37, 76, 28, 77, 30, 74, 10 ],
+				[ 50, 90, 42, 89, 45, 77, 15 ], [ 51, 82, 38, 83, 40, 80, 20 ],
+				[ 52, 83, 39, 84, 41, 81, 25 ], [ 53, 84, 40, 85, 42, 82, 30 ],
+				[ 54, 85, 41, 86, 43, 83, 35 ], [ 37, 76, 28, 77, 30, 74, 40 ],
+				[ 50, 90, 42, 89, 45, 77, 45 ], [ 51, 82, 38, 83, 40, 80, 50 ],
+				[ 52, 83, 39, 84, 41, 81, 55 ], [ 53, 84, 40, 85, 42, 82, 60 ],
+				[ 54, 85, 41, 86, 43, 83, 65 ] ],
+		xlabel : [ '29-Oct', '30-Oct', '31-Oct', '1-Nov', '2-Nov', '3-Nov',
+				'4-Nov' ]
+	}
+}
+function loadWeekSetting(target, cycle) {
+	return {
+		data : [ [ 37, 76, 28, 77, 30, 74, 10 ],
+				[ 50, 90, 42, 89, 45, 77, 15 ], [ 51, 82, 38, 83, 40, 80, 20 ],
+				[ 52, 83, 39, 84, 41, 81, 25 ], [ 53, 84, 40, 85, 42, 82, 30 ],
+				[ 54, 85, 41, 86, 43, 83, 35 ], [ 37, 76, 28, 77, 30, 74, 40 ],
+				[ 50, 90, 42, 89, 45, 77, 45 ], [ 51, 82, 38, 83, 40, 80, 50 ],
+				[ 52, 83, 39, 84, 41, 81, 55 ], [ 53, 84, 40, 85, 42, 82, 60 ],
+				[ 54, 85, 41, 86, 43, 83, 65 ] ],
+		xlabel : [ 'Week1', 'Week2', 'Week3', 'Week4', 'Week5', 'Week6',
+				'Week7' ]
+	}
+}
+function loadMonthSetting(target, cycle) {
+	return {
+		data : [ [ 37, 76, 28, 77, 30, 74, 10 ],
+				[ 50, 90, 42, 89, 45, 77, 15 ], [ 51, 82, 38, 83, 40, 80, 20 ],
+				[ 52, 83, 39, 84, 41, 81, 25 ], [ 53, 84, 40, 85, 42, 82, 30 ],
+				[ 54, 85, 41, 86, 43, 83, 35 ], [ 37, 76, 28, 77, 30, 74, 40 ],
+				[ 50, 90, 42, 89, 45, 77, 45 ], [ 51, 82, 38, 83, 40, 80, 50 ],
+				[ 52, 83, 39, 84, 41, 81, 55 ], [ 53, 84, 40, 85, 42, 82, 60 ],
+				[ 54, 85, 41, 86, 43, 83, 65 ] ],
+		xlabel : [ 'Month1', 'Month2', 'Month3', 'Month4', 'Month5', 'Month6',
+				'Month7' ]
 	}
 }
