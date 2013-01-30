@@ -39,6 +39,7 @@ ul li {
 .socialChart ul li,#chart1,#chart2,#chart3,#chart4,#chart5,#chart6,#chart7,#chart8,#chart9,#chart10,#chart11,#chart12,#chart13,#chart14
 	{
 	width: 613px;
+	float:left;
 }
 .cycleNav ul li{
 	background-image: url(../image/setting_bg.png);

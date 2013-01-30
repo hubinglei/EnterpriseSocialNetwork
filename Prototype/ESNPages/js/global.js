@@ -55,10 +55,19 @@ $(function() {
 	// page refresh
 
 	window.onbeforeunload = function() {
+		if(window.sessionStorage){
 		sessionStorage.setItem("page", page);
+		}else{
+			$.cookie("page",page) 
+			}
 	}
 	window.onload = function() {
-		var page = sessionStorage.getItem("page")
+		var page;
+		if(window.sessionStorage){
+		 page= sessionStorage.getItem("page")
+		}else{
+			page=$.cookie("page");
+			}
 		reload(page);
 	}
 
