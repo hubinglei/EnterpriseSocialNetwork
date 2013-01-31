@@ -1,6 +1,6 @@
 $(function() {
 	page = "influenceDash"
-
+	navSelected("dash");
 	function replotChart() {
 		$('.esn-chart').each(function(i) {
 			$(this).esnDraw();

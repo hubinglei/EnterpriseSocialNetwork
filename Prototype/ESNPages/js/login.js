@@ -1,6 +1,7 @@
 $(function() {		   
 	//click "enter" key		
 	page="login"
+	$("#nav > .navItem").removeClass("navActive");
 	$("input[name='password']").keydown(function(e) {
 		if (e.keyCode == 13) {
 			$("#loginButton").click();
@@ -30,6 +31,8 @@ $(function() {
 
 							if (userAccout == "admin" && password == "admin") {
 								$("#wrapper").load("homeNav.html");
+								window.location.hash="#homeNav"
+								$("#userInfor").show();
 								navSelected("home")
 								
 							}

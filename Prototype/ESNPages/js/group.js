@@ -1,7 +1,7 @@
 $(function() {
 
 	$(".navigate").css("margin-top", "-" + $("#wrapper").height())
-
+	navSelected("network");
 	// scroll to my content
 	$('.navList li').click(
 			function() {

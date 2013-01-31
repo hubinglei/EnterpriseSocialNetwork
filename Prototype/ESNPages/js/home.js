@@ -73,6 +73,7 @@ $(function() {
 	$(".arrowRight").click(function() {
 		navSelected(pos)
 		$("#wrapper").load(pos+"Nav.html");
+		window.location.hash="#"+pos+"Nav";
 								});
 	
 });

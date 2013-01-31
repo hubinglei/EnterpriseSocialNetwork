@@ -6,4 +6,5 @@ $("#nav > .navItem").click(function(event) {
 	    $("#userInfor").show();
 		$("#wrapper").load($(this).attr("id")+"Nav.html");
 	});
+
 });

@@ -7,7 +7,9 @@ function showRightNav(id) {
 }
 function navSelected(id) {
 	$("#nav > .navItem").removeClass("navActive");
+	if($("#" + id)){
 	$("#" + id).addClass("navActive");
+	}
 }
 
 function networkNav2(id) {
@@ -17,14 +19,12 @@ function networkNav2(id) {
 	$("#" + id).show();
 }
 function navActive(page) {
-	if (page == "login" || page == null) {
+	if ( page == null||page==""||page.indexOf("login") > -1) {
 		$("#userInfor").hide();
 		$("#authorcontent").show();
 	} else {
 		$("#userInfor").show();
 		$("#authorcontent").hide();
-	}
-
 	if (page.indexOf("home") > -1) {
 		$("#home").addClass("navActive");
 	} else if (page.indexOf("config") > -1) {
@@ -46,33 +46,18 @@ function navActive(page) {
 	} else if (page.indexOf("channel") > -1) {
 		$("#channel").addClass("navActive");
 	}
+   }
 }
+
 function reload(page) {
 	navActive(page)
 	$("#wrapper").load(page + ".html");
 }
+
 $(function() {
-	// page refresh
-
-	window.onbeforeunload = function() {
-		if(window.sessionStorage){
-		sessionStorage.setItem("page", page);
-		}else{
-			$.cookie("page",page) 
-			}
-	}
-	window.onload = function() {
-		var page;
-		if(window.sessionStorage){
-		 page= sessionStorage.getItem("page")
-		}else{
-			page=$.cookie("page");
-			}
-		reload(page);
-	}
-
 	$(".arrowLeft").click(function() {
-		$("#wrapper").load("homeNav.html");
+		$("#wrapper").load("homeNav.html", null, function() { });
+		window.location.hash="#homeNav"
 	})
 
 	// top button

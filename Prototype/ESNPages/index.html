@@ -2,6 +2,8 @@
   <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" " http://www.w3.org/TR/html4/strict.dtd">
 <![endif]-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
 <link href="css/global.css" rel="stylesheet" type="text/css" />
 <link href="css/header.css" rel="stylesheet" type="text/css" />
 <link href="css/login.css" rel="stylesheet" type="text/css" />
@@ -9,9 +11,10 @@
 <link href="css/jquery.jqplot.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/header.js"></script>
-<script type="text/javascript" src="js/global.js"></script>
 <script type="text/javascript" src="js/login.js"></script>
-<script type="text/javascript" src="js/plugins/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/plugins/jquery.history.js"></script>
+<script type="text/javascript" src="js/history.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
 </head>
 <body>
 <div id="headerBg">
@@ -23,20 +26,20 @@
 			</h1>
 		</div>
 		<div id="nav">
-			<a id="home" class="navItem" target="content"> <img
+			<a id="home" class="navItem" href="#homeNav"> <img
 				src="image/home_small.png"><br> Home </a> <a id="dash"
-				class="navItem "  target="content"> <img src="image/Dash_small.png"><br>
-				Dash </a> <a id="network" class="navItem " target="_self" > <img
+				class="navItem "   href="#dashNav"> <img src="image/Dash_small.png"><br>
+				Dash </a> <a id="network" class="navItem " href="#networkNav" > <img
 				src="image/Network_small.png"><br> Network </a> <a id="plan"
-				class="navItem " > <img src="image/Plan_small.png"><br>
+				class="navItem"> <img src="image/Plan_small.png"><br>
 				Plan </a> <a id="activity" class="navItem "> <img
 				src="image/Activity_small.png"><br> Activity </a> <a
-				id="media" class="navItem "> <img
+				id="media" class="navItem"  href="#mediaNav"> <img
 				src="image/Media_small.png"><br> Media </a> <a id="channel"
-				class="navItem "> <img
+				class="navItem"> <img
 				src="image/Chanel_small.png"><br> Channel </a>
                  <a id="config"
-				class="navItem"  target="content"> <img
+				class="navItem" href="#configNav"> <img
 				src="image/config.png"><br>  Config </a>
 		</div>
         <div id="userInfor">
