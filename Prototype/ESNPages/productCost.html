@@ -1,5 +1,7 @@
 <link href="css/group.css" rel="stylesheet" type="text/css" />
+<link href="css/progress.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
 <script type="text/javascript" src="js/companyCost.js"></script>
 <script type="text/javascript" src="js/global.js"></script>
 <script type="text/javascript" src="js/data.js"></script>
@@ -44,6 +46,60 @@
 		Maintenance
 	</div>
 </div>
+<table width="850" border="0" class="tableSummary1 marketingContent"
+	cellspacing="0">
+	<tr class="tableTitle">
+		<td colspan="7">Marketing Plan List
+			<div class="tableButton">
+				<ul>
+					<li><img src="image/timeType.png" width="20" height="20" /></li>
+					<li><img src="image/action_icon.png" width="20" height="20" />
+					</li>
+					<li><img src="image/setting_icon.png" width="20" height="20" />
+					</li>
+				</ul>
+		</td>
+	</tr>
+	<tr class="tableTitle1">
+        <td>Product</td>
+        <td>Marketing Plan</td>
+		<td>Start Time</td>
+		<td>End Time</td>
+		<td>Cost</td>
+		<td>Planned Status</td>
+		<td>Plan Schedule</td>
+	</tr>
+	<tr>
+        <td>Computer</td>
+		<td>Plan1</td>
+        <td>2012/1/28</td>
+         <td>2012/1/28</td>
+		<td>$300</td>
+        <td>On Going</td>
+		<td><progress value="65" max="100"></progress></td>
+		
+	</tr>
+	<tr>
+        <td>Computer</td>
+		<td>Plan2</td>
+        <td>2012/1/28</td>
+         <td>2012/1/28</td>
+		<td>$300</td>
+        <td>On Going</td>
+		<td><progress value="88" max="100"></progress></td>
+	</tr>
+	<tr>
+        <td>Computer</td>
+		<td>Plan1</td>
+        <td>2012/1/28</td>
+         <td>2012/1/28</td>
+		<td>$600</td>
+        <td>Finished</td>
+		<td><progress value="100" max="100"></progress></td>
+	</tr>
+</table>
+<div class="blank"></div>
+
 <div id="chartcost" class="esn-chart marketingContent"
 	data-options="formatable:true,setting:true,timeable:true,
 									legend:true,

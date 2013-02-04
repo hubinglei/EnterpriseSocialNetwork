@@ -1,6 +1,7 @@
 $(function() {		   
-	//click "enter" key		
+		
 	page="login"
+	//click "enter" key	
 	$("#nav > .navItem").removeClass("navActive");
 	$("input[name='password']").keydown(function(e) {
 		if (e.keyCode == 13) {

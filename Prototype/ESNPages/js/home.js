@@ -57,12 +57,14 @@ $(function() {
 
 	// social campaingn plan
 	$("#socialCampaign").click(function() {
-
+	 pos="plan"
+	 showRightNav("planNav");
 	})
 
 	// activity automation
 	$("#activityAutomation").click(function() {
-
+	 pos="activity"
+	 showRightNav("activityNav");
 	})
 
 	// channel maintenace

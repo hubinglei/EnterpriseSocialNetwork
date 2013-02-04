@@ -8,7 +8,8 @@
             }
             $('#wrapper').load(hash +".html");
         } else if(origContent != "") {
-            $('#wrapper').html(origContent);
+			$('#userInfor').hide();
+            $('#wrapper').load('login.html');
         }
     }
 
@@ -21,11 +22,6 @@
                     $.history.load(url);
                     return false;
                 });
-			window.onload = function() {
-				var newHash=window.location.hash;
-				navActive(newHash)
-		
-	       }
 		
         });
 })(jQuery);
