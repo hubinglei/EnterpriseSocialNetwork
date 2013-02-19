@@ -1,17 +1,90 @@
 <link href="css/global.css" rel="stylesheet" type="text/css" />
+<link href="css/plan.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" language="javascript"
+	src="js/plugins/jquery.dataTables.js"></script>
 <script type="text/javascript" src="js/global.js"></script>
 <script type="text/javascript" src="js/plan.js"></script>
-	<div id="homecontent">
-		<div class="rightNav" id="planNav">
-			<a class="arrowLeft"><img src="image/arrow_left.png"
-				class="arrow"> </a>
-			<div class="homeNavTitle">plan Automation</div>
-			<div class="homeNav1 tile">
-				<img src="image/influenceAnalysis.png"><br>Automation Configuration
-			</div>
-			<div class="homeNav2 tile">
-				<img src="image/sentimentAnalysis.png"><br>Automation Event Handing
-			</div>
-		</div>
+<div id="homecontent">
+	<div class="palnTitle">Plan Formulation</div>
+	<div>
+		<span id="marketPlan">Marketing Plan</span><span
+			style="margin-left: 30px;" id="marketActivities" class="palnTitle">Marketing
+			Activities</span>
 	</div>
+	<div class="searchBg1"></div>
+	<table cellpadding="0" cellspacing="0" border="1"
+		class="display marketingPlan">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Associated Entity</th>
+				<th>Start Time</th>
+				<th>Completion Time</th>
+				<th>Responsible Department</th>
+				<th>Statistical Account</th>
+				<th style="width: 300px;">Master Budget
+					<div id="new"></div></th>
+			</tr>
+		</thead>
+		<tfoot>
+			<tr>
+				<th><input type="text" name="search_name" value="Name"
+					class="search_init" /></th>
+				<th><input type="text" name="search_associated_entity"
+					value="Associated Entity" class="search_init" /></th>
+				<th><input type="text" name="search_start_time"
+					value="Start Time" class="search_init" /></th>
+				<th><input type="text" name="search_completion_time"
+					value="Completion Time" class="search_init" /></th>
+				<th><input type="text" name="search_responsible_department"
+					value="Responsible Department" class="search_init" /></th>
+				<th><input type="text" name="search_statistical_account"
+					value="Statistical Account" class="search_init" /></th>
+				<th><input type="text" name="search_master_budget"
+					value="Master Budget" class="search_init" /></th>
+			</tr>
+		</tfoot>
+		<tbody>
+			<tr>
+				<td>Plan1</td>
+				<td>Entity1</td>
+				<td>2012.10.12</td>
+				<td>2013.1.12</td>
+				<td>Design Department</td>
+				<td>youda\lily</td>
+				<td>$7000</td>
+			</tr>
+			<tr>
+				<td>Plan2</td>
+				<td>Entity2</td>
+				<td>2012.10.12</td>
+				<td>2013.1.12</td>
+				<td>Design Department</td>
+				<td>youda\lily</td>
+				<td>$7000</td>
+			</tr>
+			<tr>
+				<td>Plan3</td>
+				<td>Entity3</td>
+				<td>2012.10.12</td>
+				<td>2013.1.12</td>
+				<td>Design Department</td>
+				<td>youda\lily</td>
+				<td>$1000</td>
+			</tr>
+			<tr>
+				<td>Plan4</td>
+				<td>Entity4</td>
+				<td>2012.10.12</td>
+				<td>2013.1.12</td>
+				<td>Design Department</td>
+				<td>youda\lily</td>
+				<td>$8000</td>
+			</tr>
+		</tbody>
+
+	</table>
+</div>
+<div class="topButton">Top</div>
+</div>

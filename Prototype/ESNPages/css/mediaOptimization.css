@@ -1,0 +1,31 @@
+.optimizationLeft {
+	width: 200px;
+	height: 600px;
+	margin: 10px 30px 0 -120px;
+	line-height: 25px;
+	padding-left: 25px;
+	float: left;
+	color: #25799f;
+	background-color:#ced9d4;
+}	
+.nav{
+	margin-left:10px;
+}
+.mediaTitle{
+	 background: url("../image/Chart_bg2.png") repeat scroll 0 0 transparent;
+	 height: 35px;
+    width: 850px;
+	float:right;
+	color: rgb(35, 160, 216);
+	font-size: 18px;
+	line-height:35px;
+	padding-left:10px;
+	
+}
+.mediaTitle input{
+	float:right;
+	height:30px;
+	margin-top:3px;
+	line-height:30px;
+	color: #0099ff;
+}

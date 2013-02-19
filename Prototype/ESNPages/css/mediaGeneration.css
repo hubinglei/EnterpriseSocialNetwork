@@ -1,0 +1,29 @@
+.twitter,.sharepoint,.hpconnect,.linkin,.onehp,.facebook{
+	width:27px;
+	height:27px;
+	float:right;
+	margin-top: -20px;
+	margin-left:1px;
+}
+.twitter{
+	background:url(../image/twitter_gray.png);
+}
+.sharepoint{
+	background:url(../image/sharepoint_gray.png);
+}
+.hpconnect{
+	background:url(../image/hpconnect_gray.png);
+}
+.linkin{
+	background:url(../image/linkedin_gray.png);
+}
+.onehp{
+	background:url(../image/onehp_gray.png);
+}
+.facebook{
+	background:url(../image/facebook_gray.png);
+}
+
+.imgList img{
+	padding-left:10px;
+}

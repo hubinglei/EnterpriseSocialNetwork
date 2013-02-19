@@ -1,0 +1,70 @@
+.title{
+	font-size: 18px;
+	margin-left: -120px;
+	color: rgb(35, 160, 216);
+	}
+.navLeft {
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.75), 0 0 1px rgba(164, 164, 164, 1)
+		inset;
+	width: 200px;
+	height: 420px;
+	margin: 30px 30px 0 -120px;
+	line-height: 35px;
+	padding-left: 25px;
+	float: left;
+	color: rgb(35, 160, 216);
+}	
+.click_down{
+	float:right;
+	width:16px;
+	height:12px;
+	margin-top:-5px;
+	margin-left: 10px;
+	background-image:url(../image/embeddown.png);
+}
+
+.click_up{
+	float:right;
+	width:16px;
+	height:12px;
+	margin-top:-5px;
+	background-image:url(../image/embedup.png);
+}
+
+.categoryTitle{
+	font-weight:bold;
+}
+.mediatitle1{
+	padding-left:10px;
+	font-size: 18px;
+	padding-top: 10px;
+	color: rgb(35, 160, 216);
+}
+.mediaGroup{
+	margin-left:140px;
+}
+.descript p{
+	color: rgb(35, 160, 216);
+}
+
+.action{
+	float:right
+}
+.open,.right,.filter,.interface{
+	width:23px;
+	height:23px;
+	float:right;
+}
+.open{
+	background:url(../image/bluepen.png)
+}
+.right{
+	background:url(../image/blueright.png);
+}
+.filter{
+	background:url(../image/bluefilter.png);
+}
+.interface{
+	background:url(../image/blueinterface.png);
+}
+	

@@ -1,0 +1,21 @@
+.title{
+	font-size: 18px;
+	margin-left: -120px;
+	color: rgb(35, 160, 216);
+	}
+.engagementLeft {
+	width: 200px;
+	height: 600px;
+	margin: 10px 30px 0 -120px;
+	line-height: 25px;
+	padding-left: 25px;
+	float: left;
+	color: #25799f;
+	background-color:#ced9d4;
+}	
+.nav{
+	margin-left:10px;
+}
+.categoryTitle{
+	font-weight:bold;
+}

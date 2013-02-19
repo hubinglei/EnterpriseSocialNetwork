@@ -1,0 +1,107 @@
+table.display thead th {
+background-color: #c6c7c7;
+cursor: pointer;
+}
+#homecontent{
+	margin: 0 -120px;
+    overflow-y: auto !important;
+}
+.dataTables_filter{
+	float:right;
+	margin-top: -40px;
+	margin-right: 50px;
+}
+table{
+	width:1240px;
+	background-color:white;
+	}
+td input{
+	width:60px;
+}
+table tr td,th {
+border-color: #e1dddd;
+height:35px;
+line-height:35px;
+text-align: center;
+}
+table.display tr.row_selected td {
+background-color: #E6ECEF;
+}
+.palnTitle{
+	color: #23A0D8;
+    font-size: 17px;
+	 margin-bottom: 10px
+}
+.dataTables_wrapper{
+	 margin-top: 10px
+	}
+.saveButton{
+	background-image:url(../image/okButton.png);
+	
+}
+.saveButton,.cancleButton{
+	width:52px;
+	height:29px;
+	text-align: center;
+	color:white;
+	line-height:29px;
+	float:right;
+}
+.cancleButton{
+	background-image:url(../image/cancel.png);
+}
+.star{
+	background:url(../image/star_all.png);
+	width:16px;
+	height:15px;
+}
+.lock{
+	background:url(../image/Lock.png);
+	width:12px;
+	height:16px;
+}
+.editp{
+	background:url(../image/pencil_blue.png);
+	width:13px;
+	height:13px;
+}
+.delete{
+	background:url(../image/delete_blue.png);
+	width:12px;
+	height:12px;
+}
+ul li{
+	display:inline-block;
+	padding: 5px;
+	margin-top: -10px;
+}
+ul{
+	float:right;
+}
+.searchBg{
+	background-image: url("../image/overview_bg1.png");
+	 height: 44px;
+    line-height: 44px;
+}
+.searchBg1{
+	background-image: url("../image/overview3.png");
+	 height: 44px;
+    line-height: 44px;
+}
+label input {
+    border-radius: 1px 1px 1px 1px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.4), 0 0 0 #4D2F2F;
+    height: 30px;
+    width: 258px;
+	margin-top: -4px;
+}
+span{
+	cursor:pointer;
+}
+#new{
+	background:url(../image/addButton.png);
+	width:39px;
+	height:26px;
+	float:right;
+	margin:4px 10px 0  0;
+}
