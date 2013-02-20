@@ -57,8 +57,8 @@ $(function() {
 
 	// social campaingn plan
 	$("#socialCampaign").click(function() {
-	 //pos="plan"
-	// showRightNav("planNav");
+	 pos="plan"
+	 showRightNav("planNav");
 	})
 
 	// activity automation

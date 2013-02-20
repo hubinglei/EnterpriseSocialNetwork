@@ -27,3 +27,55 @@
 .imgList img{
 	padding-left:10px;
 }
+.mediaPic{
+	margin-top:20px;
+}
+.mediaButton,.mediaButton1{
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.75), 0 0 1px rgba(164, 164, 164, 1)
+		inset;
+	height: 20px;
+		border-radius:4px;
+	line-height: 20px;
+	float: left;
+	color: rgb(35, 160, 216);
+}
+.mediaButton{
+	width:70px;
+}
+.mediaButton1{
+	width:100px;
+	margin-left: 10px;
+}
+.addMediatitle, input{
+	color:#A6A5A5;
+}
+input{
+	width:860px;
+	margin-left:10px;
+}
+.addDocument{
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.75), 0 0 1px rgba(164, 164, 164, 1)
+		inset;
+	height: 40px;
+	border-radius:4px;
+	text-align:center;
+	width:150px;
+	line-height: 30px;
+	margin-left:10px;
+	color:#A6A5A5;
+}
+
+.cancleButton {
+    background-image: url("../image/cancel.png");
+}
+.saveButton, .cancleButton {
+    color: white;
+    float: right;
+    height: 29px;
+    line-height: 29px;
+    text-align: center;
+    width: 52px;
+}
+.saveButton {
+    background-image: url("../image/okButton.png");
+}
