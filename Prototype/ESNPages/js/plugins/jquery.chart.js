@@ -1,4 +1,175 @@
+// @sourceURL = jquery.chart.js
 (function($) {
+	
+	$.jqplot.PlanShapeRenderer = function(){
+        $.jqplot.ShapeRenderer.call(this);
+    };
+    
+    $.jqplot.PlanShapeRenderer.prototype = new $.jqplot.ShapeRenderer();
+    $.jqplot.PlanShapeRenderer.prototype.constructor = $.jqplot.PlanShapeRenderer;
+    
+    $.jqplot.PlanShapeRenderer.prototype.draw = function(ctx, points, options) {
+        ctx.save();
+        var opts = (options != null) ? options : {};
+        var fill = (opts.fill != null) ? opts.fill : this.fill;
+        var closePath = (opts.closePath != null) ? opts.closePath : this.closePath;
+        var fillRect = (opts.fillRect != null) ? opts.fillRect : this.fillRect;
+        var strokeRect = (opts.strokeRect != null) ? opts.strokeRect : this.strokeRect;
+        var clearRect = (opts.clearRect != null) ? opts.clearRect : this.clearRect;
+        var isarc = (opts.isarc != null) ? opts.isarc : this.isarc;
+        var linePattern = (opts.linePattern != null) ? opts.linePattern : this.linePattern;
+        var ctxPattern = $.jqplot.LinePattern(ctx, linePattern);
+        ctx.lineWidth = opts.lineWidth || this.lineWidth;
+        ctx.lineJoin = opts.lineJoin || this.lineJoin;
+        ctx.lineCap = opts.lineCap || this.lineCap;
+        ctx.strokeStyle = (opts.strokeStyle || opts.color) || this.strokeStyle;
+        ctx.fillStyle = opts.fillStyle || this.fillStyle;
+        ctx.beginPath();
+        if (isarc) {
+            ctx.arc(points[0], points[1], points[2], points[3], points[4], true);   
+            if (closePath) {
+                ctx.closePath();
+            }
+            if (fill) {
+                ctx.fill();
+            }
+            else {
+                ctx.stroke();
+            }
+            ctx.restore();
+            return;
+        }
+        else if (clearRect) {
+            ctx.clearRect(points[0], points[1], points[2], points[3]);
+            ctx.restore();
+            return;
+        }
+        else if (fillRect || strokeRect) {
+            if (fillRect) {
+                ctx.fillRect(points[0], points[1], points[2], points[3]);
+            }
+            if (strokeRect) {
+                ctx.strokeRect(points[0], points[1], points[2], points[3]);
+                ctx.restore();
+                return;
+            }
+        }
+        else if (points && points.length){
+            var move = true;
+            //var padString = $(ctx.canvas.parentElement).attr('pad');
+            var pad = 0;
+            //if(padString ){
+            	//pad = parseInt(padString);
+            //}
+            $(ctx.canvas.parentElement).attr('pad',pad + 2);
+            for (var i=0; i<points.length; i++) {
+                if (points[i][0] != null && points[i][1] != null) {
+                    if (move) {
+                        ctxPattern.moveTo(points[i][0], points[i][1]);
+                        move = false;
+                    }
+                    else {
+                        var y = points[i][1] + (points[i - 1][1] - points[i][1]) / 2 + pad;
+                        ctxPattern.lineTo(points[i - 1][0], y);
+                        ctxPattern.lineTo(points[i][0], y);
+                        ctxPattern.lineTo(points[i][0], points[i][1]);
+                    }
+                }
+                else {
+                    move = true;
+                }
+            }
+            if (closePath) {
+                ctxPattern.closePath();
+            }
+            if (fill) {
+                ctx.fill();
+            }
+            else {
+                ctx.stroke();
+            }
+        }
+        ctx.restore();
+    };
+    
+    
+    $.jqplot.PlanShadowRenderer = function(){
+        $.jqplot.ShadowRenderer.call(this);
+    };
+    
+    $.jqplot.PlanShadowRenderer.prototype = new $.jqplot.ShadowRenderer();
+    $.jqplot.PlanShadowRenderer.prototype.constructor = $.jqplot.PlanShadowRenderer;
+    
+    $.jqplot.PlanShadowRenderer.prototype.draw = function(ctx, points, options) {
+        ctx.save();
+        var opts = (options != null) ? options : {};
+        var fill = (opts.fill != null) ? opts.fill : this.fill;
+        var fillRect = (opts.fillRect != null) ? opts.fillRect : this.fillRect;
+        var closePath = (opts.closePath != null) ? opts.closePath : this.closePath;
+        var offset = (opts.offset != null) ? opts.offset : this.offset;
+        var alpha = (opts.alpha != null) ? opts.alpha : this.alpha;
+        var depth = (opts.depth != null) ? opts.depth : this.depth;
+        var isarc = (opts.isarc != null) ? opts.isarc : this.isarc;
+        var linePattern = (opts.linePattern != null) ? opts.linePattern : this.linePattern;
+        ctx.lineWidth = (opts.lineWidth != null) ? opts.lineWidth : this.lineWidth;
+        ctx.lineJoin = (opts.lineJoin != null) ? opts.lineJoin : this.lineJoin;
+        ctx.lineCap = (opts.lineCap != null) ? opts.lineCap : this.lineCap;
+        ctx.strokeStyle = opts.strokeStyle || this.strokeStyle || 'rgba(0,0,0,'+alpha+')';
+        ctx.fillStyle = opts.fillStyle || this.fillStyle || 'rgba(0,0,0,'+alpha+')';
+        for (var j=0; j<depth; j++) {
+            var ctxPattern = $.jqplot.LinePattern(ctx, linePattern);
+            ctx.translate(Math.cos(this.angle*Math.PI/180)*offset, Math.sin(this.angle*Math.PI/180)*offset);
+            ctxPattern.beginPath();
+            if (isarc) {
+                ctx.arc(points[0], points[1], points[2], points[3], points[4], true);                
+            }
+            else if (fillRect) {
+                if (fillRect) {
+                    ctx.fillRect(points[0], points[1], points[2], points[3]);
+                }
+            }
+            else if (points && points.length){
+                var move = true;
+                for (var i=0; i<points.length; i++) {
+                    if (points[i][0] != null && points[i][1] != null) {
+                        if (move) {
+                            ctxPattern.moveTo(points[i][0], points[i][1]);
+                            move = false;
+                        }
+                        else {
+                        	 var y = points[i][1] + (points[i - 1][1] - points[i][1]) / 2;
+                             ctxPattern.lineTo(points[i - 1][0], y);
+                             ctxPattern.lineTo(points[i][0], y);
+                             ctxPattern.lineTo(points[i][0], points[i][1]);
+                        }
+                    }
+                    else {
+                        move = true;
+                    }
+                }
+                
+            }
+            if (closePath) {
+                ctxPattern.closePath();
+            }
+            if (fill) {
+                ctx.fill();
+            }
+            else {
+                ctx.stroke();
+            }
+        }
+        ctx.restore();
+    };
+    
+    $.jqplot.PlanLineRenderer = function(){
+        $.jqplot.LineRenderer.call(this);
+        this.shapeRenderer = new $.jqplot.PlanShapeRenderer();
+        this.shadowRenderer = new $.jqplot.PlanShadowRenderer();
+    };
+    
+    $.jqplot.PlanLineRenderer.prototype = new $.jqplot.LineRenderer();
+    $.jqplot.PlanLineRenderer.prototype.constructor = $.jqplot.PlanLineRenderer;
 	
 	function cloneObj(obj) {
 		var objClone;
@@ -99,17 +270,19 @@
 	$.esnParser = {
 		auto : true,
 		onComplete : function(context) {return ;},
-		plugins : ['chart','plat'],
+		plugins : ['chart','plat','plan'],
 		parse : function(context) {
 			for ( var i = 0; i < $.esnParser.plugins.length; i++) {
 				var name = $.esnParser.plugins[i];
 				var r = $('.esn-' + name, context);
 				if(name === 'plat'){
-					mapImage.onload = function(){
-						if (r.length) {
-							r[name]();
-						}
-					};
+					mapImage.onload = (function(plat,name){
+						return function(){
+							if (plat.length) {
+								plat[name]();
+							}
+						};
+					})(r,name);
 					mapImage.src = mapSrc;
 				}else{
 					if (r.length) {
@@ -132,8 +305,9 @@
 			return (new Function("return " + s))();
 		}
 	};
-
-	$.fn.chart = function(datasource, options) {
+	
+	
+	$.fn.initChart = function(datasource, options,headerFunc,defaults) {
 		options = options || {};
 		return this.each(function(){
 			var state = $.data(this, 'chart');
@@ -143,9 +317,9 @@
 				opts = $.extend(state.options, options);
 			} else {
 				var t = $(this);
-				opts = $.extend({}, $.fn.chart.defaults,$.esnParser.parseOptions(this),{
+				opts = $.extend({}, defaults,$.esnParser.parseOptions(this),{
 					width: (parseInt(t.css('width')) || undefined),
-					height: (parseInt(t.css('height')) || $.fn.chart.defaults.defaultHeight),
+					height: (parseInt(t.css('height')) || defaults.defaultHeight),
 					left: (parseInt(t.css('left')) || undefined),
 					top: (parseInt(t.css('top')) || undefined),
 					title: t.attr('title'),
@@ -159,70 +333,35 @@
 					border: (t.attr('border') ? t.attr('border') == 'true' : undefined),
 					noheader: (t.attr('noheader') ? t.attr('noheader') == 'true' : undefined)
 				}, options);
-				//t.attr('title', '');
-				
 				state = $.data(this, 'chart', {
 					options: opts,
 					chart: wrapChart(this),
 					isLoaded: false
 				});
 			}
-			addChartHeader(this);
+			headerFunc(this);
 			setBorder(this);
-			
 			state.datasource = datasource || opts.datasource;
 			state.rawdata = state.datasource;
 			state.options.rawseries = state.options.series;
 			$(this).esnDraw();
 		});
+	};
+	
+	
+
+	$.fn.chart = function(datasource, options) {
+		$.fn.initChart.call(this,datasource, options,addChartHeader,$.fn.chart.defaults);
 	};
 	
 	
 	$.fn.plat = function(datasource, options) {
-		options = options || {};
-		return this.each(function(){
-			var state = $.data(this, 'chart');
-			var opts;
-			
-			if (state){
-				opts = $.extend(state.options, options);
-			} else {
-				var t = $(this);
-				opts = $.extend({}, $.fn.map.defaults,$.esnParser.parseOptions(this),{
-					width: (parseInt(t.css('width')) || undefined),
-					height: (parseInt(t.css('height')) || $.fn.map.defaults.defaultHeight),
-					left: (parseInt(t.css('left')) || undefined),
-					top: (parseInt(t.css('top')) || undefined),
-					title: t.attr('title'),
-					iconCls: t.attr('icon'),
-					cls: t.attr('cls'),
-					headerCls: t.attr('headerCls'),
-					bodyCls: t.attr('bodyCls'),
-					href: t.attr('href'),
-					cache: (t.attr('cache') ? t.attr('cache') == 'true' : undefined),
-					fit: (t.attr('fit') ? t.attr('fit') == 'true' : undefined),
-					border: (t.attr('border') ? t.attr('border') == 'true' : undefined),
-					noheader: (t.attr('noheader') ? t.attr('noheader') == 'true' : undefined)
-				}, options);
-				//t.attr('title', '');
-				
-				state = $.data(this, 'chart', {
-					options: opts,
-					chart: wrapChart(this),
-					isLoaded: false
-				});
-			}
-			addMapHeader(this);
-			setBorder(this);
-			
-			state.datasource = datasource || opts.datasource;
-			state.rawdata = state.datasource;
-			state.options.rawseries = state.options.series;
-			$(this).esnDraw();
-		});
+		$.fn.initChart.call(this,datasource, options,addMapHeader,$.fn.map.defaults);
 	};
 	
-	
+	$.fn.plan = function(datasource, options) {
+		$.fn.initChart.call(this,datasource, options,addPlanHeader,$.fn.chart.defaults);
+	};
 	
 	$(function() {
 		$.esnParser.parse();
@@ -257,6 +396,47 @@
 		}
 	}
 	
+	
+	$.fn.drawPlan = function(){
+		var state = $.data(this[0], 'chart');
+		destroyChart(state);
+		var maxXaxis = wrapMax(state.datasource.data,5,2);
+		var data = new Array();
+		var datasourceData = state.datasource.data;
+		for(var i=0;i < datasourceData.length;i++){
+			var line = new Array();
+			for(var j = 0;j < datasourceData[i].length;j++){
+				line.push([datasourceData[i][j],j+1]);
+			}
+			data.push(line);
+		}
+		
+		if(state.datasource){
+			var opts = {
+				sortData:false,
+				seriesDefaults: {
+					shadow: true,
+					renderer: $.jqplot.PlanLineRenderer,
+					markerOptions:{
+						style: 'filledSquare',
+					}
+				},
+				axes: { 
+			          xaxis: {
+			        	  renderer:$.jqplot.LinearAxisRenderer,
+			        	  min:0,
+			        	  max:maxXaxis % 2 == 0 ? maxXaxis:maxXaxis+1,
+			        	  tickInterval:maxXaxis > 10 ? 2:1,
+			          }, 
+			          yaxis: { 
+			        	  ticks:wrapLineLabel(state.datasource.ylabel)
+			        }
+			      }
+	    	};
+			state.jqplot = $.jqplot(state.chart.find('>div.chart-body').attr("id"),data,$.extend(opts, customStyle(state)));
+		}
+	};
+	
 	$.fn.drawLine = function(){
 		var state = $.data(this[0], 'chart');
 		destroyChart(state);
@@ -269,11 +449,11 @@
 					axes: { 
 				          xaxis: {
 				        	  renderer:$.jqplot.LinearAxisRenderer,
-				        	  ticks:wrapLineXLabel(state.datasource),
+				        	  ticks:wrapLineLabel(state.datasource.xlabel),
 				          }, 
 				          yaxis: { 
 				        	  min:0,
-				        	  max:wrapYMax(state.datasource),
+				        	  max:wrapMax(state.datasource.data,80,10),
 				        	  tickInterval:10,
 				              tickOptions:{formatString:'%d%%',},
 				        }
@@ -300,7 +480,7 @@
 				          }, 
 				          yaxis: { 
 				        	  min:0,
-				        	  max:wrapYMax(state.datasource),
+				        	  max:wrapMax(state.datasource,80,10),
 				        	  tickInterval:10,
 				              tickOptions:{formatString:'%d%%',} ,
 				        }
@@ -392,6 +572,86 @@
 		//$('.datagrid-view2 .datagrid-body table', target).html(getTBody(state.datasource,innerWidth,columns));
 		//return t;
 	};
+	$.fn.drawPlanTable  = function(){
+		var state = $.data(this[0], 'chart');
+		destroyChart(state);
+		if(!state.datasource){
+			return;
+		}
+		var innerWidth = $(this).width() - 20;
+		var innerHeigth = $(this).height() <= 0 ? state.options.height:$(this).height();
+		var columns  = new Array();
+		columns.push({label:'Action'});
+		if(state.options.series){
+			for(var i = 0; i < state.options.series.length;i++){
+				columns.push(state.options.series[i]);
+			}
+		}else{
+			var datalength = state.datasource.data.length;
+			if(datalength > 1){
+				for(var i = 0; i < datalength;i++){
+					columns.push({label:'series' + (i + 1)});
+				}
+			}else{
+				columns.push({label:state.options.head});
+			}
+		}
+		var t = $('<table border="0" cellspacing="0" cellpadding="0" class="chartTable" ><thead style="background-color: #FFFFFF;"></thead><tbody ></tbody></table>');
+		var tr = $('<tr></tr>').appendTo($('thead', t));
+		var cols = columns;
+		for(var j=0; j<cols.length; j++){
+			var col = cols[j];
+			var th = $('<td align="center"></td>').appendTo(tr);
+			th.append('<div class="datagrid-cell"><span></span><span class="datagrid-sort-icon"></span></div>');
+			$('.datagrid-cell', th).width(innerWidth / columns.length);
+			$('span', th).html(col.label + (j!=0?"(Day)":""));
+			$('span.datagrid-sort-icon', th).html('&nbsp;');
+		}
+		var datasource = state.datasource;
+		var rows = new Array();
+		for(var x = 0; x < datasource.ylabel.length; x++){
+			var row = new Array();
+			row.push(datasource.ylabel[x]);
+			for(var y = 0; y < datasource.data.length; y++){
+				row.push(datasource.data[y][x]);
+			}
+			rows.push(row);
+		}
+		
+		for(var i=0; i<rows.length; i++) {
+			var row = rows[i];
+			var tr = $('<tr></tr>').appendTo($('tbody', t));
+			for(var j=0; j<row.length; j++){
+				var field = row[j];
+				var td = $('<td align="center"></td>').appendTo(tr);
+				td.append('<div class="datagrid-cell datagrid-cell-height">' +  field +'</div>');
+			}
+		}
+		
+		$('<div class="datagrid-wrap">' +
+				'<div class="datagrid-view">' +
+				'<div class="datagrid-view2">' +
+				'<div class="datagrid-header">' +
+				'<div class="datagrid-header-inner"></div>' +
+				'</div>' +
+				'<div class="datagrid-body"><table class="datagrid-btable"  border="0" cellspacing="0" cellpadding="0"></table></div>' +
+				'</div>' +
+				'</div>' +
+		'</div>').appendTo($(this));
+		//$('<div class="chart-tool"></div>').appendTo($(target));
+		$('.datagrid-view2 .datagrid-header-inner', this).html(t);
+		$('.datagrid-wrap', this).width(innerWidth);
+		$('.datagrid-wrap', this).height(innerHeigth);
+		$('.datagrid-view', this).width(innerWidth);
+		$('.datagrid-view2',this).width(innerWidth - $('.datagrid-view1',this).outerWidth());
+		$('.datagrid-view2 .datagrid-header',this).width($('.datagrid-view2',this).width());
+		$('.datagrid-view2 .datagrid-body',this).width($('.datagrid-view2',this).width());
+		$(".chartTable tr:even").css("background-color", "#FFFFFF");
+		$(".chartTable tr:odd").css("background-color", "#E6ECFF");
+		$(".chartTable tr").css("height","35px");
+		//$('.datagrid-view2 .datagrid-body table', target).html(getTBody(state.datasource,innerWidth,columns));
+		//return t;
+	};
 	
 	// draw pie
 	
@@ -412,17 +672,17 @@
 		}
 	};
 	
-	function wrapLineXLabel(datasource){
+	function wrapLineLabel(label){
 		var i = 0;
-		var xlabel = new Array();
-		xlabel.push([i++,'']);
-		for(var j = 0;j < datasource.xlabel.length;j++){
-			xlabel.push([i++,datasource.xlabel[j]]);
+		var wrapLabel = new Array();
+		wrapLabel.push([i++,'']);
+		for(var j = 0;j < label.length;j++){
+			wrapLabel.push([i++,label[j]]);
 		}
-		xlabel.push([i,'']);
-		return xlabel;
-
+		wrapLabel.push([i,'']);
+		return wrapLabel;
 	}
+	
 	function wrapBarXLabel(datasource){
 		var xlabel = new Array();
 		for(var j = 0;j < datasource.xlabel.length;j++){
@@ -431,16 +691,17 @@
 		xlabel.push('');
 		return xlabel;
 	}
-	function wrapYMax(datasource){
-		var max = 80;
-		for(var i=0;i < datasource.data.length;i++){
-			for(var j = 0;j < datasource.data[i].length;j++){
-				if(datasource.data[i][j] > max){
-					max = datasource.data[i][j];
+	
+	function wrapMax(data,def,cap){
+		var max = def;
+		for(var i=0;i < data.length;i++){
+			for(var j = 0;j < data[i].length;j++){
+				if(data[i][j] > max){
+					max = data[i][j];
 				}
 			}
 		}
-		return max + 10;
+		return parseInt(max) + cap;
 	}
 	
 	function wrapChart(target){
@@ -453,7 +714,7 @@
 		var state = $.data(target, 'chart');
 		var opts =  state.options;
 		var chart = state.chart;
-		removeNode(chart.find('>div.chart-header'));
+		removeNode(chart.parent().find('div.chart-header'));
 		if (opts.head && !opts.noheader){
 			var header = $('<div class="chart-header"><div class="chart-title">'+opts.head +'</div></div>').prependTo(chart);
 			if (opts.iconCls){
@@ -562,6 +823,9 @@
 	function addChartHeader(target){
 		addHeader(target,['Day','Week','Month'],['Line','Bar','Table']);
 	}
+	function addPlanHeader(target){
+		addHeader(target,['Day','Week','Month'],['Line','Table']);
+	}
 	
 	function createLis(array){
 		var lis = "";
@@ -603,27 +867,13 @@
 		}
 	}
 	
-	$.fn.esnChartDraw = function(){
-		if(this.is(':visible')){
-			var opts = $.data(this[0], 'chart').options;
-			var view = opts.view || 'line';
-			if(view == 'line'){
-				$(this).drawLine();
-			}else if(view == 'bar'){
-				$(this).drawBar();
-			}else if(view=='table'){
-				$(this).drawChartTable();
-			}else if(view=='pie'){
-				$(this).drawPie();
-			}
-		}
-	};
-	
 	$.fn.esnDraw = function(){
 		if(this.hasClass('esn-chart')){
 			this.esnChartDraw();
 		}else if(this.hasClass('esn-plat')){
 			this.esnMapDraw();
+		}else if(this.hasClass('esn-plan')){
+			this.esnPlanDraw();
 		}
 	};
 	
@@ -654,7 +904,7 @@
 		if(!state.datasource){
 			return;
 		}
-		$(this).addClass('chart-map');
+		this.addClass('chart-map');
 		//if($(this).options)
 		var innerWidth = $(this).width() - 20;
 		var innerHeigth = $(this).height() <= 0 ? state.options.height:$(this).height();
@@ -733,9 +983,36 @@
 			var opts = $.data(this[0], 'chart').options;
 			var view = opts.view || 'table';
 			if(view == 'map' || view == 'plat'){
-				$(this).drawMap();
+				this.drawMap();
 			}else{
-				$(this).drawMapTable();
+				this.drawMapTable();
+			}
+		}
+	};
+	$.fn.esnChartDraw = function(){
+		if(this.is(':visible')){
+			var opts = $.data(this[0], 'chart').options;
+			var view = opts.view || 'line';
+			if(view == 'line'){
+				this.drawLine();
+			}else if(view == 'bar'){
+				this.drawBar();
+			}else if(view=='table'){
+				this.drawChartTable();
+			}else if(view=='pie'){
+				this.drawPie();
+			}
+		}
+	};
+	
+	$.fn.esnPlanDraw = function(){
+		if(this.is(':visible')){
+			var opts = $.data(this[0], 'chart').options;
+			var view = opts.view || 'line';
+			if(view == 'line'){
+				this.drawPlan();
+			}else if(view=='table'){
+				this.drawPlanTable();
 			}
 		}
 	};
@@ -749,7 +1026,6 @@
 			loadWeekResource:function(target,options){return;},
 			loadMonthResource:function(target,options){return;},
 	};
-	
 	
 	$.fn.chart.defaults = {
 			formatable:true,	

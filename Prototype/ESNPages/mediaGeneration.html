@@ -5,16 +5,31 @@
 <script type="text/javascript" src="js/meidaGlobal.js"></script>
 <div class="title">Media Generation</div>
 <div class="navLeft">
-	 <img src="image/media-pic.png" class="mediaPic"/>
-     <p>Media</p>
-     <div class="mediaButton" id="addMedia"> Add Media</div><div class="mediaButton1"> Add auto Media</div>
-<p>Total Number of <br />Media:150</p>
-	<p>Total Number of <br />Defferent Entity Media:45</p>
-    <p>Total Number of <br /> Prepared Media:45</p>
-    <p>Total Number of <br /> Checked Media:45</p>
-    <p>Total Number of <br /> Not Prepared Media:45</p>
-    <p>Total Number of <br /> Optimized Media:45</p>
-    <p>Total Number of <br /> Not Optimized Media:30</p>
+	<img src="image/media-pic.png" class="mediaPic" />
+	<p>Media</p>
+	<div class="mediaButton" id="addMedia">Add Media</div>
+	<div class="mediaButton1">Add auto Media</div>
+	<p>
+		Total Number of <br />Media:150
+	</p>
+	<p>
+		Total Number of <br />Defferent Entity Media:45
+	</p>
+	<p>
+		Total Number of <br /> Prepared Media:45
+	</p>
+	<p>
+		Total Number of <br /> Checked Media:45
+	</p>
+	<p>
+		Total Number of <br /> Not Prepared Media:45
+	</p>
+	<p>
+		Total Number of <br /> Optimized Media:45
+	</p>
+	<p>
+		Total Number of <br /> Not Optimized Media:30
+	</p>
 </div>
 
 <div class="mediaGroup media1Content">
@@ -32,45 +47,83 @@
 		<div class="filter"></div>
 		<div class="right"></div>
 		<div class="open"></div>
-		<p>
-			<img src="image/expand.png" />Comment<img
+		<div>
+			<img src="image/expand.png" class="expand"/><span>Comment</span><img
 				src="image/greenright.png" />
-		</p>
-		This is the comment for media1.
-		<p>
-			<img src="image/shrink.png" />Related Entity<img
+		<div class="content">This is the comment for media1.</div>
+		</div>
+
+		<div>
+			<img src="image/expand.png" class="expand"/><span>Related Entity</span><img
 				src="image/cross.png" />
-		</p>
-		<p>
-			<img src="image/expand.png" />Shot Message<img
+          <div class="content">This is the Related Entity for media1.</div>      
+		</div>
+		<div>
+			<img src="image/expand.png" class="expand"/><span>Shot Message</span><img
 				src="image/greenright.png" />
-		</p>
+            <div class="content">This is the Shot Message for media1.</div>
+	  </div>
 		Shot Message
-		<p>
-			<img src="image/expand.png" />Long Message<img
+		<div>
+			<img src="image/expand.png" class="expand"/><span>Long Message</span><img
 				src="image/greenright.png" />
-		</p>
-		This is the long message for media1.This is the long message for
+                <div class="content">This is the long message for media1.This is the long message for
 		media1.This is the long message for media1.This is the long message
-		for media1.
-		<p>
-			<img src="image/expand.png" />Picture<img
-				src="image/greenright.png" />
-		</p>
-		<div class="imgList">
+		for media1.</div>
+		</div>
+		
+		<div>
+			<img src="image/expand.png" class="expand"/><span>Picture</span><img src="image/greenright.png" />
+            <div class="imgList content">
 			<img src="image/expert3.png" /><img src="image/expert5.png" /><img
 				src="image/expert6.png" /><img src="image/expert7.png" /><img
 				src="image/expert4.png" /><img src="image/expert2.png" />
 		</div>
-		<p>Video</p>
-		<p><img src="image/expand.png" />Media Release</p>
-		<div class="imgList">
+		</div>
+		
+		<div>
+			<img src="image/expand.png" class="expand"/><span>Video</span>
+          <div class="content">  <iframe  width="80%" height="415"
+			src="http://www.youtube.com/embed/e4qv1kWlIAY?wmode=opaque&amp;hd=1"
+			frameborder="0" allowfullscreen></iframe>
+          </div>
+		</div>
+		<div>
+			<img src="image/expand.png" class="expand"/><span>URL</span><img
+				src="image/greenright.png" />
+                <div class="content"><a>http://www.youtobe.com</a><br />
+                <a>https://hpitspm1:8888/_admin/WebApplicationList.aspx</a><br />
+                <a>https://hpitspm1:8888/default.aspx</a>
+		</div>
+		</div>
+        
+        <div>
+			<img src="image/expand.png" class="expand"/><span>Document</span>&nbsp;<img src="image/information.png" />&nbsp;<span style="color:#fd9200;">&nbsp;Here are some suggetion to this item</span>
+                <div class="content">
+                SharePoint 2013 ESN Governence &Power Analytics V1.08.doc<br />
+                Check SMTP Server configuration.Doc<br />
+                Change Ower Tool for MOSS 2010 Bete Installation Guide V1.1.doc
+		</div>
+	  </div>
+        
+        <div>
+			<img src="image/expand.png" class="expand"/><span>Vote</span><img
+				src="image/greenright.png" />
+                <div class="content">This is the vote for media1
+		</div>
+		</div>
+        
+		<div>
+			<img src="image/expand.png" class="expand"/><span>Media Release</span>
+            <div class="imgList content">
 			<img src="image/twitter.png" /><img src="image/facebook.png" /><img
 				src="image/onehp.png" /><img src="image/onehp.png" /><img
 				src="image/hpconnect.png" /><img src="image/linkedin.png" /><img
 				src="image/sharepoint.png" />
 		</div>
-	</div>
+		</div>
+		
+  </div>
 </div>
 
 <div class="mediaGroup media2Content">
@@ -101,14 +154,11 @@
 
 <nav class="navigate">
 <ul class="navList">
-	<li><a class="media1" style="margin-right:30px;">media1
-   <img src="image/nav3.png"> </a>
+	<li><a class="media1" style="margin-right: 30px;">media1 <img
+			src="image/nav3.png"> </a></li>
+	<li><a class="media2">media2 <img src="image/nav.png"> </a>
 	</li>
-	<li><a class="media2">media2
-	<img src="image/nav.png"> </a>
-	</li>
-	<li><a class="media3">media3
-		 <img src="image/nav.png"> </a>
+	<li><a class="media3">media3 <img src="image/nav.png"> </a>
 	</li>
 
 </ul>

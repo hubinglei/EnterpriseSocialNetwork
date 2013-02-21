@@ -347,3 +347,26 @@ function loadMonthSetting(target, cycle) {
 				'Month7' ]
 	}
 }
+
+
+// campagign data
+function loadDayPlan(target, options) {
+	return {
+		data : [ [ 11, 10, 12, 19, 15, 17, 10, 13, 15, 12 ],[ 11.2, 10.7, 14.9, 12.4, 22.1, 16.2, 22.1, 11.8, 1.2, 9.3 ] ],
+		ylabel : [ 'Action1Day','Action2Day','Action3Day','Action4Day','Action5Day','Action6Day','Action7Day','Action8Day','Action9Day' ]
+	}
+}
+
+function loadWeekPlan(target, options) {
+	return {
+		data : [[ 11, 18, 22, 19, 15, 17, 15, 16, 11.8, 12 ],[ 13.2, 19.7, 11.9, 15.4, 19.1, 12.2, 15.1, 16.8, 4.2, 2.3 ] ],
+		ylabel : [ 'Action1Week','Action2Week','Action3Week','Action4Week','Action5Week','Action6Week','Action7Week','Action8Week','Action9Week' ]
+	}
+}
+
+function loadMonthPlan(target, options) {
+	return {
+		data : [ [ 21, 20, 22, 29, 25, 27, 20, 23, 25, 22 ],[ 15.2, 15.7, 12.9, 11.4, 12.1, 18.2, 19.1, 13.8, 1.8, 8.3 ] ],
+		ylabel : [ 'Action1Month','Action2Month','Action3Month','Action4Month','Action5Month','Action6Month','Action7Month','Action8Month','Action9Month' ]
+	}
+}

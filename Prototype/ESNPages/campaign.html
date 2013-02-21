@@ -120,12 +120,22 @@
 	</tr>
 </table>
 <div class="blank"></div>
-<div id="chart2" class="esn-chart planContent"
-	data-options="formatable:false,setting:false,timeable:false,
-									legend:true,
-									series:[{label:'This Month ',color:'red'},{label:'Last Month',color:'green'}],
-									datasource:{data:[[50, 20, 42, 89, 45, 87, 50, 38, 83, 40],[30, 40, 12, 29, 15, 57, 60, 78, 33, 10]
-													  ],xlabel:['29-Oct','30-Oct','31-Oct','1-Nov','2-Nov','3-Nov','4-Nov','5-Nov','6-Nov','7-Nov']},head:'Marketing Plan Execution Detail'">
+<div id="esn-plan1" class="esn-plan planContent"
+                                    data-options="
+                                    view:'line',
+                                    formatable:true,setting:false,timeable:true,
+                                    legend:true,
+                                    chooseable:false,
+                                    loadDayResource:loadDayPlan,
+                                    loadWeekResource:loadWeekPlan,
+                                    loadMonthResource:loadMonthPlan,
+                                    series:[{label:'Plan',color:'green'},{label:'Actual',color:'red'}],
+                                    datasource:{data:[
+                                    [3.5 ,5.0 ,5.5 ,9.0 ,7.0 ,5.5 ,7.5 ,11.0 ,11.5],
+                                    [5.0 ,7.5 ,7.0 ,7.5 ,5.5 ,3.4 ,5.4 ,9.10 ,11.0]
+                                ],ylabel:['Action1','Action2','Action3','Action4','Action5','Action6','Action7','Action8','Action9']},head:'Marking Plan Execution Detail'">
+                                </div>
+
 
 </div>
 </div>

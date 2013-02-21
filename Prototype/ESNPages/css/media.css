@@ -44,7 +44,7 @@
 .mediaGroup{
 	margin-left:140px;
 }
-.descript p{
+.descript span{
 	color: rgb(35, 160, 216);
 }
 
@@ -93,3 +93,10 @@
 	text-decoration: none;
 	float: left;
 }	
+.content a{
+	text-decoration: underline;
+	color: rgb(35, 160, 216);
+}
+.content{
+	margin-left:10px;
+}
