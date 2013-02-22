@@ -1,0 +1,84 @@
+.mask {    
+	position: absolute; top: 0px; filter: alpha(opacity=60); background-color: #777;  
+	z-index: 1002; left: 0px;  
+	opacity:0.5; -moz-opacity:0.5;  
+        }  
+.dailog{  
+    position: absolute; z-index: 1003;   
+    width:770px; height:550px;
+    background-color:#F3F3F3; display: none; 
+	background: url("../image/body_bg.png");
+        }  
+#tabmenu dl {
+	text-align:center;
+	border:#dbdbdb 1px solid;
+	margin:10px 0 0 -1px;
+	width:130px;
+	line-height: 30px;
+	background:#e4e5e4;
+	float:left;
+	height:30px;
+	border-radius: 4px;
+	color: #23A0D8;
+	
+}	
+
+#con1, #con2,#con3,#con4{
+    margin: 25px;
+	float:left;
+}
+input[type="text"]{
+	margin-left:20px;
+}
+#tabmenu{
+	margin-left:20px;
+}
+.tabContent{
+	width:700px;
+	height:390px;
+	margin-left:20px;
+	margin-top: 40px;
+	border:#dbdbdb 1px solid;
+}
+.cancleButton {
+    background-image: url("../image/cancel.png");
+}
+.saveButton, .cancleButton {
+    color: white;
+    float: right;
+    height: 29px;
+    line-height: 29px;
+    text-align: center;
+    width: 52px;
+	margin-top:20px;
+	 margin-right: 15px;
+}
+.saveButton {
+    background-image: url("../image/okButton.png");
+}
+.tableTitle1 {
+    background: url("../image/chart_title_bg.png") repeat scroll 0 0 transparent;
+    height: 35px;
+    width: 576px;
+}
+.tableLibary tr:nth-child(2n) {
+    background-color: #FFFFFF;
+}
+.tableLibary tr:nth-child(2n+1) {
+    background-color: #E6ECFF;
+}
+.tableLibary tr td{
+	height:20px;
+	line-height:20px;
+	padding-left: 10px;
+}
+.longMessage{
+	text-overflow: ellipsis;
+	height:20px;
+	width:490px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+input[type="radio"] {
+	width:40px;
+}

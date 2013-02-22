@@ -13,4 +13,16 @@ $(function() {
 			});
 			window.location.hash = "#engagement";
 		});
+		   
+		    $("#automationEventHandling").die('click');
+		   $("#automationEventHandling").live('click', function() {
+			$.ajax({
+				url : "activityAutomation.html",
+				cache : true,
+				success : function(result) {
+					$("#wrapper").html(result);
+				}
+			});
+			window.location.hash = "#activityAutomation";
+		});
 		   })

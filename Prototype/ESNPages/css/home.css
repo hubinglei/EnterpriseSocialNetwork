@@ -286,7 +286,7 @@ ul.dropdown-menu li a {
 	margin-top: -2px;
 }
 
-#networkNav,#mediaNav,#configNav,#activityNav,#planNav,.networkRightNav,#networkSentiment,#networkCost
+#networkNav,#mediaNav,#channelNav,#configNav,#activityNav,#planNav,.networkRightNav,#networkSentiment,#networkCost
 	{
 	display: none;
 }

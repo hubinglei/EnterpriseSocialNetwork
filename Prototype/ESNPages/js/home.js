@@ -69,7 +69,8 @@ $(function() {
 
 	// channel maintenace
 	$("#channelMaintenace").click(function() {
-
+	 pos="channel"
+	 showRightNav("channelNav");
 	})
 
 	$(".arrowRight").click(function() {

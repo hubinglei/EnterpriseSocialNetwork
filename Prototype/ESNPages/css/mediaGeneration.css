@@ -50,7 +50,7 @@
 	color:#A6A5A5;
 }
 input{
-	width:860px;
+	width:800px;
 	margin-left:10px;
 }
 .addDocument{
@@ -78,4 +78,7 @@ input{
 }
 .saveButton {
     background-image: url("../image/okButton.png");
+}
+.addbutton{
+	float:right;
 }
