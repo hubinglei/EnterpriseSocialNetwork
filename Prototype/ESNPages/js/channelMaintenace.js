@@ -1,0 +1,6 @@
+$(function() {
+			navSelected("channel");   
+		    
+	
+		   
+		   })
