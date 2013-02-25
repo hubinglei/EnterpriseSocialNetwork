@@ -18,13 +18,13 @@ $(function() {
 	})
 
 	// show tips
-	$("ul li")
+	$("ul li .earlierdata")
 			.mouseenter(
 					function() {
 						var div = $(".tips")
 						var self = $(this);
-						$(this).find(".tips").html(
-								$(this).find(".earlierdata").text()
+						$(this).parent().find(".tips").html(
+								$(this).text()
 										+ " updated items");
 						var p = self.position()
 						var x = p.left + self.width() / 2;
@@ -32,9 +32,9 @@ $(function() {
 						var y = p.top - self.height();
 						div.css("left", x);
 						div.css("top", y);
-						$(this).find(".tips").show();
+						$(this).parent().find(".tips").show();
 					}).mouseleave(function() {
-				$(this).find(".tips").hide();
+				$(this).parent().find(".tips").hide();
 			});
 
 	// home page nav

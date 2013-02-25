@@ -2,6 +2,8 @@
 	font-size: 18px;
 	margin-left: -120px;
 	color: rgb(35, 160, 216);
+	position:fixed;
+	margin-top: -10px;
 }
 
 .title1 {
@@ -18,11 +20,12 @@
 		inset;
 	width: 200px;
 	height: 420px;
-	margin: 10px 30px 0 -120px;
+	margin: 20px 30px 0 -120px;
 	line-height: 35px;
 	padding-left: 25px;
 	float: left;
 	color: rgb(35, 160, 216);
+	position:fixed;
 }
 
 .tableSummary {
@@ -41,6 +44,7 @@
 	height: 35px;
 	color: #535355;
 	line-height: 35px;
+	padding-left: 15px;
 }
 
 .tableSummary,.tableSummary1,.chart {

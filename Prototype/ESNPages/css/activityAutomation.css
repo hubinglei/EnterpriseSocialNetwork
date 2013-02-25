@@ -82,3 +82,10 @@ input[type="text"]{
 input[type="radio"] {
 	width:40px;
 }
+table tr td a{
+	color:#23A0D8;
+}
+table tr td img,#con3 img{
+	margin-left:10px;
+}
+
