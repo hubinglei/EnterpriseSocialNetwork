@@ -2,8 +2,16 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/global.js"></script>
 <script type="text/javascript" src="js/channelMaintenace.js"></script>
+<style>
+<!--
+   .nav div{
+       cursor: pointer;
+   }
+-->
+</style>
+
 <div class="title">Social Channel Maintenance</div>
-<div class="engagementLeft">
+<div id="channelDiv" class="engagementLeft">
 	<p>
 	<div class="categoryTitle">Category</div>
 	<div>Marketing entity</div>
@@ -12,6 +20,7 @@
 		<div id="brand">Brand</div>
 		<div id="product">Product</div>
 		<div id="campaign">Campaign</div>
+		<div id="expertOpinion">Expert Opinion</div>
 	</div>
 	</p>
 
@@ -24,7 +33,7 @@
 	</div>
 	</p>
 </div>
-<div class="rightContent"></div>
+<div id="channelRightContentDiv" class="rightContent"></div>
 <script>
-
+$("#channelRightContentDiv").html("channel_bussinessUnit.html");
 </script>

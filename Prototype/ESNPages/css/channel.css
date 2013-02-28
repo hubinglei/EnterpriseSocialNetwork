@@ -1,0 +1,130 @@
+table.display thead th {
+	background-color: #c6c7c7;
+	cursor: pointer;
+}
+
+#homecontent {
+	margin: 0 -120px;
+	overflow-y: auto !important;
+}
+
+.dataTables_filter {
+	float: right;
+	//margin-top: -40px;
+	//margin-right: 50px;
+}
+.dataTables_wrapper { 
+	width: 1100px;
+}
+table {
+	background-color: white;
+}
+
+td input {
+	width: 60px;
+}
+
+table tr th {
+	border-color: #e1dddd;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+}
+
+table tr td {
+	border-color: #e1dddd;
+	height: 35px;
+	line-height: 35px;
+	text-align: left;
+	pad-left: 25px;
+}
+
+table.display tr.row_selected td {
+	background-color: #E6ECEF;
+}
+
+.palnTitle {
+	color: black;
+	font-size: 24px;
+	vertical-align: bottom;
+}
+
+.saveButton {
+	background-image: url(../image/okButton.png);
+}
+
+.saveButton,.cancleButton {
+	width: 52px;
+	height: 29px;
+	text-align: center;
+	color: white;
+	line-height: 29px;
+	float: right;
+}
+
+.cancleButton {
+	background-image: url(../image/cancel.png);
+}
+
+.star {
+	background: url(../image/star_all.png);
+	width: 16px;
+	height: 15px;
+}
+
+.lock {
+	background: url(../image/Lock.png);
+	width: 12px;
+	height: 16px;
+}
+
+.editp {
+	background: url(../image/pencil_blue.png);
+	width: 13px;
+	height: 13px;
+}
+
+.delete {
+	background: url(../image/delete_blue.png);
+	width: 12px;
+	height: 12px;
+}
+
+ul li {
+	display: inline-block;
+	padding: 5px;
+	margin-top: -10px;
+}
+
+ul {
+	float: right;
+}
+
+.searchBg1 {
+	margin-left: 134px;
+	padding-left: 15px;
+	background-image: url("../image/Chart_bg2.png");
+	height: 40px;
+	line-height: 40px;
+	width: 952px;
+}
+
+label input {
+	border-radius: 1px 1px 1px 1px;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.4), 0 0 0 #4D2F2F;
+	height: 30px;
+	width: 258px;
+	margin-top: -4px;
+}
+
+span {
+	cursor: pointer;
+}
+
+#new {
+	background: url(../image/addButton.png);
+	width: 39px;
+	height: 26px;
+	float: right;
+	margin: 4px 10px 0 0;
+}

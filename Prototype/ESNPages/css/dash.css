@@ -223,3 +223,6 @@ ul li {
 .trActive{
 	color:orange;
 }
+td a {
+	text-decoration:underline;
+}

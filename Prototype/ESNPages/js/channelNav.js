@@ -1,8 +1,7 @@
 $(function() {
-			navSelected("channel");   
-		   
-	$("#channelMaintenance").die('click');
-	$("#channelMaintenance").live('click', function() {
+	navSelected("channel");  
+	$("#channelMaintenance").unbind('click');
+	$("#channelMaintenance").bind('click', function() {
 		$.ajax({
 			url : "channelMaintenance.html",
 			cache : true,
@@ -10,7 +9,6 @@ $(function() {
 				$("#wrapper").html(result);
 			}
 		});
-		window.location.hash = "#channelMaintenance"
-	})
-		   
-		   })
+		window.location.hash = "#channelMaintenance";
+	});
+});

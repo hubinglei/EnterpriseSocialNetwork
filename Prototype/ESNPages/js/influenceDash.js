@@ -29,16 +29,12 @@ $(function() {
 		}
 	})
 	
-	// pay attention or delete attention
-	$(".attention").click(function(){
-			var This =$(this);
-			 if(This.find('img').length>0){
-				 This.html('Delete Attention');
-				 }else{
-					This.html('<img src="image/plus-transparent.png"> Pay Attention');
-					 }
-								  })
-
+	payOrDeleteAttention();
+	
+	//go to edit page 
+	$('.browserBg').click(function(){
+				$('#tableContent').load('influenceDashEdit.html');
+								   })
 	// socail dash board -anlaysis
 	// area click
 	$("#area").click(function() {

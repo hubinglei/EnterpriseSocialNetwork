@@ -23,9 +23,8 @@ $(function() {
 					function() {
 						var div = $(".tips")
 						var self = $(this);
-						$(this).parent().find(".tips").html(
-								$(this).text()
-										+ " updated items");
+						$(this).parent().find(".tips").find('span').html(
+								$(this).text());
 						var p = self.position()
 						var x = p.left + self.width() / 2;
 						var docWidth = $(document).width();
