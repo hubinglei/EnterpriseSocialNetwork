@@ -13,23 +13,24 @@
 }
 .mediaTitle{
 	 background: url("../image/Chart_bg2.png") repeat scroll 0 0 transparent;
-	 height: 35px;
+	 height: 40px;
     width: 850px;
 	float:right;
 	color: rgb(35, 160, 216);
 	font-size: 18px;
-	line-height:35px;
+	line-height:40px;
 	padding-left:10px;
+	margin-top: 10px;
 	
 }
 .mediaTitle input{
 	float:right;
 	height:30px;
-	margin-top:3px;
+	margin-top:5px;
 	line-height:30px;
 	color: #0099ff;
 }
 .mediaTitle img {
 	float:right;
-	 padding: 2px 10px;
+	 padding: 4px 10px;
 }
