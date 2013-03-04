@@ -1,3 +1,18 @@
+
+.progress {
+	width: 150px;
+	height:20px;
+    border: none;  
+    background-color: #e1e9eb;
+	
+    /*IE*/
+}
+.progress span{
+	width: 120px;
+	float:left;
+	height:20px;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bcda58', endColorstr='#fb9008',gradientType=1);
+}
 /* progress style */
 progress,progress[role] /* polyfill */ {
 	appearance: none;
@@ -52,4 +67,7 @@ progress[aria-valuenow]:before {
 
 .progressGreen::-moz-progress-bar {
 	background-image: -moz-linear-gradient(left, #a0ea85, #29b402);
+}
+.progressInfor{
+	margin-top:-18px;
 }
