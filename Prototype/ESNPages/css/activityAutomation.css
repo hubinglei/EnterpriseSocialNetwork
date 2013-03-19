@@ -4,7 +4,7 @@
 	opacity:0.5; -moz-opacity:0.5;  
         }  
 .dailog{  
-    position: absolute; z-index: 1003;   
+    position: absolute; z-index: 10002;   
     width:770px; height:550px;
     background-color:#F3F3F3; display: none; 
 	background: url("../image/body_bg.png");

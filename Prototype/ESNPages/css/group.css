@@ -146,7 +146,7 @@ ul li {
 
 .navigate ul li a {
 	font-size: 12px;
-	color: rgb(102, 102, 102);
+	color: #23A0D8;
 	text-decoration: none;
 	float: right;
 	margin-right: -190px;
@@ -154,6 +154,10 @@ ul li {
 .navigate ul li a img {
 	border:0 none;
 }
-
+.navImg{
+	float:right;
+    margin-right: -35px;
+    margin-top: -25px;
+}
  .tableSummary1 tr:nth-child(odd){background-color: #E6ECFF}
  .tableSummary1 tr:nth-child(even){background-color: #FFFFFF}

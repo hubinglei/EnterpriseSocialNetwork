@@ -11,24 +11,56 @@
     
 	}
 	
-	function changeBg(className){
-		var backgroudImg =$(className).css('background-image');
-				if(backgroudImg.indexOf('browser_bg')>-1){
-				$(className).css('background','url(image/eye_bg.png)');
-				}else{
-					$(className).css('background','url(image/browser_bg.png)');
-					}
-		}
+		function replotChart() {
+		$('.esn-chart').each(function(i) {
+			$(this).esnDraw();
+		});
+	}
+	function replotMap() {
+		$('.esn-plat').each(function(i) {
+			$(this).esnMapDraw();
+		})
+	}
+	
 	$(function() {
-			   $('.browserBg').click(function(){
-							changeBg('.browserBg')	
-							changeBg('.eyeBg')
-				
-											  })
 			   
-			    $('.eyeBg').click(function(){
-							changeBg('.eyeBg')				  
-							changeBg('.browserBg')	
+	 // bind table tr event
+	$("table tr:not(:first)").click(function() {
+		var instanceName = $(this).find("td").html();
+		$("table tr:not(:first)").removeClass("trActive");
+		$(this).addClass("trActive");
+		var hashLocation =window.location.hash;
+			if(hashLocation.indexOf('influence')>-1){
+		$("#instanceName").html("&nbsp;" + instanceName);
+		if (instanceName.indexOf("Samsung") > -1) {
+			$("#lgData").hide();
+			$("#samsungData").show();
+			replotChart();
+
+		} else {
+			$("#samsungData").hide();
+			$("#lgData").show();
+			replotChart();
+		}
+			}
+	})
+	//go to edit page 
+	$('.browserBg').click(function(){
+			var hashLocation =window.location.hash;
+			if(hashLocation.indexOf('influence')>-1){
+			$('#tableContent').load('influenceDashEdit.html');
+			}else{
+				$('#tableContent').load('sentimentEdit.html');
+				}
+				 })
+			   
+	 $('.eyeBg').click(function(){
+				var hashLocation =window.location.hash;				
+				if(hashLocation.indexOf('influence')>-1){			
+				$('#tableContent').load('influenceDashView.html');
+				}else{
+					$('#tableContent').load('sentimentView.html');
+					}
 											  })
 			  
 	

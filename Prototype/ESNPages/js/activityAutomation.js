@@ -1,7 +1,12 @@
 $(function() {
 		   navSelected("activity");
 		   
-		   
+		   	   // show widget button 	   
+	$('.widgetGroup').mouseenter(function(){
+					$(this).find(".widget").find('img').show();	
+					}).mouseleave(function() {
+				$(this).find(".widget").find('img').hide();
+			});	
 		   	// show dailog
 			$(".edit").click(function(){
 				showHideMask('show');  

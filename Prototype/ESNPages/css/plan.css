@@ -55,9 +55,9 @@ background-color: #E6ECEF;
 	width:16px;
 	height:15px;
 }
-.lock{
-	background:url(../image/Lock.png);
-	width:12px;
+.unlock{
+	background:url(../image/unlock.png);
+	width:16px;
 	height:16px;
 }
 .editp{
@@ -69,6 +69,9 @@ background-color: #E6ECEF;
 	background:url(../image/delete_blue.png);
 	width:12px;
 	height:12px;
+}
+.star,.unlock,.editp,.delete{
+	cursor:pointer;
 }
 ul li{
 	display:inline-block;

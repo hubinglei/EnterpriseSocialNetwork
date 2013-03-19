@@ -1,3 +1,18 @@
+
+.progress {
+	width: 130px;
+	height:20px;
+    border: none;  
+    background-color: #e1e9eb;
+	
+    /*IE*/
+}
+.progress span{
+	width: 120px;
+	float:left;
+	height:20px;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bcda58', endColorstr='#fb9008',gradientType=1);
+}
 /* progress style */
 progress,progress[role] /* polyfill */ {
 	appearance: none;
@@ -5,7 +20,7 @@ progress,progress[role] /* polyfill */ {
 	-webkit-appearance: none;
 	border: none;
 	background-size: auto;
-	width: 150px;
+	width: 130px;
 	height: 20px;
 }
 
@@ -52,4 +67,9 @@ progress[aria-valuenow]:before {
 
 .progressGreen::-moz-progress-bar {
 	background-image: -moz-linear-gradient(left, #a0ea85, #29b402);
+}
+.progressInfor{
+	margin-top:-18px;
+	text-align: center;
+    width: 130px;
 }

@@ -62,7 +62,7 @@ var asInitVals = new Array();
 
 var oTable;
 
-var actionString = '<ul><li><div class="lock"></div></li><li><div class="editp"></div></li><li><div class="star"></div></li><li><div class="delete"></div></li></ul>';
+var actionString = '<ul><li><div class="unlock"></div></li><li><div class="editp1 editp"></div></li><li><div class="star"></div></li><li><div class="delete1 delete"></div></li></ul>';
 
 var okAndCan = '<div class="cancleButton">Cancle</div><div class="saveButton">OK</div>';
 
@@ -82,6 +82,9 @@ $(function() {
 		}
 	});
 
+
+
+   
 	/* Add a select menu for each TH element in the table footer */
 	function refreshtfoot() {
 		$("table tfoot th").each(function(i) {
@@ -99,7 +102,8 @@ $(function() {
 			.live(
 					'click',
 					function(e) {
-						e.preventDefault();
+						e.stopPropagation();
+						if($(this).hasClass('row_selected')==false){
 						if (oTable.$('tr').find('td:last-child').find('ul')
 								.html() != '') {
 							oTable.$('tr.row_selected').find('td:last-child')
@@ -121,14 +125,35 @@ $(function() {
 								&& $(this).find('td:last-child').find('div').length == 0) {
 							$(this).find('td:last-child').append(actionString);
 						}
-
+						}
 					});
 
 	var nEditing = null;
 
-	$('.marketingPlan .editp').bind('click', function(e) {
-		e.preventDefault();
+	$('.marketingPlan .unlock').live('click',function(e){
+				e.stopPropagation();
+				var This =$(this);
+				var imgStr =This.css('background-image');
+				var delete1 =$('.marketingPlan .delete');
+				var edit =$('.marketingPlan .editp');
+				if(imgStr.indexOf('un')>-1){
+					This.css('background','url(image/lock.png)');
+					delete1.css('background','url(image/delete.png)');
+					edit.css('background','url(image/pencil.png)');
+					edit.removeClass('editp1');
+					delete1.removeClass('delete1');
+					}else{
+					This.css('background','url(image/unlock.png)');
+					edit.addClass('editp1');
+					delete1.css('background','url(image/delete_blue.png)');
+					edit.css('background','url(image/pencil_blue.png)');
+					delete1.addClass('delete1');
+						}
+								})
 
+	$('.marketingPlan .editp1').live('click', function(e) {
+		//e.preventDefault();
+		e.stopPropagation();
 		/* Get the row as a parent of the link that was clicked on */
 		var nRow = $(this).parents('tr')[0];
 
@@ -151,7 +176,7 @@ $(function() {
 		}
 	});
 
-	$('.marketingPlan .cancle').bind('click', function(e) {
+	$('.marketingPlan .cancle').live('click', function(e) {
 		e.preventDefault();
 
 		/* Get the row as a parent of the link that was clicked on */
@@ -160,19 +185,20 @@ $(function() {
 		saveRow(oTable, nRow);
 	});
 
-	$('.marketingPlan .saveButton').bind('click', function(e) {
+	$('.marketingPlan .saveButton').live('click', function(e) {
 		e.preventDefault();
 
 		/* Get the row as a parent of the link that was clicked on */
 		var nRow = $(this).parents('tr')[0];
 		saveRow(oTable, nRow);
 	});
-
-	$('#new').unbind('click');
+	
+	$('#new').die('click');
 	$('#new').live(
 			'click',
 			function(e) {
 				e.preventDefault();
+				if($('#DataTables_Table_0').find('input').length==0){
 				var aData = oTable.fnGetData(0);
 				var aiNew;
 				if (aData.length == 7) {
@@ -188,6 +214,7 @@ $(function() {
 				var nRow = oTable.fnGetNodes(aiNew[0]);
 				editRow(oTable, nRow, 'new');
 				nEditing = nRow;
+				}
 			});
 
 	function restoreRow(oTable, nRow) {
@@ -236,25 +263,27 @@ $(function() {
 		refreshtfoot();
 	}
 
-	$('.marketingPlan .cancleButton').bind('click', function(e) {
+	$('.marketingPlan .cancleButton').live('click', function(e) {
 		e.preventDefault();
 		var nRow = $(this).parents('tr')[0];
 		deleteRow(nRow);
 	});
 
-	$('.marketingPlan .delete').bind('click', function(e) {
-		e.preventDefault();
+	$('.marketingPlan .delete1').live('click', function(e) {
+		e.stopPropagation();
 		var nRow = $(this).parents('tr')[0];
 		deleteRow(nRow);
 	});
 
-	$('#marketPlan').unbind('click');
-	$('#marketPlan').bind('click', function(e) {
+	$('#marketPlan').die('click');
+	$('#marketPlan').live('click', function(e) {
 		$("#homecontent").load('marketingPlan.html');
 	});
 
-	$('#marketActivities').unbind('click');
-	$('#marketActivities').bind('click', function(e) {
+	$('#marketActivities').die('click');
+	$('#marketActivities').live('click', function(e) {
 		$("#homecontent").load('marketingActivities.html');
 	});
+	
+	
 })

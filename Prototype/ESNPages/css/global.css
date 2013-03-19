@@ -233,6 +233,9 @@ html,body {
 	cursor: pointer;
 	margin-bottom: 20px;
 }
+tfoot {
+	display:table-header-group;
+}
 
 .socialTable tr:nth-child(even),.sentimentTable tr:nth-child(odd) {
 	background-color: #FFFFFF
