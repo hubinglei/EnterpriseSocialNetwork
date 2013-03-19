@@ -4,7 +4,7 @@
 
 #headerBg {
 	position: fixed;
-	padding: 10px 0 10px 200px;
+	padding: 10px 0 0px 200px;
 	z-index: 10001;
 	overflow: hidden;
 	min-width: 1200px;
@@ -13,8 +13,9 @@
 #header {
 	position: relative;
 	padding-left: 15px;
-	margin-left:-100px;
+	margin-left:-160px;
 	overflow: hidden;
+	margin-bottom: 2px;
 	
 }
 #headerTitles {
@@ -86,7 +87,7 @@ h1 {
 }
 #userName{
 	float: right;
-	margin: -70px -70px 0 0;
+	margin: -60px -70px 0 0;
 	}
 /*#userImg {
 	float: right;

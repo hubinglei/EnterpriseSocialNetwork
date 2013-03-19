@@ -2,8 +2,8 @@ $(function() {
 		   page="planNav"
 		   navSelected("plan");
 		   
-		   $("#planFormulation").die('click');
-		   $("#planFormulation").live('click', function() {
+		   $("#planFormulation").unbind('click');
+		   $("#planFormulation").bind('click', function() {
 			$.ajax({
 				url : "planFormulation.html",
 				cache : true,

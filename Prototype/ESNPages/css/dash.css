@@ -91,8 +91,12 @@ ul li {
 	color: #23A0D8;
 	font-size: 16px;
 	margin-top: 30px;
+	display: inline-block;
 }
-
+#instanceName{
+	width: 100px;
+	float: left;
+}
 #overview {
 	height: 44px;
 	line-height: 44px;
@@ -107,12 +111,15 @@ ul li {
 }
 
 #date {
-	margin-left: 90px;
+	margin-left:56px;
 	color: black;
+	float: left;
+	width: 34px;
 }
 
 #area {
 	margin-left: 20px;
+	float: left;
 }
 
 #socialTitle span,#date,#area,.browserBg {

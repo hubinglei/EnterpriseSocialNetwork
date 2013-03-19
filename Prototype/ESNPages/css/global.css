@@ -5,14 +5,16 @@ html,body {
 	min-width: 1295px;
 	font-family: HP Simplified;
 	overflow-x: hidden;
+	letter-spacing :0px;
 }
+
 #wrapper {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 1000px;
-	margin-top:100px;
-	
+	margin-top: 100px;
 }
+
 .tile:hover {
 	padding: 0;
 	text-decoration: none;
@@ -25,16 +27,18 @@ html,body {
 	z-index: 100;
 }
 
-.rightnav {
-float: right;
-text-align: center;
-margin-right: 870px;
-opacity: 1;
+.rightNav {
+	float: right;
+	text-align: center;
+	margin-right: 770px;
+	opacity: 1;
+	width: 322px;
 }
 
-.homenavtitle {
-font-size: 26px;
-color: rgb(102, 102, 102);
+.homeNavTitle {
+	font-size: 19pt;
+	color: rgb(102, 102, 102);
+	text-align: left;
 }
 
 .homeNav1 {
@@ -51,18 +55,20 @@ color: rgb(102, 102, 102);
 	margin-top: 10px;
 }
 
-.homeNav4,.homeNav5,.homeNav6,.homeNav7,.homeNav8,.homeNav9,.homeNav10,homeNav11 {
+.homeNav4,.homeNav5,.homeNav6,.homeNav7,.homeNav8,.homeNav9,.homeNav10,homeNav11
+	{
 	width: 221px;
 	height: 70px;
 	line-height: 70px;
 }
 
-.homeNav4 img,.homeNav5 img,.homeNav6 img,.homeNav7 img,.homeNav8 img,.homeNav9 img,.homeNav10 img ,.homeNav11 img
+.homeNav4 img,.homeNav5 img,.homeNav6 img,.homeNav7 img,.homeNav8 img,.homeNav9 img,.homeNav10 img,.homeNav11 img
 	{
 	margin: 5px 0 0 10px;
 }
 
-.homeNav5,.homeNav6,.homeNav7,.homeNav8,.homeNav9,.homeNav10,.homeNav11{
+.homeNav5,.homeNav6,.homeNav7,.homeNav8,.homeNav9,.homeNav10,.homeNav11
+	{
 	margin-top: 10px;
 }
 
@@ -93,24 +99,31 @@ color: rgb(102, 102, 102);
 .homeNav9 {
 	background: url(../image/homepage2_righ6.png);
 }
+
 .homeNav10 {
 	background: url(../image/homepage2_righ7.png);
 }
+
 .homeNav11 {
 	background: url(../image/homepage2_righ8.png);
 }
-.rightnav img {
-margin: 30px 0 0;
+
+.rightNav img {
+	margin: 30px 0 0;
 }
+
 .homeNav1,.homeNav2,.homeNav3,.homeNav4,.homeNav5,.homeNav6,.homeNav7,.homeNav8,.homeNav9,.homeNav10,.homeNav11
 	{
 	font-size: 17.45px;
-	color: rgb(255, 255, 255)
+	color: rgb(255, 255, 255);
+	text-align: center;
 }
-.homenav1, .homenav2, .homenav3 {
-width: 222px;
-height: 150px;
+
+.homenav1,.homenav2,.homenav3 {
+	width: 222px;
+	height: 150px;
 }
+
 .homeNav1,.homeNav2,.homeNav3 {
 	width: 222px;
 	height: 150px;
@@ -130,12 +143,12 @@ height: 150px;
 	margin-top: 10px;
 }
 
-.homeNav4,.homeNav5,.homeNav6,.homeNav7,.homeNav8,.homeNav9,.homeNav10,.homeNav11 {
+.homeNav4,.homeNav5,.homeNav6,.homeNav7,.homeNav8,.homeNav9,.homeNav10,.homeNav11
+	{
 	width: 221px;
 	height: 70px;
 	line-height: 70px;
 }
-
 
 .networkRightNav img {
 	float: left;
@@ -168,38 +181,45 @@ height: 150px;
 .homeNav1,.homeNav2,.homeNav3,.homeNav4,.homeNav5,.homeNav6,.homeNav7,.homeNav8,.homeNav9
 	{
 	font-size: 17.45px;
-	color: rgb(255, 255, 255)
+	color: rgb(255, 255, 255);
+	text-align: center;
+	
 }
 
-.arrowLeft,.arrowLeft1 {
+.arrowLeft {
 	float: left;
 	margin-left: -50px;
 	margin-top: -2px;
 }
+
 .arrowLeft1 {
-	display:none;
-	}
-#networkSentiment,#networkCost
-	{
+	float: left;
+	margin-left: -50px;
+	margin-top: 28px;
+	display: none;
+}
+
+#networkSentiment,#networkCost {
 	display: none;
 }
 
 .networkRightNav {
 	margin-left: 850px;
-	margin-top: -490px;
+	margin-top: -500px;
 	float: left;
 	opacity: 0.5;
 }
 
 .networkArrowRight {
 	margin-left: 500px;
-    margin-top: -470px;
+	margin-top: -470px;
 	float: left;
 }
 
 .networkArrowLeft {
 	margin: 30px 0 0 -60px;
 }
+
 .topButton {
 	background-image: url(../image/top.png);
 	width: 53px;
@@ -213,4 +233,7 @@ height: 150px;
 	cursor: pointer;
 	margin-bottom: 20px;
 }
-.socialTable tr:nth-child(even),.sentimentTable tr:nth-child(odd){background-color: #FFFFFF}
+
+.socialTable tr:nth-child(even),.sentimentTable tr:nth-child(odd) {
+	background-color: #FFFFFF
+}

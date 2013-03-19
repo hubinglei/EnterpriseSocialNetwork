@@ -1,12 +1,12 @@
 function showRightNav(id) {
 	$(".rightNav").each(function() {
 		$(this).hide();
-	})
+	});
 	$("#" + id).show();
 
 }
 function navSelected(id) {
-	$("#nav > .navItem").removeClass("navActive");
+	$("#nav .navItem").removeClass("navActive");
 	if($("#" + id)){
 	$("#" + id).addClass("navActive");
 	}
@@ -15,7 +15,7 @@ function navSelected(id) {
 function networkNav2(id) {
 	$(".networkRightNav").each(function() {
 		$(this).hide();
-	})
+	});
 	$("#" + id).show();
 }
 function navActive(page) {
@@ -50,20 +50,22 @@ function navActive(page) {
 }
 
 function reload(page) {
-	navActive(page)
+	navActive(page);
 	$("#wrapper").load(page + ".html");
 }
 
 $(function() {
 	$(".arrowLeft").click(function() {
 		$("#wrapper").load("homeNav.html", null, function() { });
-		window.location.hash="#homeNav"
-	})
+		window.location.hash="#homeNav";
+	});
 
 	// top button
 	$(".topButton").click(function() {
 		window.scrollTo(0, 0);
 		return false;
 	});
-
-})
+	$.ajaxSetup({
+		cache: true
+	});
+});

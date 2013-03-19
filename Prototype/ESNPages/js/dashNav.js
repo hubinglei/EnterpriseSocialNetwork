@@ -2,8 +2,8 @@ $(function() {
 	page = "dashNav"
 	navSelected("dash");
 	// Influence Insight
-	$('#influenceDash').die('click');
-	$('#influenceDash').live('click', function() {
+	$('#influenceDash').unbind('click');
+	$('#influenceDash').bind('click', function() {
 		// window.open("influenceDash.html", "_self")
 		page = "influenceDash"
 		$.ajax({
@@ -21,8 +21,8 @@ $(function() {
 	})
 
 	// Influence Insight
-	$("#sentimentDash").die('click');
-	$("#sentimentDash").live('click', function() {
+	$("#sentimentDash").unbind('click');
+	$("#sentimentDash").bind('click', function() {
 		$.ajax({
 			url : "sentimentDash.html",
 			cache : true,

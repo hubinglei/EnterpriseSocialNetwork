@@ -11,14 +11,14 @@ cursor: pointer;
 	margin-top: -40px;
 	margin-right: 50px;
 }
-table{
+table.display{
 	width:1240px;
 	background-color:white;
 	}
 td input{
 	width:60px;
 }
-table tr td,th {
+table.display tr td,th {
 border-color: #e1dddd;
 height:35px;
 line-height:35px;

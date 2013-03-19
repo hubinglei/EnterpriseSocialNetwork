@@ -16,7 +16,7 @@ table.display thead th {
 .dataTables_wrapper { 
 	width: 1100px;
 }
-table {
+table.display {
 	background-color: white;
 }
 
@@ -24,14 +24,14 @@ td input {
 	width: 60px;
 }
 
-table tr th {
+table.display tr th {
 	border-color: #e1dddd;
 	height: 35px;
 	line-height: 35px;
 	text-align: center;
 }
 
-table tr td {
+table.display tr td {
 	border-color: #e1dddd;
 	height: 35px;
 	line-height: 35px;

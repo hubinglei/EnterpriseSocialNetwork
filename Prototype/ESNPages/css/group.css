@@ -112,7 +112,19 @@ ul li {
 	color: #9c9c9c;
 }
 
+
 .navigate{
+	clear: both;
+	height: 100px;
+	width: 310px;
+	float: right;
+	right: 10px;
+	top: 90px;
+	position:fixed;
+	z-index: 100;
+} 
+
+/* .navigate{
 	clear: both;
 	height: 100px;
 	width: 310px;
@@ -123,7 +135,7 @@ ul li {
 	margin-right: -140px;
 	position:fixed;
 	margin-left: 850px;
-	}
+} */
 .navigate ul li {
 	padding: 10px 220px 2px 1px;
 	font-size: 18px;
@@ -139,5 +151,9 @@ ul li {
 	float: right;
 	margin-right: -190px;
 }
+.navigate ul li a img {
+	border:0 none;
+}
+
  .tableSummary1 tr:nth-child(odd){background-color: #E6ECFF}
  .tableSummary1 tr:nth-child(even){background-color: #FFFFFF}

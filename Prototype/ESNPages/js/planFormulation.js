@@ -116,7 +116,7 @@ $(function() {
 						}
 						oTable.$('tr.row_selected').removeClass('row_selected');
 						$(this).addClass('row_selected');
-						$(this).die('click');
+						$(this).unbind('click');
 						if ($(this).find('td:last-child').find('ul').length == 0
 								&& $(this).find('td:last-child').find('div').length == 0) {
 							$(this).find('td:last-child').append(actionString);
@@ -126,7 +126,7 @@ $(function() {
 
 	var nEditing = null;
 
-	$('.marketingPlan .editp').live('click', function(e) {
+	$('.marketingPlan .editp').bind('click', function(e) {
 		e.preventDefault();
 
 		/* Get the row as a parent of the link that was clicked on */
@@ -151,7 +151,7 @@ $(function() {
 		}
 	});
 
-	$('.marketingPlan .cancle').live('click', function(e) {
+	$('.marketingPlan .cancle').bind('click', function(e) {
 		e.preventDefault();
 
 		/* Get the row as a parent of the link that was clicked on */
@@ -160,7 +160,7 @@ $(function() {
 		saveRow(oTable, nRow);
 	});
 
-	$('.marketingPlan .saveButton').live('click', function(e) {
+	$('.marketingPlan .saveButton').bind('click', function(e) {
 		e.preventDefault();
 
 		/* Get the row as a parent of the link that was clicked on */
@@ -168,7 +168,7 @@ $(function() {
 		saveRow(oTable, nRow);
 	});
 
-	$('#new').die('click');
+	$('#new').unbind('click');
 	$('#new').live(
 			'click',
 			function(e) {
@@ -236,25 +236,25 @@ $(function() {
 		refreshtfoot();
 	}
 
-	$('.marketingPlan .cancleButton').live('click', function(e) {
+	$('.marketingPlan .cancleButton').bind('click', function(e) {
 		e.preventDefault();
 		var nRow = $(this).parents('tr')[0];
 		deleteRow(nRow);
 	});
 
-	$('.marketingPlan .delete').live('click', function(e) {
+	$('.marketingPlan .delete').bind('click', function(e) {
 		e.preventDefault();
 		var nRow = $(this).parents('tr')[0];
 		deleteRow(nRow);
 	});
 
-	$('#marketPlan').die('click');
-	$('#marketPlan').live('click', function(e) {
+	$('#marketPlan').unbind('click');
+	$('#marketPlan').bind('click', function(e) {
 		$("#homecontent").load('marketingPlan.html');
 	});
 
-	$('#marketActivities').die('click');
-	$('#marketActivities').live('click', function(e) {
+	$('#marketActivities').unbind('click');
+	$('#marketActivities').bind('click', function(e) {
 		$("#homecontent").load('marketingActivities.html');
 	});
 })

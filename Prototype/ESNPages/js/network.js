@@ -1,31 +1,31 @@
 $(function() {
-	page = "networkNav"
+	page = "networkNav";
 	navSelected("network");
 	$("#influenceAnalysis").click(function() {
-		pos = "dash"
+		pos = "dash";
 		networkNav2("networkInluence");
-	})
+	});
 
 	// social network insight
 	$("#sentimentAnalysis").click(function() {
-		pos = "network"
+		pos = "network";
 		networkNav2("networkSentiment");
-	})
+	});
 	// media mediation
 	$("#costAnalysis").click(function() {
-		pos = "media"
+		pos = "media";
 		networkNav2("networkCost");
-	})
+	});
 
 	$(".arrowRight1").click(function() {
 		moveRight();
-		$(".arrowleft1 ").show();
+		$(".arrowLeft1").show();
 		$(".networkArrowRight ").hide();
 	});
 
 	$(".arrowLeft1").click(function() {
 		moveLeft();
-		$(".arrowleft1 ").hide();
+		$(".arrowLeft1 ").hide();
 		$(".networkArrowRight ").show();
 	});
 
@@ -33,195 +33,92 @@ $(function() {
 		$(".networkRightNav").css("margin-left", "-10px");
 		$(".networkRightNav").css("opacity", "1");
 		$(".rightNav").css("margin-right", "1290px");
-		$('#inluenceCompanyGroup').die('click');
-		$("#inluenceCompanyGroup").live('click', function() {
+		$('#inluenceCompanyGroup').unbind('click');
+		$("#inluenceCompanyGroup").bind('click', function() {
 			$("#wrapper").load("companyGroup.html", null, function() {
 			});
 			window.location.hash = "#companyGroup";
 		});
-		$("#inluenceCompany").die('click');
-		$("#inluenceCompany").live('click', function() {
-			$.ajax({
-				url : "company.html",
-				cache : true,
-				success : function(result) {
-					$("#wrapper").html(result);
-				}
-			});
-			// $("#wrapper").load("company.html", null, function() { });
-			$.ajax({
-				url : "company.html",
-				cache : true,
-				success : function(result) {
-					$("#wrapper").html(result);
-				}
-			});
-			window.location.hash = "#company";
+		$("#inluenceCompany").unbind('click');
+		$("#inluenceCompany").bind('click', function() {
+			 $("#wrapper").load("company.html", null, function() { });			
 		});
 
-		$("#inluenceBrandGroup").die('click');
-		$("#inluenceBrandGroup").live('click', function() {
+		$("#inluenceBrandGroup").unbind('click');
+		$("#inluenceBrandGroup").bind('click', function() {
 			$("#wrapper").load("brandGroup.html", null, function() {
 			});
 			window.location.hash = "#brandGroup";
 		});
 
-		$("#inluenceBrand").die('click');
-		$("#inluenceBrand").live('click', function() {
-			$.ajax({
-				url : "brand.html",
-				cache : true,
-				success : function(result) {
-					$("#wrapper").html(result);
-				}
-			});
-			// $("#wrapper").load("brand.html", null, function() { });
-			window.location.hash = "#brand";
+		$("#inluenceBrand").unbind('click');
+		$("#inluenceBrand").bind('click', function() {
+			 $("#wrapper").load("brand.html", null, function() { });
 		});
 
-		$("#inluenceProductGroup").die('click');
-		$("#inluenceProductGroup").live('click', function() {
+		$("#inluenceProductGroup").unbind('click');
+		$("#inluenceProductGroup").bind('click', function() {
 			$("#wrapper").load("productGroup.html", null, function() {
 			});
 			window.location.hash = "#productGroup";
 		});
 
-		$("#inluenceProduct").die('click');
-		$("#inluenceProduct").live('click', function() {
-			$.ajax({
-				url : "product.html",
-				cache : true,
-				success : function(result) {
-					$("#wrapper").html(result);
-				}
-			});
-			// $("#wrapper").load("product.html", null, function() { });
-			window.location.hash = "#product";
+		$("#inluenceProduct").unbind('click');
+		$("#inluenceProduct").bind('click', function() {
+		   $("#wrapper").load("product.html", null, function() { });
 		});
 
-		$("#sentimentCompany").die('click');
-		$("#sentimentCompany").live('click', function() {
-			$.ajax({
-				url : "companySentiment.html",
-				cache : true,
-				success : function(result) {
-					$("#wrapper").html(result);
-				}
-			});
-			// $("#wrapper").load("companySentiment.html", null, function() {
-			// });
-			window.location.hash = "#companySentiment";
+		$("#sentimentCompany").unbind('click');
+		$("#sentimentCompany").bind('click', function() {
+			 $("#wrapper").load("companySentiment.html", null, function() { });			
 		});
 
-		$("#sentimentBrand").die('click');
-		$("#sentimentBrand").live('click', function() {
-			$.ajax({
-				url : "brandSentiment.html",
-				cache : true,
-				success : function(result) {
-					$("#wrapper").html(result);
-				}
-			});
-			// $("#wrapper").load("brandSentiment.html", null, function() { });
-			window.location.hash = "#brandSentiment";
+		$("#sentimentBrand").unbind('click');
+		$("#sentimentBrand").bind('click', function() {
+			 $("#wrapper").load("brandSentiment.html", null, function() { });
 		});
 
-		$("#sentimentProduct").die('click');
-		$("#sentimentProduct").live('click', function() {
-			$.ajax({
-				url : "productSentiment.html",
-				cache : true,
-				success : function(result) {
-					$("#wrapper").html(result);
-				}
-			});
-			// $("#wrapper").load("productSentiment.html", null, function() {
-			// });
-			window.location.hash = "#productSentiment";
+		$("#sentimentProduct").unbind('click');
+		$("#sentimentProduct").bind('click', function() {
+			$("#wrapper").load("productSentiment.html", null, function() { });
 		});
 
-		$("#costCompany").die('click');
-		$("#costCompany").live('click', function() {
-			$.ajax({
-				url : "companyCost.html",
-				cache : true,
-				success : function(result) {
-					$("#wrapper").html(result);
-				}
-			});
-			// $("#wrapper").load("companyCost.html", null, function() { });
-			window.location.hash = "#companyCost";
+		$("#costCompany").unbind('click');
+		$("#costCompany").bind('click', function() {
+			$("#wrapper").load("companyCost.html", null, function() { });
 		});
 
-		$("#costBrand").die('click');
-		$("#costBrand").live('click', function() {
-			$.ajax({
-				url : "brandCost.html",
-				cache : true,
-				success : function(result) {
-					$("#wrapper").html(result);
-				}
-			});
-			// $("#wrapper").load("brandCost.html", null, function() { });
-			window.location.hash = "#brandCost";
+		$("#costBrand").unbind('click');
+		$("#costBrand").bind('click', function() {
+			$("#wrapper").load("brandCost.html", null, function() { });
 		});
 
-		$("#costProduct").die('click');
-		$("#costProduct").live('click', function() {
-			$.ajax({
-				url : "productCost.html",
-				cache : true,
-				success : function(result) {
-					$("#wrapper").html(result);
-				}
-			});
-			// $("#wrapper").load("productCost.html", null, function() { });
-			window.location.hash = "#productCost";
+		$("#costProduct").unbind('click');
+		$("#costProduct").bind('click', function() {
+			$("#wrapper").load("productCost.html", null, function() { });
 		});
 
-		$("#inluenceCampaign").die('click');
-		$("#inluenceCampaign").live('click', function() {
-			$.ajax({
-				url : "campaign.html",
-				cache : true,
-				success : function(result) {
-					$("#wrapper").html(result);
-				}
-			});
-			// $("#wrapper").load("campaign.html", null, function() { });
-			window.location.hash = "#campaign";
+		$("#inluenceCampaign").unbind('click');
+		$("#inluenceCampaign").bind('click', function() {
+			$("#wrapper").load("campaign.html", null, function() { });
 		});
 
-		$("#inluenceCampaignGroup").die('click');
-		$("#inluenceCampaignGroup").live('click', function() {
-			$.ajax({
-				url : "campaignGroup.html",
-				cache : true,
-				success : function(result) {
-					$("#wrapper").html(result);
-				}
-			});
-			// $("#wrapper").load("campaignGroup.html", null, function() { });
+		$("#inluenceCampaignGroup").unbind('click');
+		$("#inluenceCampaignGroup").bind('click', function() {
+			$("#wrapper").load("campaignGroup.html", null, function() { });
 			window.location.hash = "#campaignGroup";
 		});
 
-		$("#costCampaign").die('click');
-		$("#costCampaign").live('click', function() {
-			$.ajax({
-				url : "campaignCost.html",
-				cache : true,
-				success : function(result) {
-					$("#wrapper").html(result);
-				}
-			});
-			// $("#wrapper").load("campaignCost.html");
-			window.location.hash = "#campaignCost";
+		$("#costCampaign").unbind('click');
+		$("#costCampaign").bind('click', function() {
+			$("#wrapper").load("campaignCost.html", null, function() { });
+			
 		});
 	}
 
 	function moveLeft() {
 		$(".networkRightNav").css("margin-left", "850px");
 		$(".networkRightNav").css("opacity", "0.5");
-		$(".rightNav").css("margin-right", "870px");
+		$(".rightNav").css("margin-right", "770px");
 	}
 });

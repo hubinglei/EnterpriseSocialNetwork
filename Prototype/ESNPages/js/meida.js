@@ -2,8 +2,8 @@ $(function() {
 		   page="mediaNav"
 		   navSelected("media");
 		   
-		$("#mediaGeneration").die('click');
-		$("#mediaGeneration").live('click', function() {
+		$("#mediaGeneration").unbind('click');
+		$("#mediaGeneration").bind('click', function() {
 			$.ajax({
 				url : "mediaGeneration.html",
 				cache : true,
@@ -14,8 +14,8 @@ $(function() {
 			window.location.hash = "#mediaGeneration";
 		});
 		
-		$("#mediaOptimization").die('click');
-		$("#mediaOptimization").live('click', function() {
+		$("#mediaOptimization").unbind('click');
+		$("#mediaOptimization").bind('click', function() {
 			$.ajax({
 				url : "mediaOptimization.html",
 				cache : true,
