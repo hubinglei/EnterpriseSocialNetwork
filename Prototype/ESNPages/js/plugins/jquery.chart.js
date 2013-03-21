@@ -1,5 +1,5 @@
-// @sourceURL = jquery.chart.js
-(function($) {
+// @sourceURL=jquery.chart.debug.js
+$(function() {
 	
 	$.jqplot.PlanShapeRenderer = function(){
         $.jqplot.ShapeRenderer.call(this);
@@ -362,11 +362,6 @@
 	$.fn.plan = function(datasource, options) {
 		$.fn.initChart.call(this,datasource, options,addPlanHeader,$.fn.chart.defaults);
 	};
-	
-	$(function() {
-		$.esnParser.parse();
-	});
-	
 	$.fn.chart.parseOptions = function(context) {
 		var t = $(context);
 		return $.extend({},$.fn.chart.defaults, $.parser.parseOptions(context), {
@@ -714,7 +709,8 @@
 		var state = $.data(target, 'chart');
 		var opts =  state.options;
 		var chart = state.chart;
-		removeNode(chart.parent().find('div.chart-header'));
+		//debugger;
+		removeNode(chart.find('>div.chart-header'));
 		if (opts.head && !opts.noheader){
 			var header = $('<div class="chart-header"><div class="chart-title">'+opts.head +'</div></div>').prependTo(chart);
 			if (opts.iconCls){
@@ -1037,4 +1033,9 @@
 			loadWeekResource:function(target,options){return;},
 			loadMonthResource:function(target,options){return;},
 	};
-})(jQuery);
+});
+
+$(function() {
+	//debugger;
+	$.esnParser.parse(); 
+});

@@ -1,12 +1,10 @@
 $(function() {
-	page = "influenceDash"
+	page = "influenceDash";
 	navSelected("dash");
 	
 	$('#tableContent').load('influenceDashView.html');
 	payOrDeleteAttention();
-	
-	
-	
+
 	// socail dash board -anlaysis
 	// area click
 	$("#area").click(function() {
@@ -16,15 +14,15 @@ $(function() {
 		$("#areaView").show();
 		replotMap();
 		$("#dateView").hide();
-	})
+	});
 
 	$("#date").click(function() {
-		$("#overview").removeClass("overview1")
-		$("#overview").addClass("overview")
+		$("#overview").removeClass("overview1");
+		$("#overview").addClass("overview");
 		$(this).css('color','black');
 		$('#area').css('color','#23A0D8');
 		$("#dateView").show();
 		$("#areaView").hide();
-	})
+	});
 
-})
+});

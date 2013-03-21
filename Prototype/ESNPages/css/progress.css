@@ -70,6 +70,6 @@ progress[aria-valuenow]:before {
 }
 .progressInfor{
 	margin-top:-18px;
-	text-align: center;
+	text-align: right;
     width: 130px;
 }

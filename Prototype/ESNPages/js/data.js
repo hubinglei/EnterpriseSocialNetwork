@@ -370,3 +370,7 @@ function loadMonthPlan(target, options) {
 		ylabel : [ 'Action1Month','Action2Month','Action3Month','Action4Month','Action5Month','Action6Month','Action7Month','Action8Month','Action9Month' ]
 	}
 }
+
+$(function() {
+	//debugger;
+});

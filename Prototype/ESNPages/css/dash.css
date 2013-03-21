@@ -1,6 +1,6 @@
 #dashcontent,#sentimentcontent {
 	margin: 0 -120px 0 -120px;
-	overflow-y: auto !important;
+	*overflow-y: auto !important;
 	*overflow-y: scroll;
 }
 

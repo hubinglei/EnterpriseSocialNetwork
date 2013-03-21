@@ -1,23 +1,19 @@
 <link href="css/group.css" rel="stylesheet" type="text/css" />
+<link href="css/progress.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/companyCost.js"></script>
-<script type="text/javascript" src="js/global.js"></script>
 <script type="text/javascript" src="js/data.js"></script>
 <script type="text/javascript" src="js/plugins/jquery.jqplot.js"></script>
 <script type="text/javascript" src="js/plugins/jquery.chart.js"></script>
 <script type="text/javascript" src="js/plugins/jqplot.barRenderer.js"></script>
-<script type="text/javascript"
-	src="js/plugins/jqplot.categoryAxisRenderer.js"></script>
-<script type="text/javascript"
-	src="js/plugins/jqplot.pieRenderer.min.js"></script>
-<script type="text/javascript"
-	src="js/plugins/jqplot.donutRenderer.min.js"></script>
-<script type="text/javascript"
-	src="js/plugins/jqplot.pointLabels.min.js"></script>
+<script type="text/javascript" src="js/plugins/jqplot.categoryAxisRenderer.js"></script>
+<script type="text/javascript" src="js/plugins/jqplot.pieRenderer.min.js"></script>
+<script type="text/javascript" src="js/plugins/jqplot.donutRenderer.min.js"></script>
+<script type="text/javascript" src="js/plugins/jqplot.pointLabels.min.js"></script>
 <script type="text/javascript" src="js/group.js"></script>
-<div class="title">Company</div>
+<div class="title">Business Unit</div>
 <div class="navLeft">
-	<div class="title1">Company Information</div>
+	<div class="title1">Business Unit Information</div>
 	<img src="image/evnyX2.png" width="113" height="128" />
 	<div class="title3">Q1 EvnyX2</div>
 	<div>
@@ -43,17 +39,66 @@
 		Maintenance
 	</div>
 </div>
-<div id="chartcost" class="esn-chart marketingContent"
-	data-options="formatable:true,setting:true,timeable:true,
-									legend:true,
-                                    loadDayResource:loadDay2,
-									loadWeekResource:loadWeek2,
-									loadMonthResource:loadMonth2,
-									series:[{label:'Actual',color:'orange'},{label:'Plan',color:'green'}],
-									datasource:{data:[[0, 20, 42, 89, 45, 87, 50, 38, 83, 40],[0, 40, 12, 29, 15, 57, 60, 78, 33, 10]
-													  ],xlabel:['1','3','5','7','9','11','13','15','17','19']},head:'LED'">
-
-</div>
+<table width="850" border="0" class="tableSummary1 marketingContent"
+	cellspacing="0">
+	<tr class="tableTitle">
+		<td colspan="9">Marketing Plan List
+			<div class="tableButton">
+				<ul>
+					<li><img src="image/timeType.png" width="20" height="20" /></li>
+					<li><img src="image/action_icon.png" width="20" height="20" />
+					</li>
+					<li><img src="image/setting_icon.png" width="20" height="20" />
+					</li>
+				</ul>
+		</td>
+	</tr>
+	<tr class="tableTitle1">
+    	<td>Business Unit</td>
+        <td>Brand</td>
+        <td>Product</td>
+        <td>Marketing Plan</td>
+		<td>Start Time</td>
+		<td>End Time</td>
+		<td>Cost</td>
+		<td>Planned Status</td>
+		<td>Plan Schedule</td>
+	</tr>
+	<tr>
+		<td>HP Australia</td>
+		<td>HP</td>
+        <td>Computer</td>
+		<td>Plan1</td>
+        <td>2012/1/28</td>
+        <td>2012/1/28</td>
+		<td>$300</td>
+        <td>On Going</td>
+		<td><progress value="65" max="100"></progress></td>
+		
+	</tr>
+	<tr>
+		<td>HP Taiwan</td>
+		<td>HP</td>
+        <td>Computer</td>
+		<td>Plan2</td>
+        <td>2012/1/28</td>
+        <td>2012/1/28</td>
+		<td>$300</td>
+        <td>On Going</td>
+		<td><progress value="88" max="100"></progress></td>
+	</tr>
+	<tr>
+		<td>HP China</td>
+		<td>HP</td>
+        <td>Computer</td>
+		<td>Plan1</td>
+        <td>2012/1/28</td>
+        <td>2012/1/28</td>
+		<td>$600</td>
+        <td>Finished</td>
+		<td><progress value="100" max="100"></progress></td>
+	</tr>
+</table>
 <div class="blank"></div>
 <div id="chartcost1" class="esn-chart structureContent"
 	data-options="formatable:false,setting:true,timeable:true,
@@ -67,7 +112,7 @@
 
 </div>
 <div class="blank"></div>
-<div id="chartcost2" class="esn-chart progressContent"
+<div id="chartcost2" class="esn-chart progress1Content"
 	data-options="formatable:true,setting:true,timeable:true,
         							loadDayResource:loadDay2,
 									loadWeekResource:loadWeek2,
@@ -100,7 +145,7 @@
 	<li><a href="#" style="margin-right: -190px;" class="structure">Cost
 			Structure <img src="image/nav.png"> </a>
 	</li>
-	<li><a href="#" style="margin-right: -190px;" class="progress">Cost
+	<li><a href="#" style="margin-right: -190px;" class="progress1">Cost
 			Use Progress <img src="image/nav.png"> </a>
 	</li>
 	<li><a href="#" style="margin-right: -190px;" class="budget">Cost

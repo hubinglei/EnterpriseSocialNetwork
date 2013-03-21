@@ -1,4 +1,4 @@
 $(function() {
-		   page="companyCost"
-		   	window.location.hash = "#companyCost";
-		   })
+	page = "companyCost";
+	window.location.hash = "#companyCost";
+});
